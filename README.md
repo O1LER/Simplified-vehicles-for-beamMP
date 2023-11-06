@@ -5,7 +5,13 @@ Since beamNG is missing many simplified models for its vehicles, and because the
 Please adhere to the internal names of beamNG vehicles, to make communication easier and prevent misunderstandings.
 Please open a branch for each vehicle. Only PR to main if you are satisfied with your work and think that the vehicle is in a usable state.
 
-Vehicles will be split in these groups:
+This repo is public and the result of it will be:
+A: published to the beamNG repo for anyone to use on their server (or singleplayer if they desire) as a beamNG mod
+B: integrated into the beamMP mod, and thus distributed by the beamMP system
+
+Please keep this in mind before starting to contribute.
+
+For the moment, vehicles are split into these groups:
 
 ## First: Self-Supported Body
 autobello, barstow, bastion, bolide, miramar, racetruck, rockbouncer, sbr, scintilla, wendover
