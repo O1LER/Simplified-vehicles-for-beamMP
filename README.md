@@ -2,13 +2,13 @@
 Creating the missing simplified vehicles as a mod for beamNG, to be used in beamMP
 
 Since beamNG is missing many simplified models for its vehicles, and because they can save a lot of processing power, they might be useful for multiplayer servers with a lot of players/cars or for players with a weak PC.
+
+
 Please adhere to the internal names of beamNG vehicles, to make communication easier and prevent misunderstandings.
 Please open a branch for each vehicle. Only PR to main if you are satisfied with your work and think that the vehicle is in a usable state.
-
 This repo is public and the result of it will be:
 A: published to the beamNG repo for anyone to use on their server (or singleplayer if they desire) as a beamNG mod
 B: integrated into the beamMP mod, and thus distributed by the beamMP system
-
 Please keep this in mind before starting to contribute.
 
 For the moment, vehicles are split into these groups:
