@@ -23,4 +23,4 @@ citybus, semi
 
 May need a completely new node/beam structure
 
-Priority should be given to the first group. Getting every vehicle into a usable state, with one single subpart per part option. We can always expand, for example the bumper selection, to the samr variety that the full vehicles has at a later date.
+Priority should be given to the first group. Getting every vehicle into a usable state, with one single subpart per part option. We can always expand, for example the bumper selection, to the same variety that the full vehicles has at a later date.
