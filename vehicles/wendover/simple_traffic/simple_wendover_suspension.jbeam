@@ -20,7 +20,7 @@
         {"selfCollision":false},
         {"nodeMaterial":"|NM_METAL"},
         {"frictionCoef":0.5},
-        {"nodeWeight":7.791533},
+        {"nodeWeight":6},
         {"group":["hub_F", "susp_F"]},
         //hub mounting points for lower wishbone, strut rail bottom point
         ["fh1r", -0.692161, -0.013955, -0.139548],
@@ -384,7 +384,7 @@
         //beamPrecompression here changes the ride height
         {"beamPrecompression":1.0, "beamType":"|NORMAL"},
         //beamSpring here controls spring rate (N/m)
-        {"beamSpring":40000,"beamDamp":0},
+        {"beamSpring":43000,"beamDamp":0},
         {"beamDeform":88304.046875,"beamStrength":434594.406250},
         ["fh1r","fs1r",{"precompressionRange":0.055}],
         ["fh1l","fs1l",{"precompressionRange":0.055}],
@@ -553,7 +553,7 @@
         {"nodeMaterial":"|NM_METAL"},
         {"frictionCoef":0.5},
 
-        {"nodeWeight":10.678697},
+        {"nodeWeight":6},
         //hub mounting points for upper wishbone
         {"group":["hub_R", "susp_R"]},
         ["rh1r", -0.647505, -0.089311, 0.139548],
@@ -1023,7 +1023,7 @@
         //beamPrecompression here changes the ride height
         {"beamPrecompression":1.0, "beamType":"|NORMAL"},
         //beamSpring here controls spring rate (N/m)
-        {"beamSpring":28000,"beamDamp":0},
+        {"beamSpring":30000,"beamDamp":0},
         {"beamDeform":121025.234375,"beamStrength":595634.000000},
         ["rh3r","rs1r",{"precompressionRange":0.096}],
         ["rh3l","rs1l",{"precompressionRange":0.096}],
