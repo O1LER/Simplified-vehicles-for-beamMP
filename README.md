@@ -25,9 +25,10 @@ burnside, bluebuck, fullsize, hopper, moonhawk, midtruck, pickup, pigeon, roamer
 They need an empty (no mesh/nodes/beams) frame part, that then has the body as a sub-part. Necessary to be able to use different bodys on the same frame part (mainly for pickup, van and roamer)
 May be based on existing simplified vehicles by beamNG
 
-## Third: Large vehicles
-citybus, semi
+## Third: Special vehicles
+citybus, semi, utv
 
 May need a completely new node/beam structure
+UTV may need the same tank steer as it full variant (If a simplified version is even necessary do to the already small size of the vehicle)
 
 Priority should be given to the first group. Getting every vehicle into a usable state, with one single subpart per part option. We can always expand, for example the bumper selection, to the same variety that the full vehicles has at a later date.
