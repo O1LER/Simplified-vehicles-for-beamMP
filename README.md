@@ -12,6 +12,8 @@ This repo is public and the result of it will be:
 
 Please keep this in mind before starting to contribute.
 
+Check the [Guide](https://github.com/O1LER/Simplified-vehicles-for-beamMP/wiki#guide-to-creating-a-simplified-vehicle-model) on how to approch this (Still WIP)
+
 For the moment, vehicles are split into these groups:
 
 ## First: Self-Supported Body
