@@ -1,18 +1,19 @@
 {
-"bastion_simple_strut_F": {
+"simple_bastion_strut_F": {
     "information":{
         "authors":"BeamNG, O1LER",
         "name":"MacPherson Strut Front Suspension",
         "value":150,
     },
-    "slotType" : "bastion_simple_suspension_F",
+    "slotType" : "simple_bastion_suspension_F",
     "slots": [
         ["type", "default", "description"],
-        ["bastion_simple_brake_F","bastion_simple_brake_F", "Front Brakes"],
-        ["bastion_simple_wheeldata_F_strut","bastion_simple_wheeldata_F_strut", "Front Spindles",{"coreSlot":true}],
-        ["bastion_simple_coilover_F_strut","bastion_simple_coilover_F_strut", "Front Coilovers"],
-        ["bastion_simple_swaybar_F_strut","bastion_simple_swaybar_F_strut", "Front Sway Bar"],
-        ["bastion_simple_steering_strut","bastion_simple_steering_strut", "Steering"],
+        ["simple_bastion_brake_F","simple_bastion_brake_F", "Front Brakes"],
+        ["simple_bastion_wheels_F", "simple_bastion_wheels_F", "Front Wheels", {"nodeOffset":{"x":0.0, "y":0.0, "z":-0.04}, "coreSlot":true}],
+        ["simple_bastion_wheeldata_F_strut","simple_bastion_wheeldata_F_strut", "Front Spindles",{"coreSlot":true}],
+        ["simple_bastion_coilover_F_strut","simple_bastion_coilover_F_strut", "Front Coilovers"],
+        ["simple_bastion_swaybar_F_strut","simple_bastion_swaybar_F_strut", "Front Sway Bar"],
+        ["simple_bastion_steering_strut","simple_bastion_steering_strut", "Steering"],
     ],
     "nodes": [
         ["id", "posX", "posY", "posZ"],
@@ -23,38 +24,38 @@
         {"nodeWeight":7.791533},
         {"group":["hub_F", "susp_F"]},
         //hub mounting points for lower wishbone, strut rail bottom point
-        ["fh1r", -0.692161, -0.013955, -0.139548],
-        ["fh1l",  0.692161, -0.013955, -0.139548],
+        ["fh1r", -0.8237, -1.6011, 0.2063],
+        ["fh1l",  0.8237, -1.6011, 0.2063],
 
         //strut body slidenode
-        ["fh2r", -0.612897, 0.013955, 0.139548],
-        ["fh2l",  0.612897, 0.013955, 0.139548],
+        ["fh2r", -0.7293, -1.5732, 0.4854],
+        ["fh2l",  0.7293, -1.5732, 0.4854],
 
         //tie rod end
-        ["fh3r", -0.641923, 0.178622, -0.122803],
-        ["fh3l",  0.641923, 0.178622, -0.122803],
+        ["fh3r", -0.7639, -1.4085, 0.223],
+        ["fh3l",  0.7639, -1.4085, 0.223],
 
         //brake caliper
-        ["fh5r", -0.703324, -0.156294, 0.000000],
-        ["fh5l",  0.703324, -0.156294, 0.000000],
+        ["fh5r", -0.8369, -1.7434, 0.3458],
+        ["fh5l",  0.8369, -1.7434, 0.3458],
 
         //subframe
         {"selfCollision":false},
         {"nodeWeight":19.275307},
         {"group":["subframe_F", "susp_F"]},
         //body mounting points for lower wishbone
-        ["fx1r", -0.323752, -0.223278, -0.111639],
-        ["fx1l",  0.323752, -0.223278, -0.111639],
-        ["fx2r", -0.323752,  0.223278, -0.111639],
-        ["fx2l",  0.323752,  0.223278, -0.111639],
+        ["fx1r", -0.3853, -1.8104, 0.2342],
+        ["fx1l",  0.3853, -1.8104, 0.2342],
+        ["fx2r", -0.3853,  -1.3639, 0.2342],
+        ["fx2l",  0.3853,  -1.3639, 0.2342],
 
         //strut rail top point
-        ["fs1r", -0.524702, 0.047446, 0.468883],
-        ["fs1l",  0.524702, 0.047446, 0.468883],
+        ["fs1r", -0.6244, -1.5397, 0.8147],
+        ["fs1l",  0.6244, -1.5397, 0.8147],
 
         {"group":""},
-        ["fco1r", -0.647505, -0.013955, 0.390736],
-        ["fco1l",  0.647505, -0.013955, 0.390736],
+        ["fco1r", -0.7705, -1.6011, 0.7365],
+        ["fco1l",  0.7705, -1.6011, 0.7365],
         {"group":""},
     ],
     "rails": {
@@ -295,13 +296,13 @@
         {"brakeVentingCoef":false},
     ],
 },
-"bastion_simple_wheeldata_F_strut": {
+"simple_bastion_wheeldata_F_strut": {
     "information":{
         "authors":"BeamNG, O1LER",
         "name":"Front Spindles",
         "value":0,
     },
-    "slotType" : "bastion_simple_wheeldata_F_strut",
+    "slotType" : "simple_bastion_wheeldata_F_strut",
     "pressureWheels":[
         ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
         //some wheel properties
@@ -325,13 +326,13 @@
         {"enableHubcaps":false},
     ],
 },
-"bastion_simple_brake_F": {
+"simple_bastion_brake_F": {
     "information":{
         "authors":"BeamNG, O1LER",
         "name":"Front Brakes",
         "value":200,
     },
-    "slotType" : "bastion_simple_brake_F",
+    "slotType" : "simple_bastion_brake_F",
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
     ],
@@ -355,13 +356,13 @@
         {"absSlipRatioTarget":0.2},
     ],
 },
-"bastion_simple_swaybar_F_strut": {
+"simple_bastion_swaybar_F_strut": {
     "information":{
         "authors":"BeamNG, O1LER",
         "name":"Front Sway Bar",
         "value":250,
     },
-    "slotType" : "bastion_simple_swaybar_F_strut",
+    "slotType" : "simple_bastion_swaybar_F_strut",
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
     ],
@@ -371,13 +372,13 @@
         ["fh1r", "fx1r", "fx1l", "fh1l"],
     ],
 },
-"bastion_simple_coilover_F_strut": {
+"simple_bastion_coilover_F_strut": {
     "information":{
         "authors":"BeamNG, O1LER",
         "name":"Front Coilovers",
         "value":200,
     },
-    "slotType" : "bastion_simple_coilover_F_strut",
+    "slotType" : "simple_bastion_coilover_F_strut",
     "beams": [
         ["id1:", "id2:"],
         //springs
@@ -412,13 +413,13 @@
         {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
     ],
 },
-"bastion_simple_steering_strut": {
+"simple_bastion_steering_strut": {
     "information":{
         "authors":"BeamNG, O1LER",
         "name":"Rack and Pinion Steering",
         "value":110,
     },
-    "slotType" : "bastion_simple_steering_strut",
+    "slotType" : "simple_bastion_steering_strut",
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
     ],
@@ -446,12 +447,12 @@
         {"nodeWeight":7.791533},
         {"group":""},
         //steering rack ends
-        ["st2r", -0.267933, 0.189786, -0.094893],
-        ["st2l",  0.267933, 0.189786, -0.094893],
+        ["st2r", -0.3188, -1.3973, 0.2509],
+        ["st2l",  0.3188, -1.3973, 0.2509],
         //body mounting points for steering rack
         {"nodeWeight":13.851615},
-        ["st1r", -0.133967, 0.189786, -0.094893],
-        ["st1l",  0.133967, 0.189786, -0.094893],
+        ["st1r", -0.1594, -1.3973, 0.2509],
+        ["st1l",  0.1594, -1.3973, 0.2509],
         {"group":""},
     ],
     "beams": [
@@ -525,19 +526,20 @@
         "FFBcoef":"$=12*1.000000*$ffbTune",
     },
 },
-"bastion_simple_doublewishbone_R": {
+"simple_bastion_doublewishbone_R": {
     "information":{
         "authors":"BeamNG, O1LER",
         "name":"Double Wishbone Rear Suspension",
         "value":150,
     },
-    "slotType" : "bastion_simple_suspension_R",
+    "slotType" : "simple_bastion_suspension_R",
     "slots": [
         ["type", "default", "description"],
-        ["bastion_simple_brake_R","bastion_simple_brake_R", "Rear Brakes"],
-        ["bastion_simple_wheeldata_R_doublewishbone","bastion_simple_wheeldata_R_doublewishbone", "Rear Spindles",{"coreSlot":true}],
-        ["bastion_simple_coilover_R_doublewishbone","bastion_simple_coilover_R_doublewishbone", "Rear Coilovers"],
-        ["bastion_simple_swaybar_R_doublewishbone","bastion_simple_swaybar_R_doublewishbone", "Rear Sway Bar"],
+        ["simple_bastion_wheels_R", "simple_bastion_wheels_R", "Rear Wheels", {"nodeOffset":{"x":0.0, "y":0.0, "z":0.0}, "coreSlot":true}],
+        ["simple_bastion_brake_R","simple_bastion_brake_R", "Rear Brakes"],
+        ["simple_bastion_wheeldata_R_doublewishbone","simple_bastion_wheeldata_R_doublewishbone", "Rear Spindles",{"coreSlot":true}],
+        ["simple_bastion_coilover_R_doublewishbone","simple_bastion_coilover_R_doublewishbone", "Rear Coilovers"],
+        ["simple_bastion_swaybar_R_doublewishbone","simple_bastion_swaybar_R_doublewishbone", "Rear Sway Bar"],
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
@@ -556,40 +558,40 @@
         {"nodeWeight":10.678697},
         //hub mounting points for upper wishbone
         {"group":["hub_R", "susp_R"]},
-        ["rh1r", -0.647505, -0.089311, 0.139548],
-        ["rh1l",  0.647505, -0.089311, 0.139548],
-        ["rh2r", -0.647505, 0.089311, 0.139548],
-        ["rh2l",  0.647505, 0.089311, 0.139548],
+        ["rh1r", -0.7408, 1.4349, 0.5072],
+        ["rh1l",  0.7408, 1.4349, 0.5072],
+        ["rh2r", -0.7408, 1.6135, 0.5072],
+        ["rh2l",  0.7408, 1.6135, 0.5072],
 
         //hub mounting points for lower wishbone
-        ["rh3r", -0.692161, -0.089311, -0.139548],
-        ["rh3l",  0.692161, -0.089311, -0.139548],
-        ["rh4r", -0.692161, 0.089311,  -0.139548],
-        ["rh4l",  0.692161, 0.089311,  -0.139548],
+        ["rh3r", -0.7919, 1.4349, 0.2281],
+        ["rh3l",  0.7919, 1.4349, 0.2281],
+        ["rh4r", -0.7919, 1.6135,  0.2281],
+        ["rh4l",  0.7919, 1.6135,  0.2281],
 
         //brake caliper
-        ["rh5r", -0.703324, -0.167458, 0.000000],
-        ["rh5l",  0.703324, -0.167458, 0.000000],
+        ["rh5r", -0.8047, 1.3567, 0.3677],
+        ["rh5l",  0.8047, 1.3567, 0.3677],
 
         //subframe
         {"selfCollision":false},
         {"nodeWeight":15.420245},
         //body mounting points for lower wishbone
         {"group":["subframe_R", "susp_R"]},
-        ["rx1r", -0.290261, -0.223278, -0.122803],
-        ["rx1l",  0.290261, -0.223278, -0.122803],
-        ["rx2r", -0.290261,  0.223278, -0.122803],
-        ["rx2l",  0.290261,  0.223278, -0.122803],
+        ["rx1r", -0.3321, 1.3009, 0.2449],
+        ["rx1l",  0.3321, 1.3009, 0.2449],
+        ["rx2r", -0.3321,  1.7475, 0.2449],
+        ["rx2l",  0.3321,  1.7475, 0.2449],
 
         //body mounting points for upper wishbone
-        ["rx3r", -0.401900, -0.223278, 0.111639],
-        ["rx3l",  0.401900, -0.223278, 0.111639],
-        ["rx4r", -0.401900,  0.223278, 0.111639],
-        ["rx4l", 0.401900,  0.223278, 0.111639],
+        ["rx3r", -0.4598, 1.3009, 0.4793],
+        ["rx3l",  0.4598, 1.3009, 0.4793],
+        ["rx4r", -0.4598,  1.7475, 0.4793],
+        ["rx4l", 0.4598,  1.7475, 0.4793],
 
         //body mounting points for spring and shock
-        ["rs1r", -0.669833, -0.078147, 0.340498],
-        ["rs1l",  0.669833, -0.078147, 0.340498],
+        ["rs1r", -0.7663, 1.446, 0.7082],
+        ["rs1l",  0.7663, 1.446, 0.7082],
         {"group":""},
     ],
     "beams": [
@@ -934,13 +936,13 @@
         {"brakeVentingCoef":false},
     ],
 },
-"bastion_simple_wheeldata_R_doublewishbone": {
+"simple_bastion_wheeldata_R_doublewishbone": {
     "information":{
         "authors":"BeamNG, O1LER",
         "name":"Rear Spindles",
         "value":0,
     },
-    "slotType" : "bastion_simple_wheeldata_R_doublewishbone",
+    "slotType" : "simple_bastion_wheeldata_R_doublewishbone",
     "pressureWheels":[
         ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
         //some wheel properties
@@ -964,13 +966,13 @@
         {"enableHubcaps":false},
     ],
 },
-"bastion_simple_brake_R": {
+"simple_bastion_brake_R": {
     "information":{
         "authors":"BeamNG, O1LER",
         "name":"Rear Brakes",
         "value":200,
     },
-    "slotType" : "bastion_simple_brake_R",
+    "slotType" : "simple_bastion_brake_R",
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
     ],
@@ -994,13 +996,13 @@
         {"absSlipRatioTarget":0.15},
     ],
 },
-"bastion_simple_swaybar_R_doublewishbone": {
+"simple_bastion_swaybar_R_doublewishbone": {
     "information":{
         "authors":"BeamNG, O1LER",
         "name":"Rear Sway Bar",
         "value":250,
     },
-    "slotType" : "bastion_simple_swaybar_R_doublewishbone",
+    "slotType" : "simple_bastion_swaybar_R_doublewishbone",
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
     ],
@@ -1010,13 +1012,13 @@
         ["rh4r", "rx1r", "rx1l", "rh4l"],
     ],
 },
-"bastion_simple_coilover_R_doublewishbone": {
+"simple_bastion_coilover_R_doublewishbone": {
     "information":{
         "authors":"BeamNG, O1LER",
         "name":"Rear Coilovers",
         "value":200,
     },
-    "slotType" : "bastion_simple_coilover_R_doublewishbone",
+    "slotType" : "simple_bastion_coilover_R_doublewishbone",
     "beams": [
         ["id1:", "id2:"],
         //rear springs
