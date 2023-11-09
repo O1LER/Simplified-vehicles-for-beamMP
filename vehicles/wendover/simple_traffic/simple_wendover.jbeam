@@ -249,8 +249,8 @@
     "slots": [
         ["type", "default", "description"],
         ["simple_wendover_engine","simple_wendover_engine","Engine", {"coreSlot":true}],
-        ["wendover_simple_suspension_F","wendover_simple_strut_F","Front Suspension", {"nodeOffset":{"x":0.0, "y":0.0, "z":0.0}, "coreSlot":true}],
-        ["wendover_simple_suspension_R","wendover_simple_doublewishbone_R","Rear Suspension", {"nodeOffset":{"x":0.0, "y":0.0, "z":0.0}, "coreSlot":true}],
+        ["simple_wendover_suspension_F","simple_wendover_strut_F","Front Suspension", {"nodeOffset":{"x":0.0, "y":0.0, "z":0.0}, "coreSlot":true}],
+        ["simple_wendover_suspension_R","simple_wendover_doublewishbone_R","Rear Suspension", {"nodeOffset":{"x":0.0, "y":0.0, "z":0.0}, "coreSlot":true}],
         ["simple_wendover_bumper_F","simple_wendover_bumper_F","Front Bumper"],
         ["simple_wendover_bumper_R","simple_wendover_bumper_R","Rear Bumper"],
         ["simple_wendover_hood","simple_wendover_hood","Hood"],

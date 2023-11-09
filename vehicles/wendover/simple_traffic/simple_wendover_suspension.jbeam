@@ -1,11 +1,11 @@
 {
-"wendover_simple_strut_F": {
+"simple_wendover_strut_F": {
     "information":{
         "authors":"BeamNG, O1LER",
         "name":"MacPherson Strut Front Suspension",
         "value":150,
     },
-    "slotType" : "wendover_simple_suspension_F",
+    "slotType" : "simple_wendover_suspension_F",
     "slots": [
         ["type", "default", "description"],
         ["wendover_simple_wheels_F", "wendover_simple_wheels_F", "Front Wheels", {"nodeOffset":{"x":0.0, "y":0.0, "z":-0.02}, "coreSlot":true}],
@@ -526,13 +526,13 @@
         "FFBcoef":"$=12*1.000000*$ffbTune",
     },
 },
-"wendover_simple_doublewishbone_R": {
+"simple_wendover_doublewishbone_R": {
     "information":{
         "authors":"BeamNG, O1LER",
         "name":"Double Wishbone Rear Suspension",
         "value":150,
     },
-    "slotType" : "wendover_simple_suspension_R",
+    "slotType" : "simple_wendover_suspension_R",
     "slots": [
         ["type", "default", "description"],
         ["wendover_simple_wheels_R", "wendover_simple_wheels_R", "Rear Wheels", {"nodeOffset":{"x":0.0, "y":0.0, "z":0.0}, "coreSlot":true}],
