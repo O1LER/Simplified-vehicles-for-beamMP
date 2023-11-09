@@ -1,21 +1,17 @@
 {
-"simple_wendover_wheels_F": {
+"wendover_simple_wheels_F": {
     "information":{
         "authors":"Synsol, O1LER",
         "name":"Front Wheels",
     },
-    "slotType" : "simple_wendover_wheels_F",
-    "slots": [
-        ["type", "default", "description"],
-        ["wendover_simple_suspension_F", "wendover_simple_strut_F", "Front Suspension", {"nodeOffset":{"x":0.0, "y":-1.5, "z":0.3}, "coreSlot":true}]
-    ],
+    "slotType" : "wendover_simple_wheels_F",
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
-        ["tire_01a_15x8_26", ["wheel_FL", "axf_L"], [], {"pos":{"x":0.7825, "y":-1.39003, "z":0.757019}, "rot":{"x":0.0316111, "y":-0.500027, "z":0.0}, "scale":{"x":1.055, "y":1, "z":1}}],
-        ["tire_01a_15x8_26", ["wheel_FR","axf_R"], [], {"pos":{"x":-0.7825, "y":-1.39003, "z":0.757019}, "rot":{"x":-0.0316111, "y":0.500027, "z":180}, "scale":{"x":1.055, "y":1, "z":1}}],
+        ["tire_01a_15x8_26", ["wheel_FL", "axf_L"], [], {"pos":{"x":0.7825, "y":-1.39003, "z":0.314329}, "rot":{"x":0.0316111, "y":-0.500027, "z":0.0}, "scale":{"x":1.055, "y":1, "z":1}}],
+        ["tire_01a_15x8_26", ["wheel_FR","axf_R"], [], {"pos":{"x":-0.7825, "y":-1.39003, "z":0.314329}, "rot":{"x":-0.0316111, "y":0.500027, "z":180}, "scale":{"x":1.055, "y":1, "z":1}}],
 
-        ["brake_caliper_standard_plain", ["wendover_hub_F","hub_F"], [], {"pos":{"x":-0.7425, "y":-1.39003, "z":0.757019}, "scale":{"x":0.9, "y":0.9, "z":0.9}, "rot":{"x": 8,    "y":0,   "z":0   }}],
-        ["brake_caliper_standard_plain", ["wendover_hub_F","hub_F"], [], {"pos":{"x": 0.7425, "y":-1.39003, "z":0.757019}, "scale":{"x":0.9, "y":0.9, "z":0.9}, "rot":{"x":-8,    "y":180, "z":0   }}],
+        ["brake_caliper_standard_plain", ["wendover_hub_F","hub_F"], [], {"pos":{"x":-0.7425, "y":-1.39003, "z":0.314329}, "scale":{"x":0.9, "y":0.9, "z":0.9}, "rot":{"x": 8,    "y":0,   "z":0   }}],
+        ["brake_caliper_standard_plain", ["wendover_hub_F","hub_F"], [], {"pos":{"x": 0.7425, "y":-1.39003, "z":0.314329}, "scale":{"x":0.9, "y":0.9, "z":0.9}, "rot":{"x":-8,    "y":180, "z":0   }}],
     ],
     "props":[
         ["func"      , "mesh"           , "idRef:", "idX:", "idY:", "baseRotation"        , "rotation"            , "translation"        , "min", "max", "offset", "multiplier",],
@@ -39,10 +35,10 @@
         {"selfCollision":false},
 
         {"nodeWeight":7.79153},
-        ["axf1", -0.670861, -1.39003, 0.756045, { "group":"axf_R" }],
-        ["axf3", 0.894138, -1.39003, 0.757994, { "group":"axf_L" }],
-        ["axf4", 0.670861, -1.39003, 0.756045, { "group":"axf_L" }],
-        ["axf5", -0.894138, -1.39003, 0.757994, { "group":"axf_R" }],
+        ["axf1", -0.670861, -1.39003, 0.3134, { "group":"axf_R" }],
+        ["axf3", 0.894138, -1.39003, 0.3154, { "group":"axf_L" }],
+        ["axf4", 0.670861, -1.39003, 0.3134, { "group":"axf_L" }],
+        ["axf5", -0.894138, -1.39003, 0.3154, { "group":"axf_R" }],
     ],
     "beams": [
         ["id1:", "id2:"],
@@ -95,23 +91,19 @@
         {"hubBeamDeform":75568.343750, "hubBeamStrength":85626.000000},
     ],
 },
-"simple_wendover_wheels_R": {
+"wendover_simple_wheels_R": {
     "information":{
         "authors":"Synsol, O1LER",
         "name":"Rear Wheels",
     },
-    "slotType" : "simple_wendover_wheels_R",
-    "slots": [
-        ["type", "default", "description"],
-        ["wendover_simple_suspension_R", "wendover_simple_doublewishbone_R", "Rear Suspension", {"nodeOffset":{"x":-0.03, "y":1.4, "z":0.31}, "coreSlot":true}]
-    ],
+    "slotType" : "wendover_simple_wheels_R",
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
-        ["tire_01a_15x8_26", ["wheel_RL", "axr_L"], [], {"pos":{"x":0.782492, "y":1.40997, "z":0.758891}, "rot":{"x":0.0315925, "y":-2.00003, "z":0.0}, "scale":{"x":1.055, "y":1, "z":1}}],
-        ["tire_01a_15x8_26", ["wheel_RR","axr_R"], [], {"pos":{"x":-0.782492, "y":1.40997, "z":0.758891}, "rot":{"x":-0.0315925, "y":2.00003, "z":180}, "scale":{"x":1.055, "y":1, "z":1}}],
+        ["tire_01a_15x8_26", ["wheel_RL", "axr_L"], [], {"pos":{"x":0.782492, "y":1.40997, "z":0.316201}, "rot":{"x":0.0315925, "y":-2.00003, "z":0.0}, "scale":{"x":1.055, "y":1, "z":1}}],
+        ["tire_01a_15x8_26", ["wheel_RR","axr_R"], [], {"pos":{"x":-0.782492, "y":1.40997, "z":0.316201}, "rot":{"x":-0.0315925, "y":2.00003, "z":180}, "scale":{"x":1.055, "y":1, "z":1}}],
 
-        ["brake_caliper_standard_plain", ["hub_R"], [], {"pos":{"x":-0.742492, "y":1.40997, "z":0.758891}, "scale":{"x":0.9, "y":0.9,  "z":0.9},  "rot":{"x": 180,  "y":0,   "z":0}}],
-        ["brake_caliper_standard_plain", ["hub_R"], [], {"pos":{"x": 0.742492, "y":1.40997, "z":0.758891}, "scale":{"x":0.9, "y":0.9,  "z":0.9},  "rot":{"x":-180,  "y":180, "z":0}}],
+        ["brake_caliper_standard_plain", ["hub_R"], [], {"pos":{"x":-0.742492, "y":1.40997, "z":0.316201}, "scale":{"x":0.9, "y":0.9,  "z":0.9},  "rot":{"x": 180,  "y":0,   "z":0}}],
+        ["brake_caliper_standard_plain", ["hub_R"], [], {"pos":{"x": 0.742492, "y":1.40997, "z":0.316201}, "scale":{"x":0.9, "y":0.9,  "z":0.9},  "rot":{"x":-180,  "y":180, "z":0}}],
     ],
     "props":[
         ["func"      , "mesh"           , "idRef:", "idX:", "idY:", "baseRotation"        , "rotation"            , "translation"        , "min", "max", "offset", "multiplier",],
@@ -134,10 +126,10 @@
         {"group":"axles"},
         {"selfCollision":false},
         {"nodeWeight":10.6787},
-        ["axr1", -0.670853, 1.40997, 0.754993, { "group":"axr_R" }],
-        ["axr3", 0.894131, 1.40997, 0.76279, { "group":"axr_L" }],
-        ["axr4", 0.670853, 1.40997, 0.754993, { "group":"axr_L" }],
-        ["axr5", -0.894131, 1.40997, 0.76279, { "group":"axr_R" }],
+        ["axr1", -0.670853, 1.40997, 0.3124, { "group":"axr_R" }],
+        ["axr3", 0.894131, 1.40997, 0.3201, { "group":"axr_L" }],
+        ["axr4", 0.670853, 1.40997, 0.3124, { "group":"axr_L" }],
+        ["axr5", -0.894131, 1.40997, 0.3201, { "group":"axr_R" }],
     ],
     "beams": [
         ["id1:", "id2:"],
