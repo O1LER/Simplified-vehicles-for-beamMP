@@ -8,12 +8,12 @@
     "slotType" : "simple_wendover_suspension_F",
     "slots": [
         ["type", "default", "description"],
-        ["wendover_simple_wheels_F", "wendover_simple_wheels_F", "Front Wheels", {"nodeOffset":{"x":0.0, "y":0.0, "z":-0.02}, "coreSlot":true}],
-        ["wendover_simple_brake_F","wendover_simple_brake_F", "Front Brakes"],
-        ["wendover_simple_wheeldata_F_strut","wendover_simple_wheeldata_F_strut", "Front Spindles",{"coreSlot":true}],
-        ["wendover_simple_coilover_F_strut","wendover_simple_coilover_F_strut", "Front Coilovers"],
-        ["wendover_simple_swaybar_F_strut","wendover_simple_swaybar_F_strut", "Front Sway Bar"],
-        ["wendover_simple_steering_strut","wendover_simple_steering_strut", "Steering"],
+        ["simple_wendover_wheels_F", "simple_wendover_wheels_F", "Front Wheels", {"nodeOffset":{"x":0.0, "y":0.0, "z":-0.02}, "coreSlot":true}],
+        ["simple_wendover_brake_F","simple_wendover_brake_F", "Front Brakes"],
+        ["simple_wendover_wheeldata_F_strut","simple_wendover_wheeldata_F_strut", "Front Spindles",{"coreSlot":true}],
+        ["simple_wendover_coilover_F_strut","simple_wendover_coilover_F_strut", "Front Coilovers"],
+        ["simple_wendover_swaybar_F_strut","simple_wendover_swaybar_F_strut", "Front Sway Bar"],
+        ["simple_wendover_steering_strut","simple_wendover_steering_strut", "Steering"],
     ],
     "nodes": [
         ["id", "posX", "posY", "posZ"],
@@ -296,13 +296,13 @@
         {"brakeVentingCoef":false},
     ],
 },
-"wendover_simple_wheeldata_F_strut": {
+"simple_wendover_wheeldata_F_strut": {
     "information":{
         "authors":"BeamNG, O1LER",
         "name":"Front Spindles",
         "value":0,
     },
-    "slotType" : "wendover_simple_wheeldata_F_strut",
+    "slotType" : "simple_wendover_wheeldata_F_strut",
     "pressureWheels":[
         ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
         //some wheel properties
@@ -326,13 +326,13 @@
         {"enableHubcaps":false},
     ],
 },
-"wendover_simple_brake_F": {
+"simple_wendover_brake_F": {
     "information":{
         "authors":"BeamNG, O1LER",
         "name":"Front Brakes",
         "value":200,
     },
-    "slotType" : "wendover_simple_brake_F",
+    "slotType" : "simple_wendover_brake_F",
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
     ],
@@ -356,13 +356,13 @@
         {"absSlipRatioTarget":0.2},
     ],
 },
-"wendover_simple_swaybar_F_strut": {
+"simple_wendover_swaybar_F_strut": {
     "information":{
         "authors":"BeamNG, O1LER",
         "name":"Front Sway Bar",
         "value":250,
     },
-    "slotType" : "wendover_simple_swaybar_F_strut",
+    "slotType" : "simple_wendover_swaybar_F_strut",
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
     ],
@@ -372,13 +372,13 @@
         ["fh1r", "fx1r", "fx1l", "fh1l"],
     ],
 },
-"wendover_simple_coilover_F_strut": {
+"simple_wendover_coilover_F_strut": {
     "information":{
         "authors":"BeamNG, O1LER",
         "name":"Front Coilovers",
         "value":200,
     },
-    "slotType" : "wendover_simple_coilover_F_strut",
+    "slotType" : "simple_wendover_coilover_F_strut",
     "beams": [
         ["id1:", "id2:"],
         //springs
@@ -413,13 +413,13 @@
         {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
     ],
 },
-"wendover_simple_steering_strut": {
+"simple_wendover_steering_strut": {
     "information":{
         "authors":"BeamNG, O1LER",
         "name":"Rack and Pinion Steering",
         "value":110,
     },
-    "slotType" : "wendover_simple_steering_strut",
+    "slotType" : "simple_wendover_steering_strut",
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
     ],
@@ -535,11 +535,11 @@
     "slotType" : "simple_wendover_suspension_R",
     "slots": [
         ["type", "default", "description"],
-        ["wendover_simple_wheels_R", "wendover_simple_wheels_R", "Rear Wheels", {"nodeOffset":{"x":0.0, "y":0.0, "z":0.0}, "coreSlot":true}],
-        ["wendover_simple_brake_R","wendover_simple_brake_R", "Rear Brakes"],
-        ["wendover_simple_wheeldata_R_doublewishbone","wendover_simple_wheeldata_R_doublewishbone", "Rear Spindles",{"coreSlot":true}],
-        ["wendover_simple_coilover_R_doublewishbone","wendover_simple_coilover_R_doublewishbone", "Rear Coilovers"],
-        ["wendover_simple_swaybar_R_doublewishbone","wendover_simple_swaybar_R_doublewishbone", "Rear Sway Bar"],
+        ["simple_wendover_wheels_R", "simple_wendover_wheels_R", "Rear Wheels", {"nodeOffset":{"x":0.0, "y":0.0, "z":0.0}, "coreSlot":true}],
+        ["simple_wendover_brake_R","simple_wendover_brake_R", "Rear Brakes"],
+        ["simple_wendover_wheeldata_R_doublewishbone","simple_wendover_wheeldata_R_doublewishbone", "Rear Spindles",{"coreSlot":true}],
+        ["simple_wendover_coilover_R_doublewishbone","simple_wendover_coilover_R_doublewishbone", "Rear Coilovers"],
+        ["simple_wendover_swaybar_R_doublewishbone","simple_wendover_swaybar_R_doublewishbone", "Rear Sway Bar"],
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
@@ -936,13 +936,13 @@
         {"brakeVentingCoef":false},
     ],
 },
-"wendover_simple_wheeldata_R_doublewishbone": {
+"simple_wendover_wheeldata_R_doublewishbone": {
     "information":{
         "authors":"BeamNG, O1LER",
         "name":"Rear Spindles",
         "value":0,
     },
-    "slotType" : "wendover_simple_wheeldata_R_doublewishbone",
+    "slotType" : "simple_wendover_wheeldata_R_doublewishbone",
     "pressureWheels":[
         ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
         //some wheel properties
@@ -966,13 +966,13 @@
         {"enableHubcaps":false},
     ],
 },
-"wendover_simple_brake_R": {
+"simple_wendover_brake_R": {
     "information":{
         "authors":"BeamNG, O1LER",
         "name":"Rear Brakes",
         "value":200,
     },
-    "slotType" : "wendover_simple_brake_R",
+    "slotType" : "simple_wendover_brake_R",
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
     ],
@@ -996,13 +996,13 @@
         {"absSlipRatioTarget":0.15},
     ],
 },
-"wendover_simple_swaybar_R_doublewishbone": {
+"simple_wendover_swaybar_R_doublewishbone": {
     "information":{
         "authors":"BeamNG, O1LER",
         "name":"Rear Sway Bar",
         "value":250,
     },
-    "slotType" : "wendover_simple_swaybar_R_doublewishbone",
+    "slotType" : "simple_wendover_swaybar_R_doublewishbone",
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
     ],
@@ -1012,13 +1012,13 @@
         ["rh4r", "rx1r", "rx1l", "rh4l"],
     ],
 },
-"wendover_simple_coilover_R_doublewishbone": {
+"simple_wendover_coilover_R_doublewishbone": {
     "information":{
         "authors":"BeamNG, O1LER",
         "name":"Rear Coilovers",
         "value":200,
     },
-    "slotType" : "wendover_simple_coilover_R_doublewishbone",
+    "slotType" : "simple_wendover_coilover_R_doublewishbone",
     "beams": [
         ["id1:", "id2:"],
         //rear springs
