@@ -1,10 +1,10 @@
 {
-	"simple_traffic_barstow_wheels_F":{
+	"simple_barstow_wheels_F":{
 		"information":{
 			"authors":"Please Pick a Name",
 			"name":"Front Wheels",
 		},
-		"slotType" : "simple_traffic_barstow_wheels_F",
+		"slotType" : "simple_barstow_wheels_F",
 		"flexbodies": [
 			["mesh", "[group]:", "nonFlexMaterials"],
 			//["tire_01a_f2", ["wheel_FL", "axf_L"], [], {"pos":{"x":0.7825, "y":-1.38, "z":0.29}, "rot":{"x":0.0316111, "y":-0.500027, "z":-0.000296357}, "scale":{"x":1, "y":1, "z":1}}],
@@ -98,12 +98,12 @@
 		],
 	},
 
-	"simple_traffic_barstow_wheels_R":{
+	"simple_barstow_wheels_R":{
 		"information":{
 			"authors":"Please Pick a Name",
 			"name":"Rear Wheels",
 		},
-		"slotType" : "simple_traffic_barstow_wheels_R",
+		"slotType" : "simple_barstow_wheels_R",
 		"flexbodies": [
 			["mesh", "[group]:", "nonFlexMaterials"],
 			//["tire_01a_f2", ["wheel_RL", "axr_L"], [], {"pos":{"x":0.782492, "y":1.40, "z":0.29}, "rot":{"x":0.0315925, "y":-2.00003, "z":-0.00112374}, "scale":{"x":1, "y":1, "z":1}}],
