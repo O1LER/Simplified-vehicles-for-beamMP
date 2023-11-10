@@ -1,0 +1,515 @@
+{
+	"simple_barstow_engine_i6": {
+		"information":{
+			"authors":"Please Pick a Name",
+			"name":"232 CUI 'Super-Thrift' I6 Engine",
+			"value":1120,
+		},
+		"slotType" : "simple_barstow_engine",
+		"slots": [
+				["type", "default", "description"],
+				["simple_barstow_transmission","simple_barstow_transmission_3A", "Transmission"]
+			],
+		"powertrain": [
+			["type", "name", "inputName", "inputIndex"],
+			["combustionEngine", "mainEngine", "dummy", 0],
+		],
+		"mainEngine": {
+			"torque":[
+				["rpm", "torque"],
+				[0, 0],
+				[500,  170],
+				[1000, 275],
+				[1500, 309],
+				[2000, 313],
+				[2500, 310],
+				[3000, 303],
+				[3500, 290],
+				[4000, 261],
+				[4500, 212],
+				[5000, 144],
+				[5500, 104],
+				[6000, 95],
+				[7000, 85],
+				[8000, 75],
+			],
+	
+			"idleRPM":600,
+			"maxRPM":4900,
+			"hasRevLimiter":false,
+			"inertia":0.18,
+			"friction":18,
+			"dynamicFriction":0.023,
+			//"burnEfficiency":0.28
+			"burnEfficiency":[
+				[0, 0.1],
+				[0.05, 0.22],
+				[0.4, 0.30],
+				[0.7, 0.36],
+				[1, 0.24],
+			],
+			"energyStorage": "mainTank",
+			"requiredEnergyType":"gasoline",
+	
+			//cooling and oil system
+			"thermalsEnabled":false,
+			"engineBlockMaterial":"iron",
+			"oilVolume":6,
+	
+			//exhaust
+			"instantAfterFireSound": "event:>Vehicle>Afterfire>i6_01>single",
+			"sustainedAfterFireSound": "event:>Vehicle>Afterfire>i6_01>multi",
+			"shiftAfterFireSound": "event:>Vehicle>Afterfire>i6_01>shift",
+			"particulates":0.05,
+			"afterFireAudibleThresholdInstant": 500000,
+			"instantAfterFireCoef": 0.3,
+			"instantAfterFireVolumeCoef": 0.8,
+			"afterFireAudibleThresholdShift": 150000,
+			"shiftAfterFireVolumeCoef": 0.7,
+			"afterFireAudibleThresholdSustained": 40000,
+			"sustainedAfterFireCoef": 0.5,
+			"sustainedAfterFireTime": 0.8,
+			"sustainedAfterFireVolumeCoef": 0.5,
+	
+			//engine durability
+			"cylinderWallTemperatureDamageThreshold":140,
+			"headGasketDamageThreshold":1500000,
+			"pistonRingDamageThreshold":1500000,
+			"connectingRodDamageThreshold":2000000,
+			"maxTorqueRating": 377,
+			"maxOverTorqueDamage": 400,
+	
+			//node beam interface
+			"torqueReactionNodes:":["f4l","f2","b1"],
+			"waterDamage": {"[engineGroup]:":["engine_intake"]},
+			"radiator": {"[engineGroup]:":["radiator"]},
+			"engineBlock": {"[engineGroup]:":["engine_block"]},
+			"breakTriggerBeam":"engine",
+			"uiName":"Engine",
+			"soundConfig": "soundConfig",
+			"soundConfigExhaust": "soundConfigExhaust",
+	
+			//starter motor
+			"starterSample":"event:>Engine>Starter>i6_2011_eng",
+			"starterSampleExhaust":"event:>Engine>Starter>i6_2011_exh",
+			"shutOffSampleEngine":"event:>Engine>Shutoff>i6_2011_eng",
+			"shutOffSampleExhaust":"event:>Engine>Shutoff>i6_2011_exh",
+			"starterVolume":0.76,
+			"starterVolumeExhaust":0.76,
+			"shutOffVolumeEngine":0.76,
+			"shutOffVolumeExhaust":0.76,
+			"starterThrottleKillTime":1,
+			"idleRPMStartRate":1,
+			"idleRPMStartCoef":1,
+		},
+		"soundConfig": {
+			"sampleName": "I6_2_engine",
+			"intakeMuffling": 0.7,
+	
+			"mainGain": -6,
+			"onLoadGain":1,
+			"offLoadGain":0.47,
+	
+			"maxLoadMix": 0.5,
+			"minLoadMix": 0,
+	
+			"lowShelfGain":-10,
+			"lowShelfFreq":125,
+	
+			"highShelfGain":5,
+			"highShelfFreq":7000,
+	
+	
+			"eqLowGain": 5,
+			"eqLowFreq": 450,
+			"eqLowWidth": 0.2,
+	
+			"eqHighGain": 3,
+			"eqHighFreq": 2500,
+			"eqHighWidth": 0.2,
+	
+			"fundamentalFrequencyCylinderCount":6,
+			"eqFundamentalGain": -4,
+		},
+		"soundConfigExhaust": {
+			"sampleName": "I6_2_exhaust",
+	
+			"mainGain": 1,
+			"onLoadGain":1,
+			"offLoadGain":0.37,
+	
+			"maxLoadMix": 0.6,
+			"minLoadMix": 0,
+	
+			"lowShelfGain":-10,
+			"lowShelfFreq":160,
+	
+			"highShelfGain":-5,
+			"highShelfFreq":6000,
+	
+			"eqLowGain": 0,
+			"eqLowFreq": 500,
+			"eqLowWidth": 0.15,
+	
+			"eqHighGain": -12,
+			"eqHighFreq": 3000,
+			"eqHighWidth": 0.15,
+	
+			"fundamentalFrequencyCylinderCount":6,
+			"eqFundamentalGain": -4,
+		},
+		"vehicleController": {
+			"clutchLaunchStartRPM":1200,
+			"clutchLaunchTargetRPM":1600,
+			//**highShiftDown overwritten by automatic transmissions**
+			"highShiftDownRPM":[0,0,0,1800,2400,2500,2500,2500],
+			//**highShiftUp can be overwritten by intake modifications**
+			"highShiftUpRPM":4550,
+		},
+		"flexbodies": [
+			["mesh", "[group]:", "nonFlexMaterials"],
+			["barstow_engine_i6", ["simple_barstow_body"]],
+			["barstow_radhose_i6", ["simple_barstow_body"]],
+			["barstow_header_i6", ["simple_barstow_body"]],
+			["barstow_intake_i6_stock", ["simple_barstow_body"]],
+		],
+		"nodes": [
+			["id", "posX", "posY", "posZ"],
+			["f4",  0.0, -1.4, 0.6, {"nodeWeight":200}],
+		],
+	},
+	"simple_barstow_engine_v8_291": {
+		"information":{
+			"authors":"Please Pick a Name",
+			"name":"291 CUI 'Fleet-Power' V8 Engine",
+			"value":3190,
+		},
+		"slotType" : "simple_barstow_engine",
+		"slots": [
+				["type", "default", "description"],
+				["simple_barstow_transmission","simple_barstow_transmission_3A", "Transmission"]
+			],
+		"powertrain": [
+			["type", "name", "inputName", "inputIndex"],
+			["combustionEngine", "mainEngine", "dummy", 0],
+		],
+		"mainEngine": {
+			"torque":[
+				["rpm", "torque"],
+				[0,     0],
+				[500,   180],
+				[1000,  310],
+				[1500,  375],
+				[2000,  411],
+				[2500,  427],
+				[3000,  432],
+				[3500,  428],
+				[4000,  406],
+				[5000,  320],
+				[6000,  225],
+				[7000,  140],
+				[8000,  90],
+			],
+
+			"idleRPM":700,
+			"idleRPMRoughness":150,
+			"maxRPM":5000,
+			"hasRevLimiter":false,
+			"inertia":0.2,
+			"friction":20,
+			"engineBrakeTorque":50,
+			"dynamicFriction":0.03,
+			"burnEfficiency":[
+				[0, 0.1],
+				[0.05, 0.22],
+				[0.4, 0.28],
+				[0.7, 0.34],
+				[1, 0.23],
+			],
+			"energyStorage": "mainTank",
+			"requiredEnergyType":"gasoline",
+	
+			//cooling and oil system
+			"thermalsEnabled":false,
+			"engineBlockMaterial":"iron",
+			"oilVolume":8,
+			"radiatorFanType":"mechanical",
+			"engineBlockAirCoolingEfficiency":37,
+			"radiatorFanLoopEvent": "event:>Vehicle>Cooling Fan>Mechanical_03",
+			"radiatorFanVolume": 0.4,
+	
+			//exhaust
+			"instantAfterFireSound": "event:>Vehicle>Afterfire>01_Single_EQ1",
+			"sustainedAfterFireSound": "event:>Vehicle>Afterfire>01_Multi_EQ1",
+			"shiftAfterFireSound": "event:>Vehicle>Afterfire>01_Shift_EQ1",
+			"particulates":0.05,
+			"instantAfterFireCoef": 0.5,
+			"sustainedAfterFireCoef": 1,
+	
+			//engine durability
+			"cylinderWallTemperatureDamageThreshold":150,
+			"headGasketDamageThreshold":1500000,
+			"pistonRingDamageThreshold":1500000,
+			"connectingRodDamageThreshold":2000000,
+			"maxTorqueRating": 580,
+			"maxOverTorqueDamage": 400,
+	
+			//node beam interface
+			"torqueReactionNodes:":["f4l","f2","b1"],
+			"waterDamage": {"[engineGroup]:":["engine_intake"]},
+			"radiator": {"[engineGroup]:":["radiator"]},
+			"engineBlock": {"[engineGroup]:":["engine_block"]},
+			"breakTriggerBeam":"engine",
+			"uiName":"Engine",
+			"soundConfig": "soundConfig",
+			"soundConfigExhaust": "soundConfigExhaust",
+	
+			//starter motor
+			"starterSample":"event:>Engine>Starter>v8_19xy_eng",
+			"starterSampleExhaust":"event:>Engine>Starter>v8_19xy_exh",
+			"shutOffSampleEngine":"event:>Engine>Shutoff>v8_19xy_eng",
+			"shutOffSampleExhaust":"event:>Engine>Shutoff>v8_19xy_exh",
+			"starterVolume":0.76,
+			"starterVolumeExhaust":0.76,
+			"shutOffVolumeEngine":0.76,
+			"shutOffVolumeExhaust":0.76,
+			"starterThrottleKillTime":1,
+			"idleRPMStartRate":1.25,
+			"idleRPMStartCoef":1,
+
+			//barstow_intake_v8_4bbl
+			"torqueModIntake":[
+				["rpm", "torque"],
+				[0,    0 ],
+				[1000, 4 ],
+				[2000, 8],
+				[3000, 13],
+				[4000, 25],
+				[5000, 40],
+				[6000, 50],
+				[7000, 40],
+				[8000, 30],
+			],
+			"$+idleRPMRoughness":100,
+			"instantAfterFireSound": "event:>Vehicle>Afterfire>v8_crossflow_02>muffled>stock_single",
+			"sustainedAfterFireSound": "event:>Vehicle>Afterfire>v8_crossflow_02>muffled>stock_multi",
+			"shiftAfterFireSound": "event:>Vehicle>Afterfire>v8_crossflow_02>muffled>stock_shift",
+			"$*instantAfterFireCoef": 1.5,
+			"$*sustainedAfterFireCoef": 1,
+			"$+particulates":0.01,
+		},
+		"soundConfig": {
+			"sampleName": "V8_cross_engine",
+			"intakeMuffling": 0.7,
+	
+			"mainGain": -2.5,
+			"onLoadGain":1,
+			"offLoadGain":0.35,
+	
+			"maxLoadMix": 0.7,
+			"minLoadMix": 0.0,
+	
+			"lowShelfGain":3,
+			"lowShelfFreq":120,
+	
+			"highShelfGain":5,
+			"highShelfFreq":3500,
+	
+			"eqLowGain": 7,
+			"eqLowFreq": 750,
+			"eqLowWidth": 0.5,
+	
+			"eqHighGain": 0,
+			"eqHighFreq": 2500,
+			"eqHighWidth": 0.2,
+	
+			"fundamentalFrequencyCylinderCount":8,
+			"eqFundamentalGain": -5,
+		},
+		"soundConfigExhaust": {
+			"sampleName": "V8_cross_exhaust",
+	
+			"mainGain": 4.0,
+			"onLoadGain":1,
+			"offLoadGain":0.55,
+	
+			"maxLoadMix": 0.7,
+			"minLoadMix": 0.0,
+	
+			"lowShelfGain":-18,
+			"lowShelfFreq":90,
+	
+			"highShelfGain":3,
+			"highShelfFreq":2000,
+	
+			"eqLowGain": 5,
+			"eqLowFreq": 300,
+			"eqLowWidth": 0.5,
+	
+			"eqHighGain": 0,
+			"eqHighFreq": 2500,
+			"eqHighWidth": 0.2,
+	
+			"fundamentalFrequencyCylinderCount":8,
+			"eqFundamentalGain": -5,
+	
+		},
+		"vehicleController": {
+			"clutchLaunchStartRPM":1200,
+			"clutchLaunchTargetRPM":1600,
+			//**highShiftDown can be overwritten by automatic transmissions**
+			"highShiftDownRPM":[0,0,0,1800,2500,2600,2600,2600],
+			//**highShiftUp can be overwritten by intake modifications**
+			"highShiftUpRPM":4800,
+		},
+		"flexbodies": [
+			["mesh", "[group]:", "nonFlexMaterials"],
+			["barstow_engine_v8_smallblock", ["simple_barstow_body"]],
+			["barstow_radhose_v8", ["simple_barstow_body"]],
+			["barstow_header_v8_cast_smallblock", ["simple_barstow_body"]],
+			["barstow_intake_v8_fourbarrel", ["simple_barstow_body"]],
+		],
+		"nodes": [
+			["id", "posX", "posY", "posZ"],
+			["f4",  0.0, -1.4, 0.6, {"nodeWeight":250}],
+		],
+	},
+	"simple_barstow_transmission_4M": {
+		"information":{
+			"authors":"Please Pick a Name",
+			"name":"4-Speed Manual Transmission",
+			"value":350,
+		},
+		"slotType" : "simple_barstow_transmission",
+
+		"gearbox": {
+			"uiName":"Gearbox",
+			"gearRatios":[-2.71, 0, 2.67, 1.84, 1.33, 1.0],
+			"friction": 1.27,
+			"dynamicFriction": 0.00127,
+			"torqueLossCoef": 0.0155,
+			"gearboxNode:":["tra1"],
+	
+			"gearWhineCoefsInput":  [0.60, 0.00, 0.12, 0.12, 0.12, 0.12, 0.12, 0.12, 0.12, 0.12],
+			"gearWhineCoefsOutput": [0.00, 0.00, 0.24, 0.24, 0.24, 0.24, 0.24, 0.24, 0.24, 0.24],
+			"gearWhineInputEvent": "event:>Vehicle>Transmission>helical_01>twine_in",
+			"gearWhineOutputEvent": "event:>Vehicle>Transmission>helical_01>twine_out",
+	
+			"forwardInputPitchCoef":0.95,
+			"forwardOutputPitchCoef":0.95,
+			//"reverseInputPitchCoef":0.7,
+			//"reverseOutputPitchCoef":0.7,
+	
+			//"gearWhineInputPitchCoefSmoothing":50,
+			//"gearWhineOutputPitchCoefSmoothing":50,
+			//"gearWhineInputVolumeCoefSmoothing":10,
+			//"gearWhineOutputVolumeCoefSmoothing":10,
+	
+			//"gearWhineFixedCoefOutput": 0.7,
+			//"gearWhineFixedCoefInput": 0.4,
+		},
+		"clutch": {
+			"uiName":"Clutch",
+			"additionalEngineInertia":0.15,
+			"clutchMass":6,
+		},
+		"vehicleController": {
+			"shiftDownRPMOffsetCoef":1.18,
+			"calculateOptimalLoadShiftPoints": true,
+			"lowShiftDownRPM":[0,0,0,1200,1200,1200],
+			"lowShiftUpRPM":[0,0,2400,2200,2000],
+		},
+		"powertrain" : [
+			["type", "name", "inputName", "inputIndex"],
+			["frictionClutch", "clutch", "mainEngine", 1],
+			["manualGearbox", "gearbox", "clutch", 1],
+
+			//rwd
+			["shaft", "driveshaft", "gearbox", 1, {"electricsName":"driveshaft", "friction":0.383, "dynamicFriction":0.00083}],
+			["differential", "rearDiff", "driveshaft", 1, {"diffType":"lsd", "gearRatio":3.08, "lsdPreload":150, "lsdLockCoef":0.3, "lsdRevLockCoef":0.15, "uiName":"Rear Differential","defaultVirtualInertia":0.5}],
+			
+			["shaft", "wheelaxleRL", "rearDiff", 1, {"connectedWheel":"RL", "breakTriggerBeam":"axle_RL", "friction":0, "electricsName":"axle_RL"}],
+			["shaft", "wheelaxleRR", "rearDiff", 2, {"connectedWheel":"RR", "breakTriggerBeam":"axle_RR", "friction":0, "electricsName":"axle_RR"}],
+
+			//["shaft", "fixaxleFL", "frontDiff", 1,  {"friction":0}],
+			//["shaft", "fixaxleFR", "frontDiff", 2,  {"friction":0}],
+
+			["shaft", "wheelaxleFL", "fixaxleFL", 1,  {"connectedWheel":"FL", "breakTriggerBeam":"axle_FL", "friction":0, "electricsName":"axle_FL", "visualShaftAVName":"outputAV1"}],
+			["shaft", "wheelaxleFR", "fixaxleFR", 1,  {"connectedWheel":"FR", "breakTriggerBeam":"axle_FR", "friction":0, "electricsName":"axle_FR", "visualShaftAVName":"outputAV1"}],
+		],
+		"rearDiff": {
+			"friction": 4.05,
+			"dynamicFriction": 0.00191,
+			"torqueLossCoef": 0.032,
+		},
+		"flexbodies": [
+			["mesh", "[group]:", "nonFlexMaterials"],
+			["barstow_transmission", ["simple_barstow_body"]],
+		],
+	},
+	"simple_barstow_transmission_3A": {
+		"information":{
+			"authors":"Please Pick a Name",
+			"name":"3-Speed Automatic Transmission",
+			"value":1050,
+		},
+		"slotType" : "simple_barstow_transmission",
+
+		"gearbox": {
+			"uiName":"Gearbox",
+			"gearRatios":[-2.18, 0, 2.46, 1.46, 1.00],
+			"parkLockTorque":2500,
+			"oneWayViscousCoef":35,
+			"friction": 1.52,
+			"dynamicFriction": 0.00153,
+			"torqueLossCoef": 0.017,
+			"gearboxNode:":["f2"],
+		},
+		"torqueConverter": {
+			"uiName":"Torque Converter",
+			"converterDiameter":0.30,
+			"converterStiffness":8,
+			"couplingAVRatio":0.9,
+			"stallTorqueRatio":1.8,
+			"additionalEngineInertia":0.2,
+		},
+		"vehicleController": {
+			"automaticModes":"PRND21",
+			"useSmartAggressionCalculation":false,
+			"calculateOptimalLoadShiftPoints": true,
+			"transmissionGearChangeDelay":2,
+			"gearboxDecisionSmoothingUp":0.5,
+			"gearboxDecisionSmoothingDown":0.5,
+			"lowShiftDownRPM":1100,
+			"lowShiftUpRPM":[0,0,1700,1500],
+			"wheelSlipUpThreshold":99999,
+		},
+		"powertrain" : [
+			["type", "name", "inputName", "inputIndex"],
+			["torqueConverter", "torqueConverter", "mainEngine", 1],
+			["automaticGearbox", "gearbox", "torqueConverter", 1],
+
+			//rwd
+			["shaft", "driveshaft", "gearbox", 1, {"electricsName":"driveshaft", "friction":0.383, "dynamicFriction":0.00083}],
+			["differential", "rearDiff", "driveshaft", 1, {"diffType":"lsd", "gearRatio":3.08, "lsdPreload":150, "lsdLockCoef":0.3, "lsdRevLockCoef":0.15, "uiName":"Rear Differential","defaultVirtualInertia":0.5}],
+
+			["shaft", "wheelaxleRL", "rearDiff", 1, {"connectedWheel":"RL", "breakTriggerBeam":"axle_RL", "friction":0, "electricsName":"axle_RL"}],
+			["shaft", "wheelaxleRR", "rearDiff", 2, {"connectedWheel":"RR", "breakTriggerBeam":"axle_RR", "friction":0, "electricsName":"axle_RR"}],
+
+			//["shaft", "fixaxleFL", "frontDiff", 1,  {"friction":0}],
+			//["shaft", "fixaxleFR", "frontDiff", 2,  {"friction":0}],
+
+			["shaft", "wheelaxleFL", "fixaxleFL", 1,  {"connectedWheel":"FL", "breakTriggerBeam":"axle_FL", "friction":0, "electricsName":"axle_FL", "visualShaftAVName":"outputAV1"}],
+			["shaft", "wheelaxleFR", "fixaxleFR", 1,  {"connectedWheel":"FR", "breakTriggerBeam":"axle_FR", "friction":0, "electricsName":"axle_FR", "visualShaftAVName":"outputAV1"}],
+		],
+		"rearDiff": {
+			"friction": 4.05,
+			"dynamicFriction": 0.00191,
+			"torqueLossCoef": 0.032,
+		},
+		"flexbodies": [
+			["mesh", "[group]:", "nonFlexMaterials"],
+			["barstow_transmission", ["simple_barstow_body"]],
+		],
+	},
+}
