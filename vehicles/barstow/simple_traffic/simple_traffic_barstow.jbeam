@@ -106,9 +106,12 @@
 			["barstow_body", ["simple_barstow_body"], []],
 			["barstow_fender_L", ["simple_barstow_body"], []],
 			["barstow_fender_R", ["simple_barstow_body"], []],
+			["barstow_grille", ["simple_barstow_body"]],
 
 			["barstow_door_L", ["simple_barstow_body", "barstow_door_FL"], []],
 			["barstow_door_R", ["simple_barstow_body", "barstow_door_FR"], []],
+			["barstow_bpillar_L", ["simple_barstow_body", "barstow_door_FL"]],
+			["barstow_bpillar_R", ["simple_barstow_body", "barstow_door_FR"]],
 
 			["barstow_doorpanel_L", ["simple_barstow_body", "barstow_door_FL"], []],
 			["barstow_doorpanel_R", ["simple_barstow_body", "barstow_door_FR"], []],
@@ -127,8 +130,10 @@
 
 			{"deformGroup":"doorglass_FR_break", "deformMaterialBase":"barstow_glass", "deformMaterialDamaged":"barstow_glass_dmg"},
 			["barstow_doorglass_R", ["simple_barstow_body", "barstow_door_FR"],[],{"deformSound":"event:>Destruction>Vehicle>Glass>glassbreaksound5", "deformVolume":0.7}],
+			["barstow_quarterglass_R", ["simple_barstow_body"], []],
 			{"deformGroup":"doorglass_FL_break", "deformMaterialBase":"barstow_glass", "deformMaterialDamaged":"barstow_glass_dmg"},
 			["barstow_doorglass_L", ["simple_barstow_body", "barstow_door_FL"],[],{"deformSound":"event:>Destruction>Vehicle>Glass>glassbreaksound5", "deformVolume":0.7}],
+			["barstow_quarterglass_L", ["simple_barstow_body"], []],
 
 			{"deformGroup":"windshield_break", "deformMaterialBase":"barstow_glass", "deformMaterialDamaged":"barstow_windshield_dmg"},
 			["barstow_windshield", ["simple_barstow_body"],[],{"deformSound":"event:>Destruction>Vehicle>Glass>impact_glass_windscreen_01", "deformVolume":0.7}],
@@ -138,10 +143,6 @@
 
 			{"deformGroup":"backlight_break", "deformMaterialBase":"barstow_glass", "deformMaterialDamaged":"barstow_glass_dmg"},
 			["barstow_backlight", ["simple_barstow_body"], [],{"deformSound":"event:>Destruction>Vehicle>Glass>glassbreaksound9", "deformVolume":0.8}],
-			["barstow_quarterglass_L", ["simple_barstow_body"], []],
-			["barstow_quarterglass_R", ["simple_barstow_body"], []],
-			["barstow_bpillar_L", ["simple_barstow_body"]],
-			["barstow_bpillar_R", ["simple_barstow_body"]],
 			{"deformGroup":""},
 
 			["barstow_wipers", ["simple_barstow_body"], []],
@@ -156,6 +157,16 @@
 			["barstow_taillight_R", ["simple_barstow_body"],[],{"deformSound":"event:>Destruction>Vehicle>Glass>glassbreaksound1", "deformVolume":0.5}],
 			{"deformGroup":"taillight_L_break", "deformMaterialBase":"barstow_lights", "deformMaterialDamaged":"barstow_lights_dmg"},
 			["barstow_taillight_L", ["simple_barstow_body"],[],{"deformSound":"event:>Destruction>Vehicle>Glass>glassbreaksound2", "deformVolume":0.5}],
+			
+			{"deformGroup":"headlightglass_R_break", "deformMaterialBase":"barstow_lights", "deformMaterialDamaged":"barstow_lights_dmg"},
+			["barstow_headlight_R", ["simple_barstow_body"],[],{"deformSound":"event:>Destruction>Vehicle>Glass>glassbreaksound3", "deformVolume":0.5}],
+			{"deformGroup":"headlightglass_L_break", "deformMaterialBase":"barstow_lights", "deformMaterialDamaged":"barstow_lights_dmg"},
+			["barstow_headlight_L", ["simple_barstow_body"],[],{"deformSound":"event:>Destruction>Vehicle>Glass>glassbreaksound4", "deformVolume":0.5}],
+   
+			{"deformGroup":"headlightglass_R_break", "deformMaterialBase":"barstow_glass", "deformMaterialDamaged":"barstow_glass_dmg"},
+			["barstow_headlightglass_R", ["simple_barstow_body"]],
+			{"deformGroup":"headlightglass_L_break", "deformMaterialBase":"barstow_glass", "deformMaterialDamaged":"barstow_glass_dmg"},
+			["barstow_headlightglass_L", ["simple_barstow_body"]],
 
 			{"deformGroup":"doorglass_FR_break", "deformMaterialBase":"barstow_lights", "deformMaterialDamaged":"barstow_lights_dmg"},
 			//["barstow_fendersignal_R", ["simple_barstow_body"],[],{"deformSound":"event:>Destruction>Vehicle>Glass>glassbreaksound2", "deformVolume":0.3}],
