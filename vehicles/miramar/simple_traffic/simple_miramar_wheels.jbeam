@@ -7,22 +7,22 @@
     "slotType" : "simple_miramar_wheels_F",
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
-        ["tire_01a_15x8_26", ["wheel_FL", "axf_L"], [], {"pos":{"x":0.7825, "y":-1.39003, "z":0.314329}, "rot":{"x":0.0316111, "y":-0.500027, "z":0.0}, "scale":{"x":1.055, "y":1, "z":1}}],
-        ["tire_01a_15x8_26", ["wheel_FR","axf_R"], [], {"pos":{"x":-0.7825, "y":-1.39003, "z":0.314329}, "rot":{"x":-0.0316111, "y":0.500027, "z":180}, "scale":{"x":1.055, "y":1, "z":1}}],
+        ["tire_03b_13x6_24", ["wheel_FL", "axf_L"], [], {"pos":{"x":0.7825, "y":-1.39003, "z":0.314329}, "rot":{"x":0.0316111, "y":-0.500027, "z":0.0}, "scale":{"x":1.1, "y":1, "z":1}}],
+        ["tire_03b_13x6_24", ["wheel_FR","axf_R"], [], {"pos":{"x":-0.7825, "y":-1.39003, "z":0.314329}, "rot":{"x":-0.0316111, "y":0.500027, "z":180}, "scale":{"x":1.1, "y":1, "z":1}}],
 
-        ["brake_caliper_standard_plain", ["miramar_hub_F","hub_F"], [], {"pos":{"x":-0.7425, "y":-1.39003, "z":0.314329}, "scale":{"x":0.9, "y":0.9, "z":0.9}, "rot":{"x": 8,    "y":0,   "z":0   }}],
-        ["brake_caliper_standard_plain", ["miramar_hub_F","hub_F"], [], {"pos":{"x": 0.7425, "y":-1.39003, "z":0.314329}, "scale":{"x":0.9, "y":0.9, "z":0.9}, "rot":{"x":-8,    "y":180, "z":0   }}],
+        //["brake_caliper_standard_plain", ["miramar_hub_F","hub_F"], [], {"pos":{"x":-0.7425, "y":-1.39003, "z":0.314329}, "scale":{"x":0.9, "y":0.9, "z":0.9}, "rot":{"x": 8,    "y":0,   "z":0   }}],
+        //["brake_caliper_standard_plain", ["miramar_hub_F","hub_F"], [], {"pos":{"x": 0.7425, "y":-1.39003, "z":0.314329}, "scale":{"x":0.9, "y":0.9, "z":0.9}, "rot":{"x":-8,    "y":180, "z":0   }}],
     ],
     "props":[
         ["func"      , "mesh"           , "idRef:", "idX:", "idY:", "baseRotation"        , "rotation"            , "translation"        , "min", "max", "offset", "multiplier",],
-        ["axle_FR", "steelwheel_01a_15x7_deep", "axf1", "axf5", "fh2r", {"x":0, "y":0, "z":0}, {"x":-1, "y":0, "z":0} , {"x":0, "y":0, "z":0}, -360, 360, 0, 1, {"baseTranslation":{"x":0.115, "y":0, "z":0.0}, "breakGroup":"driveshaft","deformGroup":"driveshaft","optional":true}],
-        ["axle_FL", "steelwheel_01a_15x7_deep", "axf4", "axf3", "fh2l", {"x":0, "y":0, "z":0}, {"x":1, "y":0, "z":0} , {"x":0, "y":0, "z":0}, -360, 360, 0, 1, {"baseTranslation":{"x":0.115, "y":0, "z":0.0}, "breakGroup":"driveshaft","deformGroup":"driveshaft","optional":true}],
+        ["axle_FR", "steelwheel_11a_13x5", "axf1", "axf5", "fh2r", {"x":0, "y":0, "z":0}, {"x":-1, "y":0, "z":0} , {"x":0, "y":0, "z":0}, -360, 360, 0, 1, {"baseTranslation":{"x":0.115, "y":0, "z":0.0}, "breakGroup":"driveshaft","deformGroup":"driveshaft","optional":true}],
+        ["axle_FL", "steelwheel_11a_13x5", "axf4", "axf3", "fh2l", {"x":0, "y":0, "z":0}, {"x":1, "y":0, "z":0} , {"x":0, "y":0, "z":0}, -360, 360, 0, 1, {"baseTranslation":{"x":0.115, "y":0, "z":0.0}, "breakGroup":"driveshaft","deformGroup":"driveshaft","optional":true}],
 
-        ["axle_FR", "soliad_hubcap_02a_15", "axf1", "axf5", "fh2r", {"x":0, "y":0, "z":0}, {"x":-1, "y":0, "z":0} , {"x":0, "y":0, "z":0}, -360, 360, 0, 1, {"baseTranslation":{"x":0.23, "y":0, "z":0.0}, "breakGroup":"driveshaft","deformGroup":"driveshaft","optional":true}],
-        ["axle_FL", "soliad_hubcap_02a_15", "axf4", "axf3", "fh2l", {"x":0, "y":0, "z":0}, {"x":1, "y":0, "z":0} , {"x":0, "y":0, "z":0}, -360, 360, 0, 1, {"baseTranslation":{"x":0.23, "y":0, "z":0.0}, "breakGroup":"driveshaft","deformGroup":"driveshaft","optional":true}],
+        ["axle_FR", "hubcap_05a_10", "axf1", "axf5", "fh2r", {"x":0, "y":0, "z":0}, {"x":-1, "y":0, "z":0} , {"x":0, "y":0, "z":0}, -360, 360, 0, 1, {"baseTranslation":{"x":0.115, "y":0, "z":0.0}, "breakGroup":"driveshaft","deformGroup":"driveshaft","optional":true}],
+        ["axle_FL", "hubcap_05a_10", "axf4", "axf3", "fh2l", {"x":0, "y":0, "z":0}, {"x":1, "y":0, "z":0} , {"x":0, "y":0, "z":0}, -360, 360, 0, 1, {"baseTranslation":{"x":0.115, "y":0, "z":0.0}, "breakGroup":"driveshaft","deformGroup":"driveshaft","optional":true}],
 
-        ["axle_FR", "brake_disc_plain", "axf1", "axf5", "fh2r", {"x":0, "y":0, "z":0}, {"x":-1, "y":0, "z":0} , {"x":0, "y":0, "z":0}, -360, 360, 0, 1, {"baseTranslation":{"x":0.07, "y":0, "z":0.0}, "breakGroup":"driveshaft","deformGroup":"driveshaft","optional":true}],
-        ["axle_FL", "brake_disc_plain", "axf4", "axf3", "fh2l", {"x":0, "y":0, "z":0}, {"x":1, "y":0, "z":0} , {"x":0, "y":0, "z":0}, -360, 360, 0, 1, {"baseTranslation":{"x":0.07, "y":0, "z":0.0}, "breakGroup":"driveshaft","deformGroup":"driveshaft","optional":true}],
+        //["axle_FR", "brake_disc_plain", "axf1", "axf5", "fh2r", {"x":0, "y":0, "z":0}, {"x":-1, "y":0, "z":0} , {"x":0, "y":0, "z":0}, -360, 360, 0, 1, {"baseTranslation":{"x":0.07, "y":0, "z":0.0}, "breakGroup":"driveshaft","deformGroup":"driveshaft","optional":true}],
+        //["axle_FL", "brake_disc_plain", "axf4", "axf3", "fh2l", {"x":0, "y":0, "z":0}, {"x":1, "y":0, "z":0} , {"x":0, "y":0, "z":0}, -360, 360, 0, 1, {"baseTranslation":{"x":0.07, "y":0, "z":0.0}, "breakGroup":"driveshaft","deformGroup":"driveshaft","optional":true}],
     ],
     "nodes": [
         ["id", "posX", "posY", "posZ"],
@@ -72,9 +72,9 @@
 
         //general settings
         //{"radius":0.30},
-        {"hubRadius":0.33},
-        {"wheelOffset":-0.035},
-        {"hubWidth":0.195},
+        {"hubRadius":0.30},
+        {"wheelOffset":0.0},
+        {"hubWidth":0.145},
         //{"tireWidth":0.21},
         {"numRays":10},
 
@@ -99,22 +99,22 @@
     "slotType" : "simple_miramar_wheels_R",
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
-        ["tire_01a_15x8_26", ["wheel_RL", "axr_L"], [], {"pos":{"x":0.782492, "y":1.40997, "z":0.316201}, "rot":{"x":0.0315925, "y":-2.00003, "z":0.0}, "scale":{"x":1.055, "y":1, "z":1}}],
-        ["tire_01a_15x8_26", ["wheel_RR","axr_R"], [], {"pos":{"x":-0.782492, "y":1.40997, "z":0.316201}, "rot":{"x":-0.0315925, "y":2.00003, "z":180}, "scale":{"x":1.055, "y":1, "z":1}}],
+        ["tire_03b_13x6_24", ["wheel_RL", "axr_L"], [], {"pos":{"x":0.782492, "y":1.40997, "z":0.316201}, "rot":{"x":0.0315925, "y":-2.00003, "z":0.0}, "scale":{"x":1.1, "y":1, "z":1}}],
+        ["tire_03b_13x6_24", ["wheel_RR","axr_R"], [], {"pos":{"x":-0.782492, "y":1.40997, "z":0.316201}, "rot":{"x":-0.0315925, "y":2.00003, "z":180}, "scale":{"x":1.1, "y":1, "z":1}}],
 
-        ["brake_caliper_standard_plain", ["hub_R"], [], {"pos":{"x":-0.742492, "y":1.40997, "z":0.316201}, "scale":{"x":0.9, "y":0.9,  "z":0.9},  "rot":{"x": 180,  "y":0,   "z":0}}],
-        ["brake_caliper_standard_plain", ["hub_R"], [], {"pos":{"x": 0.742492, "y":1.40997, "z":0.316201}, "scale":{"x":0.9, "y":0.9,  "z":0.9},  "rot":{"x":-180,  "y":180, "z":0}}],
+        //["brake_caliper_standard_plain", ["hub_R"], [], {"pos":{"x":-0.742492, "y":1.40997, "z":0.316201}, "scale":{"x":0.9, "y":0.9,  "z":0.9},  "rot":{"x": 180,  "y":0,   "z":0}}],
+        //["brake_caliper_standard_plain", ["hub_R"], [], {"pos":{"x": 0.742492, "y":1.40997, "z":0.316201}, "scale":{"x":0.9, "y":0.9,  "z":0.9},  "rot":{"x":-180,  "y":180, "z":0}}],
     ],
     "props":[
         ["func"      , "mesh"           , "idRef:", "idX:", "idY:", "baseRotation"        , "rotation"            , "translation"        , "min", "max", "offset", "multiplier",],
-        ["axle_RR", "steelwheel_01a_15x7_deep", "axr1", "axr5", "rh2r", {"x":0, "y":0, "z":0}, {"x":-1, "y":0, "z":0} , {"x":0, "y":0, "z":0}, -360, 360, 0, 1, {"baseTranslation":{"x":0.115, "y":0, "z":0.0}, "breakGroup":"driveshaft","deformGroup":"driveshaft","optional":true}],
-        ["axle_RL", "steelwheel_01a_15x7_deep", "axr4", "axr3", "rh2l", {"x":0, "y":0, "z":0}, {"x":1, "y":0, "z":0} , {"x":0, "y":0, "z":0}, -360, 360, 0, 1, {"baseTranslation":{"x":0.115, "y":0, "z":0.0}, "breakGroup":"driveshaft","deformGroup":"driveshaft","optional":true}],
+        ["axle_RR", "steelwheel_11a_13x5", "axr1", "axr5", "rh2r", {"x":0, "y":0, "z":0}, {"x":-1, "y":0, "z":0} , {"x":0, "y":0, "z":0}, -360, 360, 0, 1, {"baseTranslation":{"x":0.115, "y":0, "z":0.0}, "breakGroup":"driveshaft","deformGroup":"driveshaft","optional":true}],
+        ["axle_RL", "steelwheel_11a_13x5", "axr4", "axr3", "rh2l", {"x":0, "y":0, "z":0}, {"x":1, "y":0, "z":0} , {"x":0, "y":0, "z":0}, -360, 360, 0, 1, {"baseTranslation":{"x":0.115, "y":0, "z":0.0}, "breakGroup":"driveshaft","deformGroup":"driveshaft","optional":true}],
 
-        ["axle_RR", "soliad_hubcap_02a_15", "axr1", "axr5", "rh2r", {"x":0, "y":0, "z":0}, {"x":-1, "y":0, "z":0} , {"x":0, "y":0, "z":0}, -360, 360, 0, 1, {"baseTranslation":{"x":0.23, "y":0, "z":0.0}, "breakGroup":"driveshaft","deformGroup":"driveshaft","optional":true}],
-        ["axle_RL", "soliad_hubcap_02a_15", "axr4", "axr3", "rh2l", {"x":0, "y":0, "z":0}, {"x":1, "y":0, "z":0} , {"x":0, "y":0, "z":0}, -360, 360, 0, 1, {"baseTranslation":{"x":0.23, "y":0, "z":0.0}, "breakGroup":"driveshaft","deformGroup":"driveshaft","optional":true}],
+        ["axle_RR", "hubcap_05a_10", "axr1", "axr5", "rh2r", {"x":0, "y":0, "z":0}, {"x":-1, "y":0, "z":0} , {"x":0, "y":0, "z":0}, -360, 360, 0, 1, {"baseTranslation":{"x":0.115, "y":0, "z":0.0}, "breakGroup":"driveshaft","deformGroup":"driveshaft","optional":true}],
+        ["axle_RL", "hubcap_05a_10", "axr4", "axr3", "rh2l", {"x":0, "y":0, "z":0}, {"x":1, "y":0, "z":0} , {"x":0, "y":0, "z":0}, -360, 360, 0, 1, {"baseTranslation":{"x":0.115, "y":0, "z":0.0}, "breakGroup":"driveshaft","deformGroup":"driveshaft","optional":true}],
 
-        ["axle_RR", "brake_disc_plain", "axr1", "axr5", "rh2r", {"x":0, "y":0, "z":0}, {"x":-1, "y":0, "z":0} , {"x":0, "y":0, "z":0}, -360, 360, 0, 1, {"baseTranslation":{"x":0.07, "y":0, "z":0.0}, "breakGroup":"driveshaft","deformGroup":"driveshaft","optional":true}],
-        ["axle_RL", "brake_disc_plain", "axr4", "axr3", "rh2l", {"x":0, "y":0, "z":0}, {"x":1, "y":0, "z":0} , {"x":0, "y":0, "z":0}, -360, 360, 0, 1, {"baseTranslation":{"x":0.07, "y":0, "z":0.0}, "breakGroup":"driveshaft","deformGroup":"driveshaft","optional":true}],
+        //["axle_RR", "brake_disc_plain", "axr1", "axr5", "rh2r", {"x":0, "y":0, "z":0}, {"x":-1, "y":0, "z":0} , {"x":0, "y":0, "z":0}, -360, 360, 0, 1, {"baseTranslation":{"x":0.07, "y":0, "z":0.0}, "breakGroup":"driveshaft","deformGroup":"driveshaft","optional":true}],
+        //["axle_RL", "brake_disc_plain", "axr4", "axr3", "rh2l", {"x":0, "y":0, "z":0}, {"x":1, "y":0, "z":0} , {"x":0, "y":0, "z":0}, -360, 360, 0, 1, {"baseTranslation":{"x":0.07, "y":0, "z":0.0}, "breakGroup":"driveshaft","deformGroup":"driveshaft","optional":true}],
     ],
     "nodes": [
         ["id", "posX", "posY", "posZ"],
@@ -163,9 +163,9 @@
 
         //general settings
         //{"radius":0.30},
-        {"hubRadius":0.33},
-        {"wheelOffset":-0.015},
-        {"hubWidth":0.195},
+        {"hubRadius":0.30},
+        {"wheelOffset":0.0},
+        {"hubWidth":0.145},
         //{"tireWidth":0.21},
         {"numRays":10},
 

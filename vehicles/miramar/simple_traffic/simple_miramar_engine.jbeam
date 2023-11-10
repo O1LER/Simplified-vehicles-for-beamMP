@@ -16,40 +16,35 @@
        "mainEngine": {
            "torque":[
                ["rpm", "torque"],
-               [0,      0],
-               [500,  160],
-               [1000, 238],
-               [1500, 296],
-               [2000, 339],
-               [2500, 364],
-               [3000, 386],
-               [3500, 398],
-               [4000, 407],
-               [4500, 403],
-               [5000, 400],
-               [5500, 397],
-               [6000, 392],
-               [6500, 365],
-               [7000, 310],
-               [7500, 211],
-               [8000, 110],
-               [8500,   0],
+               [0, 0],
+               [500, 80],
+               [1000, 126],
+               [1500, 153],
+               [2000, 167],
+               [2500, 173],
+               [3000, 176],
+               [4000, 178],
+               [5000, 157],
+               [6000, 113],
+               [7000, 50],
+               [8000, 30],
+               [9000, 20],
            ],
            //engine performance
            "idleRPM":750,
-           //max rpm physically capable of
-           "maxRPM":6600,
-           "inertia":0.17,
-           "friction":18,
-           "dynamicFriction":0.026,
-           "engineBrakeTorque":44,
-           //"burnEfficiency":0.33,
+           "maxRPM":6000,
+           "hasRevLimiter":false,
+           "inertia":0.1,
+           "friction":12,
+           "dynamicFriction":0.024,
+           "engineBrakeTorque":31,
+           //"burnEfficiency":0.29
            "burnEfficiency":[
-               [0, 0.1],
+               [0, 0.10],
                [0.05, 0.21],
-               [0.4, 0.35],
-               [0.7, 0.38],
-               [1, 0.27],
+               [0.4, 0.34],
+               [0.7, 0.45],
+               [1, 0.32],
            ],
            //fuel system
            "energyStorage": "mainTank",
@@ -95,72 +90,73 @@
            "soundConfigExhaust": "soundConfigExhaust",
    
            //starter motor
-           "starterSample":"event:>Engine>Starter>v8_20xy_eng",
-           "starterSampleExhaust":"event:>Engine>Starter>v8_20xy_exh",
-           "shutOffSampleEngine":"event:>Engine>Shutoff>v8_20xy_eng",
-           "shutOffSampleExhaust":"event:>Engine>Shutoff>v8_20xy_exh",
+           "starterSample":"event:>Engine>Starter>i4_1996_eng",
+           "starterSampleExhaust":"event:>Engine>Starter>i4_1996_exh",
+           "shutOffSampleEngine":"event:>Engine>Shutoff>i4_1996_eng",
+           "shutOffSampleExhaust":"event:>Engine>Shutoff>i4_1996_exh",
            "starterVolume":0.76,
            "starterVolumeExhaust":0.76,
            "shutOffVolumeEngine":0.76,
            "shutOffVolumeExhaust":0.76,
-           "idleRPMStartRate":1.25,
+           "starterThrottleKillTime":1.25,
+           "idleRPMStartRate":2,
            "idleRPMStartCoef":1,
        },
        "soundConfig": {
-           "sampleName": "i4_2_engine",
-           "intakeMuffling": 0.85,
-   
-           "mainGain": -7.5,
-           "onLoadGain":1,
-           "offLoadGain":0.55,
-   
-           "maxLoadMix": 0.8,
-           "minLoadMix": 0.0,
-   
-           "lowShelfGain":5,
-           "lowShelfFreq":120,
-   
-           "highShelfGain":2,
-           "highShelfFreq":8000,
-   
-           "eqLowGain": -3,
-           "eqLowFreq": 400,
-           "eqLowWidth": 0.2,
-   
-           "eqHighGain": -4,
-           "eqHighFreq": 2200,
-           "eqHighWidth": 0.15,
-   
-           "fundamentalFrequencyCylinderCount":6,
-           "eqFundamentalGain": -2,
-       },
-       "soundConfigExhaust": {
-           "sampleName": "i4_2_exhaust",
-   
-           "mainGain": 5,
-           "onLoadGain":1,
-           "offLoadGain":0.40,
-   
-           "maxLoadMix": 0.8,
-           "minLoadMix": 0,
-   
-           "lowShelfGain":-8,
-           "lowShelfFreq":80,
-   
-           "highShelfGain":4,
-           "highShelfFreq":2500,
-   
-           "eqLowGain": -4,
-           "eqLowFreq": 250,
-           "eqLowWidth": 0.25,
-   
-           "eqHighGain": -6,
-           "eqHighFreq": 1500,
-           "eqHighWidth": 0.25,
-   
-           "fundamentalFrequencyCylinderCount":6,
-           "eqFundamentalGain": -5,
-       },
+        "sampleName": "I4_2_engine",
+        "intakeMuffling": 0.5,
+
+        "mainGain": -5.5,
+        "onLoadGain":1,
+        "offLoadGain":0.45,
+
+        "maxLoadMix": 0.65,
+        "minLoadMix": 0,
+
+        "lowShelfGain":-5,
+        "lowShelfFreq":80,
+
+        "highShelfGain":-4,
+        "highShelfFreq":2500,
+
+        "eqLowGain": -6,
+        "eqLowFreq": 500,
+        "eqLowWidth": 0.1,
+
+        "eqHighGain": 0,
+        "eqHighFreq": 2500,
+        "eqHighWidth": 0.1,
+
+        "fundamentalFrequencyCylinderCount":4,
+        "eqFundamentalGain": -4,
+    },
+    "soundConfigExhaust": {
+        "sampleName": "I4_2_exhaust",
+
+        "mainGain": -2,
+        "onLoadGain":1,
+        "offLoadGain":0.3,
+
+        "maxLoadMix": 0.66,
+        "minLoadMix": 0,
+
+        "lowShelfGain":-4,
+        "lowShelfFreq":70,
+
+        "highShelfGain":2,
+        "highShelfFreq":5000,
+
+        "eqLowGain":2,
+        "eqLowFreq": 600,
+        "eqLowWidth": 0.32,
+
+        "eqHighGain": -14,
+        "eqHighFreq": 4500,
+        "eqHighWidth": 0.1,
+
+        "fundamentalFrequencyCylinderCount":4,
+        "eqFundamentalGain": -6,
+    },
        "vehicleController": {
            "vehicleController": {
                "clutchLaunchStartRPM":1200,
@@ -218,7 +214,7 @@
            ["automaticGearbox", "gearbox", "torqueConverter", 1],
    
            //rwd
-           ["differential", "frontDiff", "gearbox", 1, {"diffType":"lsd", "lsdPreload":125, "lsdLockCoef":0.18, "lsdRevLockCoef":0.18, "gearRatio":3.91}],
+           ["differential", "rearDiff", "gearbox", 1, {"diffType":"lsd", "lsdPreload":125, "lsdLockCoef":0.18, "lsdRevLockCoef":0.18, "gearRatio":3.91}],
    
            //awd
            //["differential", "centreDiff", "gearbox", 1, {"diffType":"open", "gearRatio":1.00, "diffTorqueSplit":1.0}],
@@ -227,14 +223,14 @@
            //["shaft",            "rearDriveShaft",      "centreDiff", 2 ],
            //["differential", "rearDiff", "rearDriveShaft", 1, {"diffType":"open", "gearRatio":4.23, "diffTorqueSplit":0.50}],
    
-           ["shaft", "wheelaxleFL", "frontDiff", 1, {"connectedWheel":"FL", "breakTriggerBeam":"axle_FL", "friction":0, "electricsName":"axle_FL"}],
-           ["shaft", "wheelaxleFR", "frontDiff", 2, {"connectedWheel":"FR", "breakTriggerBeam":"axle_FR", "friction":0, "electricsName":"axle_FR"}],
+           ["shaft", "wheelaxleFL", "fixaxleRL", 1, {"connectedWheel":"FL", "breakTriggerBeam":"axle_FL", "friction":0, "electricsName":"axle_FL", "visualShaftAVName":"outputAV1"}],
+           ["shaft", "wheelaxleFR", "fixaxleRR", 1, {"connectedWheel":"FR", "breakTriggerBeam":"axle_FR", "friction":0, "electricsName":"axle_FR", "visualShaftAVName":"outputAV1"}],
    
            //["shaft", "fixaxleRL", "rearDiff", 1,  {"friction":0}],
            //["shaft", "fixaxleRR", "rearDiff", 2,  {"friction":0}],
    
-           ["shaft", "wheelaxleRL", "fixaxleRL", 1,  {"connectedWheel":"RL", "breakTriggerBeam":"axle_RL", "friction":0, "electricsName":"axle_RL", "visualShaftAVName":"outputAV1"}],
-           ["shaft", "wheelaxleRR", "fixaxleRR", 1,  {"connectedWheel":"RR", "breakTriggerBeam":"axle_RR", "friction":0, "electricsName":"axle_RR", "visualShaftAVName":"outputAV1"}],
+           ["shaft", "wheelaxleRL", "rearDiff", 1,  {"connectedWheel":"RL", "breakTriggerBeam":"axle_RL", "friction":0, "electricsName":"axle_RL"}],
+           ["shaft", "wheelaxleRR", "rearDiff", 2,  {"connectedWheel":"RR", "breakTriggerBeam":"axle_RR", "friction":0, "electricsName":"axle_RR"}],
        ],
    },
    

@@ -8,7 +8,7 @@
     "slotType" : "simple_miramar_suspension_F",
     "slots": [
         ["type", "default", "description"],
-        ["simple_miramar_wheels_F", "simple_miramar_wheels_F", "Front Wheels", {"nodeOffset":{"x":0.0, "y":0.0, "z":-0.02}, "coreSlot":true}],
+        ["simple_miramar_wheels_F", "simple_miramar_wheels_F", "Front Wheels", {"nodeOffset":{"x":-0.12, "y":0.13, "z":-0.02}, "coreSlot":true}],
         ["simple_miramar_brake_F","simple_miramar_brake_F", "Front Brakes"],
         ["simple_miramar_wheeldata_F_strut","simple_miramar_wheeldata_F_strut", "Front Spindles",{"coreSlot":true}],
         ["simple_miramar_coilover_F_strut","simple_miramar_coilover_F_strut", "Front Coilovers"],
@@ -21,41 +21,41 @@
         {"selfCollision":false},
         {"nodeMaterial":"|NM_METAL"},
         {"frictionCoef":0.5},
-        {"nodeWeight":6},
+        {"nodeWeight":5},
         {"group":["hub_F", "susp_F"]},
         //hub mounting points for lower wishbone, strut rail bottom point
-        ["fh1r", -0.692161, -1.3865, 0.2069],
-        ["fh1l",  0.692161, -1.3865, 0.2069],
+        ["fh1r", -0.692161, -1.2883, 0.2357],
+        ["fh1l",  0.692161, -1.2883, 0.2357],
 
         //strut body slidenode
-        ["fh2r", -0.612897, -1.3586, 0.4859],
-        ["fh2l",  0.612897, -1.3586, 0.4859],
+        ["fh2r", -0.612897, -1.2604, 0.5147],
+        ["fh2l",  0.612897, -1.2604, 0.5147],
 
         //tie rod end
-        ["fh3r", -0.641923, -1.194, 0.2236],
-        ["fh3l",  0.641923, -1.194, 0.2236],
+        ["fh3r", -0.641923, -1.0958, 0.2524],
+        ["fh3l",  0.641923, -1.0958, 0.2524],
 
         //brake caliper
-        ["fh5r", -0.703324, -1.5289, 0.3464],
-        ["fh5l",  0.703324, -1.5289, 0.3464],
+        ["fh5r", -0.703324, -1.4307, 0.3752],
+        ["fh5l",  0.703324, -1.4307, 0.3752],
 
         //subframe
         {"selfCollision":false},
         {"nodeWeight":19.275307},
         {"group":["subframe_F", "susp_F"]},
         //body mounting points for lower wishbone
-        ["fx1r", -0.323752, -1.5959, 0.2348],
-        ["fx1l",  0.323752, -1.5959, 0.2348],
-        ["fx2r", -0.323752,  -1.1493, 0.2348],
-        ["fx2l",  0.323752,  -1.1493, 0.2348],
+        ["fx1r", -0.323752, -1.4977, 0.2636],
+        ["fx1l",  0.323752, -1.4977, 0.2636],
+        ["fx2r", -0.323752,  -1.0511, 0.2636],
+        ["fx2l",  0.323752,  -1.0511, 0.2636],
 
         //strut rail top point
-        ["fs1r", -0.524702, -1.3251, 0.8153],
-        ["fs1l",  0.524702, -1.3251, 0.8153],
+        ["fs1r", -0.524702, -1.2269, 0.8441],
+        ["fs1l",  0.524702, -1.2269, 0.8441],
 
         {"group":""},
-        ["fco1r", -0.647505, -1.3865, 0.7371],
-        ["fco1l",  0.647505, -1.3865, 0.7371],
+        ["fco1r", -0.647505, -1.2883, 0.7659],
+        ["fco1l",  0.647505, -1.2883, 0.7659],
         {"group":""},
     ],
     "rails": {
@@ -385,7 +385,7 @@
         //beamPrecompression here changes the ride height
         {"beamPrecompression":1.0, "beamType":"|NORMAL"},
         //beamSpring here controls spring rate (N/m)
-        {"beamSpring":43000,"beamDamp":0},
+        {"beamSpring":23000,"beamDamp":0},
         {"beamDeform":88304.046875,"beamStrength":434594.406250},
         ["fh1r","fs1r",{"precompressionRange":0.055}],
         ["fh1l","fs1l",{"precompressionRange":0.055}],
@@ -394,7 +394,7 @@
         {"beamPrecompression":1.0, "beamType":"|BOUNDED", "beamLongBound":1.0, "beamShortBound":1.0},
         {"beamLimitSpring":0,"beamLimitDamp":0},
         //damper values set here (N/m/s)
-        {"beamSpring":0,"beamDamp":6500},
+        {"beamSpring":0,"beamDamp":3500},
         ["fh1r","fco1r", {"beamDampFast":1750,"beamDampRebound":4500,"beamDampReboundFast":2250,"beamDampVelocitySplit":0.25,"dampCutoffHz":500}],
         ["fh1l","fco1l", {"beamDampFast":1750,"beamDampRebound":4500,"beamDampReboundFast":2250,"beamDampVelocitySplit":0.25,"dampCutoffHz":500}],
 
@@ -535,7 +535,7 @@
     "slotType" : "simple_miramar_suspension_R",
     "slots": [
         ["type", "default", "description"],
-        ["simple_miramar_wheels_R", "simple_miramar_wheels_R", "Rear Wheels", {"nodeOffset":{"x":0.0, "y":0.0, "z":0.0}, "coreSlot":true}],
+        ["simple_miramar_wheels_R", "simple_miramar_wheels_R", "Rear Wheels", {"nodeOffset":{"x":-0.12, "y":-0.13, "z":0.0}, "coreSlot":true}],
         ["simple_miramar_brake_R","simple_miramar_brake_R", "Rear Brakes"],
         ["simple_miramar_wheeldata_R_doublewishbone","simple_miramar_wheeldata_R_doublewishbone", "Rear Spindles",{"coreSlot":true}],
         ["simple_miramar_coilover_R_doublewishbone","simple_miramar_coilover_R_doublewishbone", "Rear Coilovers"],
@@ -555,50 +555,50 @@
         {"nodeMaterial":"|NM_METAL"},
         {"frictionCoef":0.5},
 
-        {"nodeWeight":6},
+        {"nodeWeight":4},
         //hub mounting points for upper wishbone
         {"group":["hub_R", "susp_R"]},
-        ["rh1r", -0.647505, 1.2975, 0.4722],
-        ["rh1l",  0.647505, 1.2975, 0.4722],
-        ["rh2r", -0.647505, 1.4761, 0.4722],
-        ["rh2l",  0.647505, 1.4761, 0.4722],
+        ["rh1r", -0.647505, 1.1953, 0.4722],
+        ["rh1l",  0.647505, 1.1953, 0.4722],
+        ["rh2r", -0.647505, 1.3739, 0.4722],
+        ["rh2l",  0.647505, 1.3739, 0.4722],
 
         //hub mounting points for lower wishbone
-        ["rh3r", -0.692161, 1.2975, 0.1931],
-        ["rh3l",  0.692161, 1.2975, 0.1931],
-        ["rh4r", -0.692161, 1.4761,  0.1931],
-        ["rh4l",  0.692161, 1.4761,  0.1931],
+        ["rh3r", -0.692161, 1.1953, 0.1931],
+        ["rh3l",  0.692161, 1.1953, 0.1931],
+        ["rh4r", -0.692161, 1.3739,  0.1931],
+        ["rh4l",  0.692161, 1.3739,  0.1931],
 
         //brake caliper
-        ["rh5r", -0.703324, 1.2193, 0.3327],
-        ["rh5l",  0.703324, 1.2193, 0.3327],
+        ["rh5r", -0.703324, 1.1171, 0.3327],
+        ["rh5l",  0.703324, 1.1171, 0.3327],
 
         //subframe
         {"selfCollision":false},
         {"nodeWeight":15.420245},
         //body mounting points for lower wishbone
         {"group":["subframe_R", "susp_R"]},
-        ["rx1r", -0.290261, 1.1635, 0.2099],
-        ["rx1l",  0.290261, 1.1635, 0.2099],
-        ["rx2r", -0.290261,  1.6101, 0.2099],
-        ["rx2l",  0.290261,  1.6101, 0.2099],
+        ["rx1r", -0.290261, 1.0613, 0.2099],
+        ["rx1l",  0.290261, 1.0613, 0.2099],
+        ["rx2r", -0.290261,  1.5079, 0.2099],
+        ["rx2l",  0.290261,  1.5079, 0.2099],
 
         //body mounting points for upper wishbone
-        ["rx3r", -0.401900, 1.1635, 0.4443],
-        ["rx3l",  0.401900, 1.1635, 0.4443],
-        ["rx4r", -0.401900,  1.6101, 0.4443],
-        ["rx4l", 0.401900,  1.6101, 0.4443],
+        ["rx3r", -0.401900, 1.0613, 0.4443],
+        ["rx3l",  0.401900, 1.0613, 0.4443],
+        ["rx4r", -0.401900,  1.5079, 0.4443],
+        ["rx4l", 0.401900,  1.5079, 0.4443],
 
         //body mounting points for spring and shock
-        ["rs1r", -0.669833, 1.3086, 0.6732],
-        ["rs1l",  0.669833, 1.3086, 0.6732],
+        ["rs1r", -0.669833, 1.2064, 0.6732],
+        ["rs1l",  0.669833, 1.2064, 0.6732],
         {"group":""},
     ],
     "beams": [
         ["id1:", "id2:"],
         //double wishbone suspension
         {"beamPrecompression":1, "beamType":"|NORMAL"},
-        {"beamSpring":17800202.000000,"beamDamp":593.260925},
+        {"beamSpring":8800200,"beamDamp":550},
         {"beamDeform":144755.671875,"beamStrength":832938.375000},
         //hub
         ["rh2r","rh3r"],
@@ -1025,7 +1025,7 @@
         //beamPrecompression here changes the ride height
         {"beamPrecompression":1.0, "beamType":"|NORMAL"},
         //beamSpring here controls spring rate (N/m)
-        {"beamSpring":30000,"beamDamp":0},
+        {"beamSpring":20000,"beamDamp":0},
         {"beamDeform":121025.234375,"beamStrength":595634.000000},
         ["rh3r","rs1r",{"precompressionRange":0.096}],
         ["rh3l","rs1l",{"precompressionRange":0.096}],
@@ -1034,7 +1034,7 @@
         {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":1.0, "beamShortBound":1.0},
         {"beamLimitSpring":0,"beamLimitDamp":0},
         //damper values set here (N/m/s)
-        {"beamSpring":0,"beamDamp":4000},
+        {"beamSpring":0,"beamDamp":300},
         ["rh3l","rs1l",{"beamDampFast":1000,"beamDampRebound":3000,"beamDampReboundFast":1500,"beamDampVelocitySplit":0.25,"dampCutoffHz":500}],
         ["rh3r","rs1r",{"beamDampFast":1000,"beamDampRebound":3000,"beamDampReboundFast":1500,"beamDampVelocitySplit":0.25,"dampCutoffHz":500}],
 
