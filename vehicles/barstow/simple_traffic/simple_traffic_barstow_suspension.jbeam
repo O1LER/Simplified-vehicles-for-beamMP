@@ -2,15 +2,18 @@
 	"simple_barstow_doublewishbone_F": {
 		"information":{
 			"authors":"Please Pick a Name",
-			"name":"MacPherson Strut Front Suspension",
+			"name":"Front Suspension",
 			"value":150,
 		},
 		"slotType" : "simple_barstow_suspension_F",
 		"flexbodies":[
+			["mesh", "[group]:", "nonFlexMaterials"],
 			["barstow_hub_F", ["hub_F"]],
+			["barstow_upperarm_F", ["susp_F"]],
 			["barstow_lowerarm_F", ["susp_F"]],
-			["barstow_tierod_F", ["susp_F"]],
 			["barstow_swaybar_F", ["susp_F"]],
+			["brake_hub_5l",["wheel_FR","hub_F"],    [],   {"pos":{"x":-0.74,  "y":-1.38, "z":0.29}, "scale":{"x":0.6, "y":1.0,  "z":1.0},   "rot":{"x":0,   "y":0,  "z":0  }}],
+			["brake_hub_5l",["wheel_FL","hub_F"],    [],   {"pos":{"x" :0.74,  "y":-1.38, "z":0.29}, "scale":{"x":0.6, "y":1.0,  "z":1.0},   "rot":{"x":0,   "y":0,  "z":180}}],
 		],
 		"slots": [
 			["type", "default", "description"],
@@ -37,6 +40,7 @@
 			["fh2r", -0.64, -1.37, 0.47],
 			["fh2l",  0.64, -1.37, 0.47],
 
+			{"group":"hub_F"},
 			//tie rod end
 			["fh3r", -0.645, -1.23, 0.204],
 			["fh3l",  0.645, -1.23, 0.204],
@@ -351,25 +355,32 @@
 		"slotType" : "simple_barstow_brake_F",
 		"flexbodies": [
 			["mesh", "[group]:", "nonFlexMaterials"],
+			["brake_caliper_standard_plain", ["hub_F"], [], {"pos":{"x":-0.745, "y":-1.38, "z":0.29}, "scale":{"x":0.8, "y":0.87, "z":0.87},  "rot":{"x":0,   "y":0,  "z":0  }}],
+			["brake_caliper_standard_plain", ["hub_F"], [], {"pos":{"x": 0.745, "y":-1.38, "z":0.29}, "scale":{"x":0.8, "y":0.87, "z":0.87},  "rot":{"x":0,   "y":180,"z":0  }}],
+		],
+		"props":[
+			["func",   "mesh",            "idRef:","idX:","idY:","baseRotation",        "rotation",           "translation",        "min","max","offset","multiplier",],
+			["axle_FR","brake_disc_solid","axf1",  "axf5","fh2r",{"x":0, "y":0, "z":0}, {"x":-1,"y":0, "z":0},{"x":0, "y":0, "z":0},-360, 360, 0, 1, {"baseTranslation":{"x":0.165, "y":0, "z":0.0}, "breakGroup":"driveshaft","deformGroup":"driveshaft","optional":true}],
+			["axle_FL","brake_disc_solid","axf4",  "axf3","fh2l",{"x":0, "y":0, "z":0}, {"x":1, "y":0, "z":0},{"x":0, "y":0, "z":0},-360, 360, 0, 1, {"baseTranslation":{"x":0.165, "y":0, "z":0.0}, "breakGroup":"driveshaft","deformGroup":"driveshaft","optional":true}],
 		],
 		"pressureWheels":[
 			["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
-			{"brakeTorque":3117.321777}, //Rate of brake torque (Nm) increase per input (input is 0 to 1). If there is no knee point, it also indicates the maximum brake torque.
+			//brakes
+			{"enableABS":false},
+			{"brakeTorque":"$=$brakestrength*2000"}, //Rate of brake torque (Nm) increase per input (input is 0 to 1). If there is no knee point, it also indicates the maximum brake torque.
 			{"brakeInputSplit":1}, //Creates a knee point in brake torque rate (value of 0.5 means knee occurs at half brake input)
 			{"brakeSplitCoef":1}, //Reduces or increases the brake torque rate after the knee point. Value of 0.5 means brake torque will rise at half the rate defined by brakeTorque.
 			{"parkingTorque":0}, //Maximum parking brake torque
-			{"brakeSpring":86.572594}, //Stiffness of the brake system. Too high will make brake unstable, too low will cause wheel hop or rubber band effect.
+			{"brakeSpring":150}, //Stiffness of the brake system. Too high will make brake unstable, too low will cause wheel hop or rubber band effect.
 
 			//brake thermals
 			{"enableBrakeThermals":false},
-			{"brakeDiameter":0.385000}, //Diameter (m)
-			{"brakeMass":9.721068}, //Rotor mass (ignoring hub/bearing area) (kg)
-			{"brakeType":"vented-disc"}, //Type ("drum", "disc", "vented-disc")
+			{"brakeDiameter":0.27}, //Diameter (m)
+			{"brakeMass":6}, //Rotor mass (ignoring hub/bearing area) (kg)
+			{"brakeType":"disc"}, //Type ("drum", "disc", "vented-disc")
 			{"rotorMaterial":"steel"}, //Rotor material ("steel", "aluminum", "aluminium", "ceramic")
-			{"padMaterial":"sport"}, //Pad material ("basic","premium","sport","semi-race","full-race","godmode")
-			{"brakeVentingCoef":1.650000}, //Cooling multiplier (1 for typical unducted brakes)
-			//abs
-			{"absSlipRatioTarget":0.2},
+			{"padMaterial":"basic"}, //Pad material ("basic","premium","sport","semi-race","full-race","godmode")
+			{"brakeVentingCoef":1.0}, //Cooling multiplier (1 for typical unducted brakes)
 		],
 	},
 	"simple_barstow_swaybar_F_strut": {
@@ -401,13 +412,14 @@
 			//beamPrecompression here changes the ride height
 			{"beamPrecompression":1.0, "beamType":"|NORMAL"},
 			//beamSpring here controls spring rate (N/m)
-			{"beamDeform":88304.046875,"beamStrength":434594.406250},
+          	{"beamDeform":20300,"beamStrength":153000},
 			{"beamSpring":51000,"beamDamp":10},
 			["fh1r","fs1r", {"precompressionRange":0.11,"beamPrecompressionTime":0.02,"soundFile":"event:>Vehicle>Suspension>car_modn_med_01>spring_compress_01","colorFactor":0.4,"attackFactor":30,"volumeFactor":1.5,"decayFactor":6,"noiseFactor":0.01,"pitchFactor":0.2,"maxStress":1400}],//acting at wishbone
 			["fh1l","fs1l", {"precompressionRange":0.11,"beamPrecompressionTime":0.02,"soundFile":"event:>Vehicle>Suspension>car_modn_med_01>spring_compress_01","colorFactor":0.4,"attackFactor":30,"volumeFactor":1.5,"decayFactor":6,"noiseFactor":0.01,"pitchFactor":0.2,"maxStress":1400}],
 
 			//dampers
 			{"beamPrecompression":1.0, "beamType":"|BOUNDED", "beamLongBound":1.0, "beamShortBound":1.0},
+			{"beamDeform":25300,"beamStrength":153000},
 			//damper values set here (N/m/s)
 			{"beamSpring":0,"beamDamp":5400},
 			{"beamLimitSpring":251000,"beamLimitDamp":5000},
@@ -426,6 +438,13 @@
 		"slotType" : "simple_barstow_steering_strut",
 		"flexbodies": [
 			["mesh", "[group]:", "nonFlexMaterials"],
+			["barstow_steeringbox", ["simple_barstow_body"]],
+			["barstow_steeringshaft", ["simple_barstow_body"]],
+			["barstow_tierod_F", ["hub_F","steer_F"]],
+			["barstow_tierod_M", ["susp_F"]],
+			["barstow_idler", ["susp_F"]],
+			["barstow_pitman", ["susp_F"]],
+			["barstow_idlerbracket", ["susp_F"]],
 		],
 		"variables": [
 			["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
@@ -448,13 +467,14 @@
 			{"collision":false},
 			{"nodeMaterial":"|NM_METAL"},
 			{"frictionCoef":0.5},
-			{"nodeWeight":7.791533},
-			{"group":""},
+			{"nodeWeight":8},
+			{"group":"steer_F"},
 			//steering rack ends
 			["st2r", -0.267933, -1.24, 0.25],
 			["st2l",  0.267933, -1.24, 0.25],
 			//body mounting points for steering rack
 			{"nodeWeight":13.851615},
+			{"group":""},
 			["st1r", -0.133967, -1.24, 0.25],
 			["st1l",  0.133967, -1.24, 0.25],
 			{"group":""},
@@ -555,6 +575,10 @@
 			["barstow_upperarm_R", ["susp_R"], []],
 			["barstow_tierod_R", ["susp_R"], []],
 			["barstow_swaybar_R", ["susp_R"], []], */
+		],
+		"props": [
+			["func"      ,"mesh",              "idRef:","idX:","idY:","baseRotation",         "rotation"            , "translation"        , "min", "max", "offset", "multiplier",],
+			["driveshaft","barstow_driveshaft","ax3r",  "ax3l","b1",  {"x":-89.4, "y":0, "z":0}, {"x":0, "y":1, "z":0} , {"x":0, "y":0, "z":0}, -360, 360, 0, 1,{"breakGroup":"driveshaft","deformGroup":"driveshaft","optional":true}],
 		],
 		"nodes": [
 			["id", "posX", "posY", "posZ"],
@@ -885,25 +909,28 @@
 		"slotType" : "simple_barstow_brake_R",
 		"flexbodies": [
 			["mesh", "[group]:", "nonFlexMaterials"],
+			//temporary translate until susp meshes are properly fixed
+			["barstow_brakedrum_RR", ["hub_R"],[],{"pos":{"x":0.02,"y":0,"z":0}}],
+			["barstow_brakedrum_RL", ["hub_R"],[],{"pos":{"x":-0.02,"y":0,"z":0}}],
 		],
 		"pressureWheels":[
 			["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
-			{"brakeTorque":1302.744751}, //Rate of brake torque (Nm) increase per input (input is 0 to 1). If there is no knee point, it also indicates the maximum brake torque.
-			{"brakeInputSplit":1}, //Creates a knee point in brake torque rate (value of 0.5 means knee occurs at half brake input)
-			{"brakeSplitCoef":1}, //Reduces or increases the brake torque rate after the knee point. Value of 0.5 means brake torque will rise at half the rate defined by brakeTorque.
-			{"parkingTorque":3796.266846}, //Maximum parking brake torque
-			{"brakeSpring":118.652191}, //Stiffness of the brake system. Too high will make brake unstable, too low will cause wheel hop or rubber band effect.
+			//brakes
+			{"enableABS":false},
+			{"brakeTorque":"$=$brakestrength*950"}, //Rate of brake torque (Nm) increase per input (input is 0 to 1). If there is no knee point, it also indicates the maximum brake torque.
+			{"brakeInputSplit":0.5}, //Creates a knee point in brake torque rate (value of 0.5 means knee occurs at half brake input)
+			{"brakeSplitCoef":0.5}, //Reduces or increases the brake torque rate after the knee point. Value of 0.5 means brake torque will rise at half the rate defined by brakeTorque.
+			{"parkingTorque":1500}, //Maximum parking brake torque
+			{"brakeSpring":150}, //Stiffness of the brake system. Too high will make brake unstable, too low will cause wheel hop or rubber band effect.
 
 			//brake thermals
 			{"enableBrakeThermals":false},
-			{"brakeDiameter":0.319000}, //Diameter (m)
-			{"brakeMass":8.898415}, //Rotor mass (ignoring hub/bearing area) (kg)
-			{"brakeType":"disc"}, //Type ("drum", "disc", "vented-disc")
+			{"brakeDiameter":0.27}, //Diameter (m)
+			{"brakeMass":4.6}, //Rotor mass (ignoring hub/bearing area) (kg)
+			{"brakeType":"drum"}, //Type ("drum", "disc", "vented-disc")
 			{"rotorMaterial":"steel"}, //Rotor material ("steel", "aluminum", "aluminium", "ceramic")
-			{"padMaterial":"sport"}, //Pad material ("basic","premium","sport","semi-race","full-race","godmode")
-			{"brakeVentingCoef":1.650000}, //Cooling multiplier (1 for typical unducted brakes)
-			//abs
-			{"absSlipRatioTarget":0.15},
+			{"padMaterial":"basic"}, //Pad material ("basic","premium","sport","semi-race","full-race","godmode")
+			{"brakeVentingCoef":0.8}, //Cooling multiplier (1 for typical unducted brakes)
 		],
 	},
 	"simple_barstow_leaf_R": {
