@@ -1,11 +1,11 @@
 {
-	"simple_traffic_barstow_bumper_F": {
+	"simple_barstow_bumper_F": {
 		"information":{
 			"authors":"Please Pick a Name",
 			"name":"Front Bumper",
 			"value":70,
 		},
-		"slotType" : "simple_traffic_barstow_bumper_F",
+		"slotType" : "simple_barstow_bumper_F",
 		"flexbodies": [
 			["mesh", "[group]:", "nonFlexMaterials"],
 			["barstow_bumper_F", ["barstow_bumper_F"]],
@@ -178,13 +178,13 @@
 			{"group":""},
 		],
 	},
-	"simple_traffic_barstow_bumper_R": {
+	"simple_barstow_bumper_R": {
 		"information":{
 			"authors":"Please Pick a Name",
 			"name":"Rear Bumper",
 			"value":70,
 		},
-		"slotType" : "simple_traffic_barstow_bumper_R",
+		"slotType" : "simple_barstow_bumper_R",
 		"flexbodies": [
 			["mesh", "[group]:", "nonFlexMaterials"],
 			["barstow_bumper_R", ["barstow_bumper_R"]],
@@ -354,13 +354,13 @@
 			{"group":""},
 		],
 	},
-	"simple_traffic_barstow_hood": {
+	"simple_barstow_hood": {
 		"information":{
 			"authors":"Please Pick a Name",
 			"name":"Hood",
 			"value":390,
 		},
-		"slotType" : "simple_traffic_barstow_hood",
+		"slotType" : "simple_barstow_hood",
 		"flexbodies": [
 			["mesh", "[group]:", "nonFlexMaterials"],
 			["barstow_hood", ["barstow_hood"]],
@@ -507,13 +507,13 @@
 			{"group":""},
 		],
 	},
-	"simple_traffic_barstow_trunk": {
+	"simple_barstow_trunk": {
 		"information":{
 			"authors":"Please Pick a Name",
 			"name":"Trunk",
 			"value":390,
 		},
-		"slotType" : "simple_traffic_barstow_trunk",
+		"slotType" : "simple_barstow_trunk",
 		"flexbodies": [
 			["mesh", "[group]:", "nonFlexMaterials"],
 			["barstow_trunk", ["barstow_trunk"]],
@@ -649,13 +649,13 @@
 			{"group":""},
 		],
 	},
-	"simple_traffic_barstow_mirrors": {
+	"simple_barstow_mirrors": {
 		"information":{
 			"authors":"Please Pick a Name",
 			"name":"Mirrors",
 			"value":150,
 		},
-		"slotType" : "simple_traffic_barstow_mirrors",
+		"slotType" : "simple_barstow_mirrors",
 		"flexbodies": [
 			["mesh", "[group]:", "nonFlexMaterials"],
 			["barstow_mirror_R", ["barstow_mirror_R"]],

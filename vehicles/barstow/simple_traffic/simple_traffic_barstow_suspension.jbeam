@@ -1,11 +1,11 @@
 {
-	"simple_traffic_barstow_doublewishbone_F": {
+	"simple_barstow_doublewishbone_F": {
 		"information":{
 			"authors":"Please Pick a Name",
 			"name":"MacPherson Strut Front Suspension",
 			"value":150,
 		},
-		"slotType" : "simple_traffic_barstow_suspension_F",
+		"slotType" : "simple_barstow_suspension_F",
 		"flexbodies":[
 			["barstow_hub_F", ["hub_F"]],
 			["barstow_lowerarm_F", ["susp_F"]],
@@ -14,12 +14,12 @@
 		],
 		"slots": [
 			["type", "default", "description"],
-			["simple_traffic_barstow_wheels_F","simple_traffic_barstow_wheels_F", "Front Wheels"],
-			["simple_traffic_barstow_brake_F","simple_traffic_barstow_brake_F", "Front Brakes"],
-			["simple_traffic_barstow_wheeldata_F","simple_traffic_barstow_wheeldata_F", "Front Spindles",{"coreSlot":true}],
-			["simple_traffic_barstow_coilover_F_strut","simple_traffic_barstow_coilover_F_strut", "Front Coilovers"],
-			["simple_traffic_barstow_swaybar_F_strut","simple_traffic_barstow_swaybar_F_strut", "Front Sway Bar"],
-			["simple_traffic_barstow_steering_strut","simple_traffic_barstow_steering_strut", "Steering"],
+			["simple_barstow_wheels_F","simple_barstow_wheels_F", "Front Wheels"],
+			["simple_barstow_brake_F","simple_barstow_brake_F", "Front Brakes"],
+			["simple_barstow_wheeldata_F","simple_barstow_wheeldata_F", "Front Spindles",{"coreSlot":true}],
+			["simple_barstow_coilover_F_strut","simple_barstow_coilover_F_strut", "Front Coilovers"],
+			["simple_barstow_swaybar_F_strut","simple_barstow_swaybar_F_strut", "Front Sway Bar"],
+			["simple_barstow_steering_strut","simple_barstow_steering_strut", "Steering"],
 		],
 		"nodes": [
 			["id", "posX", "posY", "posZ"],
@@ -312,13 +312,13 @@
 			{"brakeVentingCoef":false},
 		],
 	},
-	"simple_traffic_barstow_wheeldata_F": {
+	"simple_barstow_wheeldata_F": {
 		"information":{
 			"authors":"Please Pick a Name",
 			"name":"Front Spindles",
 			"value":0,
 		},
-		"slotType" : "simple_traffic_barstow_wheeldata_F",
+		"slotType" : "simple_barstow_wheeldata_F",
 		"pressureWheels":[
 			["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
 			//some wheel properties
@@ -342,13 +342,13 @@
 			{"enableHubcaps":false},
 		],
 	},
-	"simple_traffic_barstow_brake_F": {
+	"simple_barstow_brake_F": {
 		"information":{
 			"authors":"Please Pick a Name",
 			"name":"Front Brakes",
 			"value":200,
 		},
-		"slotType" : "simple_traffic_barstow_brake_F",
+		"slotType" : "simple_barstow_brake_F",
 		"flexbodies": [
 			["mesh", "[group]:", "nonFlexMaterials"],
 		],
@@ -372,13 +372,13 @@
 			{"absSlipRatioTarget":0.2},
 		],
 	},
-	"simple_traffic_barstow_swaybar_F_strut": {
+	"simple_barstow_swaybar_F_strut": {
 		"information":{
 			"authors":"Please Pick a Name",
 			"name":"Front Sway Bar",
 			"value":250,
 		},
-		"slotType" : "simple_traffic_barstow_swaybar_F_strut",
+		"slotType" : "simple_barstow_swaybar_F_strut",
 		"flexbodies": [
 			["mesh", "[group]:", "nonFlexMaterials"],
 		],
@@ -388,13 +388,13 @@
 			["fh1r", "fx1r", "fx1l", "fh1l"],
 		],
 	},
-	"simple_traffic_barstow_coilover_F_strut": {
+	"simple_barstow_coilover_F_strut": {
 		"information":{
 			"authors":"Please Pick a Name",
 			"name":"Front Coilovers",
 			"value":200,
 		},
-		"slotType" : "simple_traffic_barstow_coilover_F_strut",
+		"slotType" : "simple_barstow_coilover_F_strut",
 		"beams": [
 			["id1:", "id2:"],
 			//springs
@@ -417,13 +417,13 @@
 			{"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
 		],
 	},
-	"simple_traffic_barstow_steering_strut": {
+	"simple_barstow_steering_strut": {
 		"information":{
 			"authors":"Please Pick a Name",
 			"name":"Rack and Pinion Steering",
 			"value":110,
 		},
-		"slotType" : "simple_traffic_barstow_steering_strut",
+		"slotType" : "simple_barstow_steering_strut",
 		"flexbodies": [
 			["mesh", "[group]:", "nonFlexMaterials"],
 		],
@@ -531,26 +531,26 @@
 		},
 	},
 
-	"simple_traffic_barstow_liveaxle_R": {
+	"simple_barstow_liveaxle_R": {
 		"information":{
 			"authors":"Please Pick a Name",
 			"name":"Live Axle Rear Suspension",
 			"value":150,
 		},
-		"slotType" : "simple_traffic_barstow_suspension_R",
+		"slotType" : "simple_barstow_suspension_R",
 		"slots": [
 			["type", "default", "description"],
-			["simple_traffic_barstow_wheels_R","simple_traffic_barstow_wheels_R", "Rear Wheels"],
-			["simple_traffic_barstow_brake_R","simple_traffic_barstow_brake_R", "Rear Brakes"],
-			["simple_traffic_barstow_wheeldata_R","simple_traffic_barstow_wheeldata_R", "Rear Spindles",{"coreSlot":true}],
-			["simple_traffic_barstow_leaf_R","simple_traffic_barstow_leaf_R", "Rear Leaf Springs"],
-			["simple_traffic_barstow_shock_R","simple_traffic_barstow_shock_R", "Rear Shocks"],
-			//["simple_traffic_barstow_swaybar_R_liveaxle","simple_traffic_barstow_swaybar_R_liveaxle", "Rear Sway Bar"],
+			["simple_barstow_wheels_R","simple_barstow_wheels_R", "Rear Wheels"],
+			["simple_barstow_brake_R","simple_barstow_brake_R", "Rear Brakes"],
+			["simple_barstow_wheeldata_R","simple_barstow_wheeldata_R", "Rear Spindles",{"coreSlot":true}],
+			["simple_barstow_leaf_R","simple_barstow_leaf_R", "Rear Leaf Springs"],
+			["simple_barstow_shock_R","simple_barstow_shock_R", "Rear Shocks"],
+			//["simple_barstow_swaybar_R_liveaxle","simple_barstow_swaybar_R_liveaxle", "Rear Sway Bar"],
 		],
 		"flexbodies": [
 			["mesh", "[group]:", "nonFlexMaterials"],
 			["barstow_axle_R", ["hub_R", "susp_R"]],
-			["barstow_leafmounts", ["simple_traffic_barstow_body"]],
+			["barstow_leafmounts", ["simple_barstow_body"]],
 			/* ["barstow_lowerarm_R", ["susp_R"], []],
 			["barstow_upperarm_R", ["susp_R"], []],
 			["barstow_tierod_R", ["susp_R"], []],
@@ -846,13 +846,13 @@
 			{"brakeVentingCoef":false},
 		],
 	},
-	"simple_traffic_barstow_wheeldata_R": {
+	"simple_barstow_wheeldata_R": {
 		"information":{
 			"authors":"Please Pick a Name",
 			"name":"Rear Spindles",
 			"value":0,
 		},
-		"slotType" : "simple_traffic_barstow_wheeldata_R",
+		"slotType" : "simple_barstow_wheeldata_R",
 		"pressureWheels":[
 			["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
 			//some wheel properties
@@ -876,13 +876,13 @@
 			{"enableHubcaps":false},
 		],
 	},
-	"simple_traffic_barstow_brake_R": {
+	"simple_barstow_brake_R": {
 		"information":{
 			"authors":"Please Pick a Name",
 			"name":"Rear Brakes",
 			"value":200,
 		},
-		"slotType" : "simple_traffic_barstow_brake_R",
+		"slotType" : "simple_barstow_brake_R",
 		"flexbodies": [
 			["mesh", "[group]:", "nonFlexMaterials"],
 		],
@@ -906,13 +906,13 @@
 			{"absSlipRatioTarget":0.15},
 		],
 	},
-	"simple_traffic_barstow_leaf_R": {
+	"simple_barstow_leaf_R": {
 		"information":{
 			"authors":"Please Pick a Name",
 			"name":"Rear Leaf Springs",
 			"value":150,
 		},
-		"slotType" : "simple_traffic_barstow_leaf_R",
+		"slotType" : "simple_barstow_leaf_R",
 		"flexbodies": [
 			["mesh", "[group]:", "nonFlexMaterials"],
 			["barstow_leafblock_R", ["susp_R"]],
@@ -1011,13 +1011,13 @@
 			{"triangleType":"NORMALTYPE"},
 		],
 	},
-	"simple_traffic_barstow_shock_R": {
+	"simple_barstow_shock_R": {
 		"information":{
 			"authors":"Please Pick a Name",
 			"name":"Rear Shocks",
 			"value":250,
 		},
-		"slotType" : "simple_traffic_barstow_shock_R",
+		"slotType" : "simple_barstow_shock_R",
 		"flexbodies": [
 			["mesh", "[group]:", "nonFlexMaterials"],
 			["barstow_shock_R", ["susp_R"]],

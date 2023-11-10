@@ -1,14 +1,14 @@
 {
-	"simple_traffic_barstow_engine_i6": {
+	"simple_barstow_engine_i6": {
 		"information":{
 			"authors":"Please Pick a Name",
 			"name":"232 CUI 'Super-Thrift' I6 Engine",
 			"value":1120,
 		},
-		"slotType" : "simple_traffic_barstow_engine",
+		"slotType" : "simple_barstow_engine",
 		"slots": [
 				["type", "default", "description"],
-				["simple_traffic_barstow_transmission","simple_traffic_barstow_transmission_3A", "Transmission"]
+				["simple_barstow_transmission","simple_barstow_transmission_3A", "Transmission"]
 			],
 		"powertrain": [
 			["type", "name", "inputName", "inputIndex"],
@@ -168,26 +168,26 @@
 		},
 		"flexbodies": [
 			["mesh", "[group]:", "nonFlexMaterials"],
-			["barstow_engine_i6", ["simple_traffic_barstow_body"]],
-			["barstow_radhose_i6", ["simple_traffic_barstow_body"]],
-			["barstow_header_i6", ["simple_traffic_barstow_body"]],
-			["barstow_intake_i6_stock", ["simple_traffic_barstow_body"]],
+			["barstow_engine_i6", ["simple_barstow_body"]],
+			["barstow_radhose_i6", ["simple_barstow_body"]],
+			["barstow_header_i6", ["simple_barstow_body"]],
+			["barstow_intake_i6_stock", ["simple_barstow_body"]],
 		],
 		"nodes": [
 			["id", "posX", "posY", "posZ"],
 			["f4",  0.0, -1.4, 0.6, {"nodeWeight":200}],
 		],
 	},
-	"simple_traffic_barstow_engine_v8_291": {
+	"simple_barstow_engine_v8_291": {
 		"information":{
 			"authors":"Please Pick a Name",
 			"name":"291 CUI 'Fleet-Power' V8 Engine",
 			"value":3190,
 		},
-		"slotType" : "simple_traffic_barstow_engine",
+		"slotType" : "simple_barstow_engine",
 		"slots": [
 				["type", "default", "description"],
-				["simple_traffic_barstow_transmission","simple_traffic_barstow_transmission_3A", "Transmission"]
+				["simple_barstow_transmission","simple_barstow_transmission_3A", "Transmission"]
 			],
 		"powertrain": [
 			["type", "name", "inputName", "inputIndex"],
@@ -364,23 +364,23 @@
 		},
 		"flexbodies": [
 			["mesh", "[group]:", "nonFlexMaterials"],
-			["barstow_engine_v8_smallblock", ["simple_traffic_barstow_body"]],
-			["barstow_radhose_v8", ["simple_traffic_barstow_body"]],
-			["barstow_header_v8_cast_smallblock", ["simple_traffic_barstow_body"]],
-			["barstow_intake_v8_fourbarrel", ["simple_traffic_barstow_body"]],
+			["barstow_engine_v8_smallblock", ["simple_barstow_body"]],
+			["barstow_radhose_v8", ["simple_barstow_body"]],
+			["barstow_header_v8_cast_smallblock", ["simple_barstow_body"]],
+			["barstow_intake_v8_fourbarrel", ["simple_barstow_body"]],
 		],
 		"nodes": [
 			["id", "posX", "posY", "posZ"],
 			["f4",  0.0, -1.4, 0.6, {"nodeWeight":250}],
 		],
 	},
-	"simple_traffic_barstow_transmission_4M": {
+	"simple_barstow_transmission_4M": {
 		"information":{
 			"authors":"Please Pick a Name",
 			"name":"4-Speed Manual Transmission",
 			"value":350,
 		},
-		"slotType" : "simple_traffic_barstow_transmission",
+		"slotType" : "simple_barstow_transmission",
 
 		"gearbox": {
 			"uiName":"Gearbox",
@@ -439,16 +439,16 @@
 		],
 		"flexbodies": [
 			["mesh", "[group]:", "nonFlexMaterials"],
-			["barstow_transmission", ["simple_traffic_barstow_body"]],
+			["barstow_transmission", ["simple_barstow_body"]],
 		],
 	},
-	"simple_traffic_barstow_transmission_3A": {
+	"simple_barstow_transmission_3A": {
 		"information":{
 			"authors":"Please Pick a Name",
 			"name":"3-Speed Automatic Transmission",
 			"value":1050,
 		},
-		"slotType" : "simple_traffic_barstow_transmission",
+		"slotType" : "simple_barstow_transmission",
 
 		"gearbox": {
 			"uiName":"Gearbox",
@@ -499,7 +499,7 @@
 		],
 		"flexbodies": [
 			["mesh", "[group]:", "nonFlexMaterials"],
-			["barstow_transmission", ["simple_traffic_barstow_body"]],
+			["barstow_transmission", ["simple_barstow_body"]],
 		],
 	},
 }
