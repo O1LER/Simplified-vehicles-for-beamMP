@@ -6,17 +6,30 @@
 			"value":70,
 		},
 		"slotType" : "simple_barstow_bumper_F",
+		"slots": [
+			["type", "default", "description"],
+			["barstow_licenseplate_F","barstow_licenseplate_F","Front License Plate"],
+		],
 		"flexbodies": [
 			["mesh", "[group]:", "nonFlexMaterials"],
 			["barstow_bumper_F", ["barstow_bumper_F"]],
+			{"deformGroup":"bumpersignal_FL_break", "deformMaterialBase":"barstow_lights", "deformMaterialDamaged":"barstow_lights_dmg"},
+			["barstow_bumpersignal_FL_a", ["barstow_bumper_F"],[],{"deformSound":"event:>Destruction>Vehicle>Glass>glassbreaksound2", "deformVolume":0.3}],
+			{"deformGroup":"bumpersignal_FR_break", "deformMaterialBase":"barstow_lights", "deformMaterialDamaged":"barstow_lights_dmg"},
+			["barstow_bumpersignal_FR_a", ["barstow_bumper_F"],[],{"deformSound":"event:>Destruction>Vehicle>Glass>glassbreaksound1", "deformVolume":0.3}],
+			{"deformGroup":"bumpersignal_FL_break", "deformMaterialBase":"barstow_lights", "deformMaterialDamaged":"barstow_lights_dmg"},
+			["barstow_bumpersignal_FL_b", ["barstow_bumper_F"]],
+			{"deformGroup":"bumpersignal_FR_break", "deformMaterialBase":"barstow_lights", "deformMaterialDamaged":"barstow_lights_dmg"},
+			["barstow_bumpersignal_FR_b", ["barstow_bumper_F"]],
+			{"deformGroup":""},
 		],
 		"nodes": [
 			["id", "posX", "posY", "posZ"],
-			{"frictionCoef":0.8},
-			{"nodeMaterial":"|NM_PLASTIC"},
+			{"frictionCoef":0.5},
+			{"nodeMaterial":"|NM_METAL"},
 			{"collision":true},
 			{"selfCollision":true},
-			{"nodeWeight":0.75},
+			{"nodeWeight":2.0},
 			{"group":"barstow_bumper_F"},
 			["fb1rrr", -0.88, -1.89, 0.31],
 			["fb1rr", -0.85, -2.08, 0.3],
@@ -41,8 +54,8 @@
 		"beams": [
 			["id1:", "id2:"],
 			{"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
-			{"beamSpring":600000,"beamDamp":60},
-			{"beamDeform":7695,"beamStrength":"FLT_MAX"},
+			{"beamSpring":1401000,"beamDamp":100},
+			{"beamDeform":22250,"beamStrength":"FLT_MAX"},
 			//main shape
 			{"deformLimitExpansion":1.1},
 			["fb1rrr", "fb1rr"],
@@ -94,7 +107,8 @@
 			["fb2r", "fb2rrr"],
 
 			//rigidifer
-			{"beamDeform":2000},
+			{"beamSpring":1101000,"beamDamp":100},
+			{"beamDeform":3180,"beamStrength":"FLT_MAX"},
 			["fb3", "fb1"],
 			["fb3", "fb1r"],
 			["fb3", "fb1rr"],
@@ -111,7 +125,8 @@
 			["fb3", "fb2lll"],
 
 			//attach
-			{"beamDeform":4000,"beamStrength":20000},
+		  	{"beamSpring":401000,"beamDamp":350},
+		  	{"beamDeform":6750,"beamStrength":29750},
 			{"disableTriangleBreaking":true},
 			//r
 			{"breakGroup":"frontbumper_R"},
@@ -160,8 +175,8 @@
 		"triangles": [
 			["id1:","id2:","id3:"],
 			//front bumper
-			{"groundModel":"plastic"},
-			{"dragCoef":4},
+			{"groundModel":"metal"},
+			{"dragCoef":7},
 			{"group":"barstow_bumper_F"},
 			["fb2rrr", "fb1rrr", "fb1rr"],
 			["fb1rr", "fb2rr", "fb2rrr"],
@@ -188,14 +203,19 @@
 		"flexbodies": [
 			["mesh", "[group]:", "nonFlexMaterials"],
 			["barstow_bumper_R", ["barstow_bumper_R"]],
+			{"deformGroup":"bumpersignal_RL_break", "deformMaterialBase":"barstow_lights", "deformMaterialDamaged":"barstow_lights_dmg"},
+			["barstow_bumpersignal_RL", ["barstow_bumper_R"],[],{"deformSound":"event:>Destruction>Vehicle>Glass>glassbreaksound4", "deformVolume":0.3}],
+			{"deformGroup":"bumpersignal_RR_break", "deformMaterialBase":"barstow_lights", "deformMaterialDamaged":"barstow_lights_dmg"},
+			["barstow_bumpersignal_RR", ["barstow_bumper_R"],[],{"deformSound":"event:>Destruction>Vehicle>Glass>glassbreaksound3", "deformVolume":0.3}],
+			{"deformGroup":""},
 		],
 		"nodes": [
 			["id", "posX", "posY", "posZ"],
-			{"frictionCoef":0.8},
-			{"nodeMaterial":"|NM_PLASTIC"},
+			{"frictionCoef":0.5},
+			{"nodeMaterial":"|NM_METAL"},
 			{"collision":true},
 			{"selfCollision":true},
-			{"nodeWeight":0.75},
+			{"nodeWeight":2.0},
 			{"group":"barstow_bumper_R"},
 			["rb1rrr", -0.9, 2.32, 0.32],
 			["rb1rr", -0.85, 2.59, 0.32],
@@ -220,8 +240,8 @@
 		"beams": [
 			["id1:", "id2:"],
 			{"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
-			{"beamSpring":600000,"beamDamp":60},
-			{"beamDeform":7695,"beamStrength":"FLT_MAX"},
+			{"beamDeform":22425,"beamStrength":"FLT_MAX"},
+			{"beamSpring":1401000,"beamDamp":100},
 			//main shape
 			{"deformLimitExpansion":1.1},
 			["rb1rrr", "rb1rr"],
@@ -273,7 +293,8 @@
 			["rb2r", "rb2rrr"],
 
 			//rigidifer
-			{"beamDeform":2000},
+			{"beamSpring":1101000,"beamDamp":100},
+			{"beamDeform":3180,"beamStrength":"FLT_MAX"},
 			["rb3", "rb1"],
 			["rb3", "rb1r"],
 			["rb3", "rb1rr"],
@@ -290,7 +311,8 @@
 			["rb3", "rb2lll"],
 
 			//attach
-			{"beamDeform":4000,"beamStrength":20000},
+			{"beamSpring":401000,"beamDamp":350},
+			{"beamDeform":6250,"beamStrength":22750},
 			{"disableTriangleBreaking":true},
 			//r
 			{"breakGroup":"rearbumper_R"},
@@ -319,7 +341,9 @@
 			{"breakGroup":""},
 
 			//support beams
-			{"beamType":"|SUPPORT", "beamLongBound":4},
+			{"beamType":"|SUPPORT", "beamLongBound":8},
+			{"beamSpring":450000,"beamDamp":180},
+			{"beamDeform":5000,"beamStrength":95000},
 			["rb1ll", "b4l"],
 			["rb2ll", "b8l"],
 			["rb1lll", "b3l"],
@@ -336,8 +360,8 @@
 		"triangles": [
 			["id1:","id2:","id3:"],
 			//rear bumper
-			{"groundModel":"plastic"},
-			{"dragCoef":4},
+			{"groundModel":"metal"},
+			{"dragCoef":7},
 			{"group":"barstow_bumper_R"},
 			["rb2rrr", "rb1rr", "rb1rrr"],
 			["rb2rr", "rb1rr", "rb2rrr"],
@@ -372,7 +396,7 @@
 			{"collision":true},
 			{"selfCollision":true},
 			{"group":"barstow_hood"},
-			{"nodeWeight":1.5},
+			{"nodeWeight":2.25},
 			["h1rr", -0.7, -2.11, 0.83],
 			["h1r", -0.35, -2.11, 0.83],
 			["h1", 0.0, -2.11, 0.83],
@@ -514,6 +538,10 @@
 			"value":390,
 		},
 		"slotType" : "simple_barstow_trunk",
+		"slots": [
+			["type", "default", "description"],
+			["barstow_licenseplate_R","barstow_licenseplate_R","Rear License Plate"],
+		],
 		"flexbodies": [
 			["mesh", "[group]:", "nonFlexMaterials"],
 			["barstow_trunk", ["barstow_trunk"]],
@@ -525,7 +553,7 @@
 			{"collision":true},
 			{"selfCollision":true},
 			{"group":"barstow_trunk"},
-			{"nodeWeight":1.5},
+			{"nodeWeight":2},
 			["t3r", -0.7, 2.13, 0.97],
 			["t3", 0.0, 2.14, 0.99],
 			["t3l", 0.7, 2.13, 0.97],
@@ -664,11 +692,11 @@
 		"nodes": [
 			["id", "posX", "posY", "posZ"],
 			//--MIRROR--
-			{"nodeWeight":0.35},
+			{"nodeWeight":0.8},
 			{"selfCollision":true},
 			{"collision":true},
-			{"frictionCoef":1},
-			{"nodeMaterial":"|NM_PLASTIC"},
+			{"frictionCoef":0.5},
+			{"nodeMaterial":"|NM_METAL"},
 			{"group":"barstow_mirror_R"},
 			["mi1r",-0.84, -0.21, 1.02,{"selfCollision":false}],
 			["mi2r",-0.95, -0.19, 1.02],
@@ -745,7 +773,7 @@
 		"triangles": [
 			["id1:","id2:","id3:"],
 			//right mirror
-			{"groundModel":"plastic"},
+			{"groundModel":"metal"},
 			{"group":"barstow_mirror_R"},
 			{"dragCoef":10},
 			["mi2r","mi1r","mi3r"],
