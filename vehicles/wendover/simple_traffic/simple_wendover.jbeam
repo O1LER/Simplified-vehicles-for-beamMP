@@ -131,6 +131,8 @@
         ["wendover_trim_fender_R_a", ["simple_wendover_body"], []],
         ["wendover_sideskirt_L_a", ["simple_wendover_body"], []],
         ["wendover_sideskirt_R_a", ["simple_wendover_body"], []],
+        ["wendover_bumperbar_F", ["simple_wendover_body"], []],
+        ["wendover_bumperbar_R", ["simple_wendover_body"], []],
 
         ["wendover_radiator", ["simple_wendover_body"], []],
         ["wendover_exhaust", ["simple_wendover_body"], []],
