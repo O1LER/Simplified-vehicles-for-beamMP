@@ -425,9 +425,9 @@
 			["manualGearbox", "gearbox", "clutch", 1],
 
 			//rwd
-			["shaft", "driveshaft", "gearbox", 1, {"friction":0, "electricsName":"driveshaft"}],
-			["differential", "rearDiff", "driveshaft", 1, {"diffType":"open", "gearRatio":4.11, "diffTorqueSplit":0.50}],
-
+			["shaft", "driveshaft", "gearbox", 1, {"electricsName":"driveshaft", "friction":0.383, "dynamicFriction":0.00083}],
+			["differential", "rearDiff", "driveshaft", 1, {"diffType":"lsd", "gearRatio":3.08, "lsdPreload":150, "lsdLockCoef":0.3, "lsdRevLockCoef":0.15, "uiName":"Rear Differential","defaultVirtualInertia":0.5}],
+			
 			["shaft", "wheelaxleRL", "rearDiff", 1, {"connectedWheel":"RL", "breakTriggerBeam":"axle_RL", "friction":0, "electricsName":"axle_RL"}],
 			["shaft", "wheelaxleRR", "rearDiff", 2, {"connectedWheel":"RR", "breakTriggerBeam":"axle_RR", "friction":0, "electricsName":"axle_RR"}],
 
@@ -437,6 +437,11 @@
 			["shaft", "wheelaxleFL", "fixaxleFL", 1,  {"connectedWheel":"FL", "breakTriggerBeam":"axle_FL", "friction":0, "electricsName":"axle_FL", "visualShaftAVName":"outputAV1"}],
 			["shaft", "wheelaxleFR", "fixaxleFR", 1,  {"connectedWheel":"FR", "breakTriggerBeam":"axle_FR", "friction":0, "electricsName":"axle_FR", "visualShaftAVName":"outputAV1"}],
 		],
+		"rearDiff": {
+			"friction": 4.05,
+			"dynamicFriction": 0.00191,
+			"torqueLossCoef": 0.032,
+		},
 		"flexbodies": [
 			["mesh", "[group]:", "nonFlexMaterials"],
 			["barstow_transmission", ["simple_barstow_body"]],
@@ -485,8 +490,8 @@
 			["automaticGearbox", "gearbox", "torqueConverter", 1],
 
 			//rwd
-			["shaft", "driveshaft", "gearbox", 1, {"friction":0, "electricsName":"driveshaft"}],
-			["differential", "rearDiff", "driveshaft", 1, {"diffType":"open", "gearRatio":4.11, "diffTorqueSplit":0.50}],
+			["shaft", "driveshaft", "gearbox", 1, {"electricsName":"driveshaft", "friction":0.383, "dynamicFriction":0.00083}],
+			["differential", "rearDiff", "driveshaft", 1, {"diffType":"lsd", "gearRatio":3.08, "lsdPreload":150, "lsdLockCoef":0.3, "lsdRevLockCoef":0.15, "uiName":"Rear Differential","defaultVirtualInertia":0.5}],
 
 			["shaft", "wheelaxleRL", "rearDiff", 1, {"connectedWheel":"RL", "breakTriggerBeam":"axle_RL", "friction":0, "electricsName":"axle_RL"}],
 			["shaft", "wheelaxleRR", "rearDiff", 2, {"connectedWheel":"RR", "breakTriggerBeam":"axle_RR", "friction":0, "electricsName":"axle_RR"}],
@@ -497,6 +502,11 @@
 			["shaft", "wheelaxleFL", "fixaxleFL", 1,  {"connectedWheel":"FL", "breakTriggerBeam":"axle_FL", "friction":0, "electricsName":"axle_FL", "visualShaftAVName":"outputAV1"}],
 			["shaft", "wheelaxleFR", "fixaxleFR", 1,  {"connectedWheel":"FR", "breakTriggerBeam":"axle_FR", "friction":0, "electricsName":"axle_FR", "visualShaftAVName":"outputAV1"}],
 		],
+		"rearDiff": {
+			"friction": 4.05,
+			"dynamicFriction": 0.00191,
+			"torqueLossCoef": 0.032,
+		},
 		"flexbodies": [
 			["mesh", "[group]:", "nonFlexMaterials"],
 			["barstow_transmission", ["simple_barstow_body"]],
