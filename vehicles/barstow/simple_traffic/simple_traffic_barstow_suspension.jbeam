@@ -30,7 +30,7 @@
 			{"selfCollision":false},
 			{"nodeMaterial":"|NM_METAL"},
 			{"frictionCoef":0.5},
-			{"nodeWeight":7.791533},
+			{"nodeWeight":8},
 			{"group":["hub_F", "susp_F"]},
 			//hub mounting points for lower wishbone, strut rail bottom point
 			["fh1r", -0.68, -1.395, 0.17],
@@ -51,7 +51,7 @@
 
 			//subframe
 			{"selfCollision":false},
-			{"nodeWeight":19.275307},
+			{"nodeWeight":20},
 			{"group":["subframe_F", "susp_F"]},
 			//body mounting points for lower wishbone
 			["fx1r", -0.34, -1.67, 0.22],
@@ -473,11 +473,10 @@
 			["st2r", -0.267933, -1.24, 0.25],
 			["st2l",  0.267933, -1.24, 0.25],
 			//body mounting points for steering rack
-			{"nodeWeight":13.851615},
+			{"nodeWeight":15},
 			{"group":""},
 			["st1r", -0.133967, -1.24, 0.25],
 			["st1l",  0.133967, -1.24, 0.25],
-			{"group":""},
 		],
 		"beams": [
 			["id1:","id2:"],
@@ -587,7 +586,7 @@
 			{"nodeMaterial":"|NM_METAL"},
 			{"selfCollision":false},
 			{"collision":false},
-			{"nodeWeight":4.5},
+			{"nodeWeight":8},
 			{"group":["hub_R", "susp_R"]},
 			["ax2r", -0.61, 1.40, 0.43],
 			["ax2l", 0.61, 1.40, 0.43],
@@ -595,22 +594,21 @@
 			["ax3l", 0.68, 1.25, 0.18],
 			["ax1r", -0.68, 1.55, 0.18],
 			["ax1l", 0.68, 1.55, 0.18],
-			{"nodeWeight":18},
+			{"nodeWeight":20},
 			{"collision":true},
 			{"group":["susp_R"]},
 			["ax1", 0.0, 1.49, 0.17],
 			["ax3", 0.0, 1.12, 0.29],
-			{"nodeWeight":12},
 			["ax2", 0.0, 1.44, 0.43],
 			//damper mounting nodes
-			{"nodeWeight":5.0},
+			{"nodeWeight":8},
 			["axshr", -0.45, 1.40, 0.14],
 			["axshl", 0.45, 1.40, 0.14],
 			//spring mounting nodes
 			["axsr", -0.59, 1.40, 0.18],
 			["axsl", 0.59, 1.40, 0.18],
 			//leaf nodes
-			{"nodeWeight":18},
+			{"nodeWeight":20},
 			["rx1r",-0.52, 0.78, 0.18],
 			["rx1l", 0.52, 0.78, 0.18],
 			["rx2r",-0.49, 1.93, 0.37],
