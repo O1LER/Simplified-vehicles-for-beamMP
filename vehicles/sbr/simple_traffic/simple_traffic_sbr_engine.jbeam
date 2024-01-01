@@ -11,7 +11,7 @@
 				["sbr_engine_ecu","sbr_engine_ecu", "Engine Management", {"coreSlot":true}],
 				["n2o_system","", "Nitrous Oxide System"],
 				["sbr_engine_internals","sbr_engine_internals", "Engine Long Block", {"coreSlot":true}],
-				["simple_sbr_transaxle","simple_sbr_transaxle_3A", "Transaxle"]
+				["simple_sbr_transaxle","simple_sbr_transaxle_7DCT", "Transaxle"]
 			],
 		"powertrain": [
 			["type", "name", "inputName", "inputIndex"],
@@ -102,6 +102,21 @@
 			"starterThrottleKillTime":0.75,
 			"idleRPMStartRate":2,
 			"idleRPMStartCoef":1.1,
+
+			//exhaust
+			"torqueModExhaust":[
+				["rpm", "torque"],
+				[0, 0],
+				[1000, -0],
+				[2000, -0],
+				[3000, -2],
+				[4000, -4],
+				[5000, -6],
+				[6000, -7],
+				[7000, -9],
+				[8000, -12],
+				[9000, -16],
+			],
 		},
 		"soundConfig": {
 			"sampleName": "B4_2_engine_rear",
@@ -138,16 +153,16 @@
 			"onLoadGain":1.0,
 			"offLoadGain":0.75,
 	
-			"maxLoadMix": 0.85
+			"maxLoadMix": 0.85,
 			"minLoadMix": 0,
 	
-			"lowShelfGain":-12,
+			"lowShelfGain":1,
 			"lowShelfFreq":110,
 	
-			"highShelfGain":13,
+			"highShelfGain":10,
 			"highShelfFreq":2000,
 	
-			"eqLowGain": 10,
+			"eqLowGain": 3,
 			"eqLowFreq": 400,
 			"eqLowWidth": 0.1,
 	
@@ -173,10 +188,12 @@
 			["sbr_heatshield", ["simple_sbr_body"]],
 			["sbr_radiator", ["simple_sbr_body"]],
 			["sbr_coolantlines", ["simple_sbr_body"]],
+			["sbr_muffler_custom", ["simple_sbr_body"]],
+			["sbr_exhausttip_custom", ["simple_sbr_body"]],
 		],
 		"nodes": [
 			["id", "posX", "posY", "posZ"],
-			["b4",  0.0, -1.4, 0.6, {"nodeWeight":179.7}],
+			["b4",  0.0, 1.6, 0.17, {"nodeWeight":224.7, "isExhaust":"mainEngine"}],
 		],
 	},
 	"simple_sbr_engine_2.5": {
@@ -191,7 +208,7 @@
 				["sbr_engine_ecu","sbr_engine_ecu", "Engine Management", {"coreSlot":true}],
 				["n2o_system","", "Nitrous Oxide System"],
 				["sbr_engine_internals","sbr_engine_internals", "Engine Long Block", {"coreSlot":true}],
-				["simple_sbr_transaxle","simple_sbr_transaxle_3A", "Transaxle"]
+				["simple_sbr_transaxle","simple_sbr_transaxle_7DCT", "Transaxle"]
 			],
 		"powertrain": [
 			["type", "name", "inputName", "inputIndex"],
@@ -282,6 +299,21 @@
 			"starterThrottleKillTime":0.75,
 			"idleRPMStartRate":2,
 			"idleRPMStartCoef":1.1,
+
+			//exhaust
+			"torqueModExhaust":[
+				["rpm", "torque"],
+				[0, 0],
+				[1000, -0],
+				[2000, -0],
+				[3000, -2],
+				[4000, -4],
+				[5000, -6],
+				[6000, -7],
+				[7000, -9],
+				[8000, -12],
+				[9000, -16],
+			],
 		},
 		"soundConfig": {
 			"sampleName": "B4_2_engine_rear",
@@ -321,13 +353,13 @@
 			"maxLoadMix": 0.85,
 			"minLoadMix": 0,
 	
-			"lowShelfGain":-15,
+			"lowShelfGain":-2,
 			"lowShelfFreq":130,
 	
-			"highShelfGain":7,
+			"highShelfGain":4,
 			"highShelfFreq":3000,
 	
-			"eqLowGain": 8,
+			"eqLowGain": 1,
 			"eqLowFreq": 400,
 			"eqLowWidth": 0.1,
 	
@@ -353,10 +385,12 @@
 			["sbr_heatshield", ["simple_sbr_body"]],
 			["sbr_radiator", ["simple_sbr_body"]],
 			["sbr_coolantlines", ["simple_sbr_body"]],
+			["sbr_muffler_custom", ["simple_sbr_body"]],
+			["sbr_exhausttip_custom", ["simple_sbr_body"]],
 		],
 		"nodes": [
 			["id", "posX", "posY", "posZ"],
-			["b4",  0.0, -1.4, 0.6, {"nodeWeight":183.7}],
+			["b4",  0.0, 1.6, 0.17, {"nodeWeight":228.7, "isExhaust":"mainEngine"}],
 		],
 	},
 	"simple_sbr_transaxle_7DCT": {
@@ -366,7 +400,6 @@
 			"value":6300,
 		},
 		"slotType" : "simple_sbr_transaxle",
-
 		"gearbox": {
 			"uiName":"Gearbox",
 			"gearRatios":[-3.55, 0, 3.91, 2.29, 1.65, 1.30, 1.08, 0.88, 0.67],
@@ -398,26 +431,34 @@
 			["dctGearbox", "gearbox", "mainEngine", 1],
 
 			//rwd
-			["shaft", "transfercase", "gearbox", 1, {"electricsName":"Rear Output Shaft", "friction":0.4, "dynamicFriction":0.00035}],
-			["differential", "rearDiff", "transfercase", 1, {"diffType":"lsd", "gearRatio":3.44, "lsdPreload":150, "lsdLockCoef":0.3, "lsdRevLockCoef":0.15, "uiName":"Rear Differential","defaultVirtualInertia":0.5}],
+			//["shaft", "transfercase", "gearbox", 1, {"electricsName":"Rear Output Shaft", "friction":0.4, "dynamicFriction":0.00035}],
+        	["differential", "transfercase", "gearbox", 1, {"diffType":"open", "diffTorqueSplit":0.75, "friction":0.5, "dynamicFriction":0.0004, "torqueLossCoef":0.012, "uiName":"Center Differential","defaultVirtualInertia":0.1,"speedLimitCoef":0.1}],
+			["differential", "rearDiff", "transfercase", 1, {"diffType":"lsd", "gearRatio":3.44, "lsdPreload":100, "lsdLockCoef":0.1, "lsdRevLockCoef":0.025, "uiName":"Rear Differential","defaultVirtualInertia":0.25}],
+			["differential", "frontDiff", "transfercase", 2, {"diffType":"lsd", "gearRatio":3.44, "lsdPreload":60, "lsdLockCoef":0.05, "lsdRevLockCoef":0.0, "uiName":"Front Differential","defaultVirtualInertia":0.25}],
 			
 			["shaft", "wheelaxleRL", "rearDiff", 1, {"connectedWheel":"RL", "breakTriggerBeam":"axle_RL", "friction":1.51, "dynamicFriction":0.0036, "electricsName":"axle_RL"}],
 			["shaft", "wheelaxleRR", "rearDiff", 2, {"connectedWheel":"RR", "breakTriggerBeam":"axle_RR", "friction":1.51, "dynamicFriction":0.0036, "electricsName":"axle_RR"}],
 
-			//["shaft", "fixaxleFL", "frontDiff", 1,  {"friction":0}],
-			//["shaft", "fixaxleFR", "frontDiff", 2,  {"friction":0}],
-
-			["shaft", "wheelaxleFL", "fixaxleFL", 1,  {"connectedWheel":"FL", "breakTriggerBeam":"axle_FL", "friction":1.51, "dynamicFriction":0.0036, "electricsName":"axle_FL", "visualShaftAVName":"outputAV1"}],
-			["shaft", "wheelaxleFR", "fixaxleFR", 1,  {"connectedWheel":"FR", "breakTriggerBeam":"axle_FR", "friction":1.51, "dynamicFriction":0.0036, "electricsName":"axle_FR", "visualShaftAVName":"outputAV1"}],
+			["shaft", "wheelaxleFL", "frontDiff", 1,  {"connectedWheel":"FL", "breakTriggerBeam":"axle_FL", "friction":1.51, "dynamicFriction":0.0036, "electricsName":"axle_FL", "visualShaftAVName":"outputAV1"}],
+			["shaft", "wheelaxleFR", "frontDiff", 2,  {"connectedWheel":"FR", "breakTriggerBeam":"axle_FR", "friction":1.51, "dynamicFriction":0.0036, "electricsName":"axle_FR", "visualShaftAVName":"outputAV1"}],
 		],
 		"rearDiff": {
 			"friction": 3.7,
 			"dynamicFriction": 0.0018,
 			"torqueLossCoef": 0.03,
 		},
+		"frontDiff": {
+			"friction": 3.4,
+			"dynamicFriction": 0.0016,
+			"torqueLossCoef": 0.03,
+		},
 		"flexbodies": [
 			["mesh", "[group]:", "nonFlexMaterials"],
-			["sbr_transaxle", ["simple_sbr_body"]],
+			["sbr_transaxle", ["simple_sbr_body","subframe_R"]],
+			["sbr_halfshaft_R", ["hub_R","subframe_R"]],
+			["sbr_driveshaft", ["subframe_R","subframe_F"],[],{"pos":{"x":0,"y":-0.03,"z":0},"rot":{"x":180,"y":0,"z":0}}],
+			["sbr_diff_F", ["subframe_F"]],
+			["sbr_halfshaft_F", ["hub_F","subframe_F"]],
 		],
 	},
 }

@@ -428,7 +428,7 @@
 			{"collision":true},
 			{"selfCollision":true},
 			{"group":"sbr_hood"},
-			{"nodeWeight":2.25},
+			{"nodeWeight":1.0},
 			["h1rr", -0.76, -1.46, 0.73],
 			["h1r", -0.47, -1.83, 0.59],
 			["h1", 0.0, -1.91, 0.57],
@@ -593,7 +593,7 @@
 			{"collision":true},
 			{"selfCollision":true},
 			{"group":"sbr_tailgate"},
-			{"nodeWeight":1.5},
+			{"nodeWeight":6.5},
 			["t3r", -0.55, 1.13, 1.12],
 			["t3", 0.0, 1.16, 1.13],
 			["t3l", 0.55, 1.13, 1.12],
@@ -602,13 +602,14 @@
 			["t2", 0.0, 1.59, 0.97],
 			["t2l", 0.63, 1.56, 0.94],
 
+			{"nodeWeight":2.1},
 			["t1r", -0.67, 1.91, 0.77],
 			["t1", 0.0, 2.1, 0.7],
 			["t1l", 0.67, 1.91, 0.77],
 			{"group":""},
 			{"collision":false},
 			{"selfCollision":false},
-			["t4", 0.0, 1.4863, 0.7773],
+			["t4", 0.0, 1.5, 0.6],
 		],
 		"beams": [
 			["id1:", "id2:"],
@@ -722,7 +723,7 @@
 		],
 		"triangles": [
 			["id1:","id2:","id3:"],
-			{"groundModel":"metal"},
+            {"groundModel":"plastic"},
             {"dragCoef":8},
 			["t2l", "t1l", "t2"],
 			["t2", "t1l", "t1"],
@@ -755,7 +756,7 @@
 		"nodes": [
 			["id", "posX", "posY", "posZ"],
 			//--MIRROR--
-         	{"nodeWeight":0.3},
+         	{"nodeWeight":0.25},
 			{"selfCollision":true},
 			{"collision":true},
 			{"frictionCoef":1},
@@ -835,10 +836,9 @@
 		],
 		"triangles": [
 			["id1:","id2:","id3:"],
-			//right mirror
-			{"groundModel":"metal"},
-			{"group":"sbr_mirror_R"},
+            {"groundModel":"plastic"},
 			{"dragCoef":25},
+			{"group":"sbr_mirror_R"},
 			["mi2r","mi1r","mi3r"],
 			["mi2r","mi3r","mi4r"],
 			["mi1r","mi2r","mi5r"],
@@ -876,7 +876,7 @@
 		"nodes": [
 			["id", "posX", "posY", "posZ"],
 			//--MIRROR--
-         	{"nodeWeight":0.3},
+         	{"nodeWeight":0.25},
 			{"selfCollision":true},
 			{"collision":true},
 			{"frictionCoef":1},
@@ -956,10 +956,9 @@
 		],
 		"triangles": [
 			["id1:","id2:","id3:"],
-			//right mirror
-			{"groundModel":"metal"},
+            {"groundModel":"plastic"},
+			{"dragCoef":25},
 			{"group":"sbr_mirror_R"},
-			{"dragCoef":16},
 			["mi2r","mi1r","mi3r"],
 			["mi2r","mi3r","mi4r"],
 			["mi1r","mi2r","mi5r"],

@@ -10,13 +10,13 @@
 		"slotType" : "sbr_body",
 		"slots": [
 			["type", "default", "description"],
-			["simple_sbr_engine","simple_sbr_engine_i6","Engine"],
+			["simple_sbr_engine","simple_sbr_engine_2.5","Engine"],
 			["simple_sbr_suspension_F","simple_sbr_doublewishbone_F","Front Suspension"],
-			["simple_sbr_suspension_R","simple_sbr_liveaxle_R","Rear Suspension"],
+			["simple_sbr_suspension_R","simple_sbr_doublewishbone_R","Rear Suspension"],
 			["simple_sbr_bumper_F","simple_sbr_bumper_F","Front Bumper"],
 			["simple_sbr_bumper_R","simple_sbr_bumper_R","Rear Bumper"],
 			["simple_sbr_hood","simple_sbr_hood","Hood"],
-			["simple_sbr_trunk","simple_sbr_trunk","Trunk"],
+			["simple_sbr_trunk","simple_sbr_trunk","Tailgate"],
 			["simple_sbr_headlight_R","simple_sbr_headlight_R","Right Headlight"],
 			["simple_sbr_headlight_L","simple_sbr_headlight_L","Left Headlight"],
 			["simple_sbr_mirrors","simple_sbr_mirrors","Mirrors"],
@@ -54,7 +54,7 @@
 		},
 		"variables": [
 			["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
-			["$fuel", "range", "L", "Engine", 60, 0, 80, "Fuel Volume", "Initial Fuel Volume", {"stepDis":0.5}]
+			["$fuel", "range", "L", "Engine", 37.5, 0, 50, "Fuel Volume", "Initial Fuel Volume", {"stepDis":0.5}]
 		],
 		"energyStorage": [
 			["type", "name"],
@@ -62,7 +62,7 @@
 		],
 		"mainTank": {
 			"energyType":"gasoline",
-			"fuelCapacity": 80,
+			"fuelCapacity": 50,
 			"startingFuelCapacity": "$fuel",
 			"fuel": {"[engineGroup]:":["fuel"]},
 			"breakTriggerBeam": "fuelTank",
@@ -127,10 +127,6 @@
 		],
 		"flexbodies": [
 			["mesh", "[group]:", "nonFlexMaterials"],
-			//["sbr_radsupport", ["simple_sbr_body"]],
-			//["sbr_engbay_radsupport", ["simple_sbr_body"]],
-			//["sbr_engbay_firewall", ["simple_sbr_body"]],
-			//["sbr_radiator_stock", ["simple_sbr_body"], []],
 			["sbr_engbaycrap", ["simple_sbr_body"]],
 		 	["sbr_brakelines", ["simple_sbr_body"]],
 			["sbr_bumperbar_F", ["simple_sbr_body"]],
@@ -218,7 +214,7 @@
 			{"selfCollision":true},
 
 			//body
-			{"nodeWeight":8.7},
+			{"nodeWeight":13.75},
 			["b1r",-0.89,-0.68, 0.14],
 			["b1",  0.0,-0.68, 0.14],
 			["b1l", 0.89,-0.68, 0.14],
@@ -232,7 +228,7 @@
 			["b3l", 0.89, 0.9, 0.14],
 
 			["b4r",-0.89, 1.58, 0.46],
-			["b4",  0.0, 1.6, 0.17, {"afterFireAudioCoef":0.15, "afterFireVisualCoef":0.15, "afterFireVolumeCoef":0.30, "afterFireMufflingCoef":0.0, "exhaustAudioMufflingCoef":0.15, "exhaustAudioGainChange":-4}],
+			["b4",  0.0, 1.6, 0.17, {"isExhaust":"mainEngine"}],
 			["b4l", 0.89, 1.58, 0.46],
 
 			["b5r",-0.84,-0.75, 0.78],
@@ -272,7 +268,7 @@
 			["f1ll", 0.77,-1.66, 0.22],
 
 			["f2r",-0.8, -1.41, 0.2],
-			["f2",  0.0,  -1.41, 0.14, {"isExhaust":"mainEngine"}],
+			["f2",  0.0,  -1.41, 0.14],
 			["f2l", 0.8, -1.41, 0.2],
 
 			["f3rr",-0.78,-1.62, 0.58],
@@ -287,9 +283,9 @@
 
 			//rear end
 			["r1rr",-0.81, 1.96, 0.54],
-			["r1r", -0.6, 2.05, 0.27],
+			["r1r", -0.6, 2.05, 0.27, {"afterFireAudioCoef":0.6,"afterFireVisualCoef":0.2, "afterFireVolumeCoef":0.6, "afterFireMufflingCoef":0.50, "exhaustAudioMufflingCoef":0.45, "exhaustAudioGainChange":-4.5}],
 			["r1",   0.0,  2.01, 0.27],
-			["r1l",  0.6, 2.05, 0.27],
+			["r1l",  0.6, 2.05, 0.27, {"afterFireAudioCoef":0.6,"afterFireVisualCoef":0.2, "afterFireVolumeCoef":0.6, "afterFireMufflingCoef":0.50, "exhaustAudioMufflingCoef":0.45, "exhaustAudioGainChange":-4.5}],
 			["r1ll", 0.8, 1.96, 0.54],
 
 			["r2rr",-0.79, 1.88, 0.754],
