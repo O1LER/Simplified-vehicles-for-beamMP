@@ -1,0 +1,464 @@
+{
+	"simple_sbr_engine_2.0": {
+		"information":{
+			"authors":"Please Pick a Name",
+			"name":"2.0L F4 Engine",
+			"value":6000,
+		},
+		"slotType" : "simple_sbr_engine",
+		"slots": [
+				["type", "default", "description"],
+				["sbr_engine_ecu","sbr_engine_ecu", "Engine Management", {"coreSlot":true}],
+				["n2o_system","", "Nitrous Oxide System"],
+				["sbr_engine_internals","sbr_engine_internals", "Engine Long Block", {"coreSlot":true}],
+				["simple_sbr_transaxle","simple_sbr_transaxle_7DCT", "Transaxle"]
+			],
+		"powertrain": [
+			["type", "name", "inputName", "inputIndex"],
+			["combustionEngine", "mainEngine", "dummy", 0],
+		],
+		"mainEngine": {
+			"torque":[
+				["rpm", "torque"],
+				[0, 0],
+				[500, 97],
+				[1000, 132],
+				[2000, 167],
+				[3000, 201],
+				[3500, 227],
+				[4000, 243],
+				[4500, 246],
+				[5000, 248],
+				[5500, 246],
+				[6000, 243],
+				[6500, 237],
+				[7000, 227],
+				[7500, 217],
+				[8000, 201],
+				[9000, 163],
+			],
+	
+			"idleRPM":950,
+			//max rpm physically capable of
+			"maxRPM":7200,
+			"revLimiterType": "soft",
+			"inertia":0.11,
+			"friction":11.5,
+			"dynamicFriction":0.024,
+			"engineBrakeTorque":38,
+			//"burnEfficiency":0.4
+			"burnEfficiency":[
+				[0, 0.12],
+				[0.05, 0.27],
+				[0.4, 0.5],
+				[0.7, 0.47],
+				[1, 0.34],
+			],
+			//fuel system
+			"energyStorage": "mainTank",
+			"requiredEnergyType":"gasoline",
+	
+			//exhaust
+			"instantAfterFireSound": "event:>Vehicle>Afterfire>box4_01>single",
+			"sustainedAfterFireSound": "event:>Vehicle>Afterfire>box4_01>multi",
+			"shiftAfterFireSound": "event:>Vehicle>Afterfire>box4_01>shift",
+			"particulates":0.02,
+			"instantAfterFireCoef": 0.75,
+			"sustainedAfterFireCoef": 0.5,
+	
+			//cooling and oil system
+			"thermalsEnabled":false,
+			"engineBlockMaterial":"aluminum",
+			"oilVolume":5,
+			"engineBlockAirCoolingEfficiency":28,
+
+			//engine durability
+			"cylinderWallTemperatureDamageThreshold":150,
+			"headGasketDamageThreshold":1500000,
+			"pistonRingDamageThreshold":1500000,
+			"connectingRodDamageThreshold":2000000,
+			"maxTorqueRating": 310,
+			"maxOverTorqueDamage": 500,
+	
+			//node beam interface
+			"torqueReactionNodes:":["b8","b4","r1"],
+			"waterDamage": {"[engineGroup]:":["engine_intake"]},
+			"radiator": {"[engineGroup]:":["radiator"]},
+			"engineBlock": {"[engineGroup]:":["engine_block"]},
+			"breakTriggerBeam":"engine",
+			"uiName":"Engine",
+			"soundConfig": "soundConfig",
+			"soundConfigExhaust": "soundConfigExhaust",
+	
+			//starter motor
+			"starterSample":"event:>Engine>Starter>box4_2006_eng",
+			"starterSampleExhaust":"event:>Engine>Starter>box4_2006_exh",
+			"shutOffSampleEngine":"event:>Engine>Shutoff>box4_2006_eng",
+			"shutOffSampleExhaust":"event:>Engine>Shutoff>box4_2006_exh",
+			"starterVolume":0.76,
+			"starterVolumeExhaust":0.76,
+			"shutOffVolumeEngine":0.76,
+			"shutOffVolumeExhaust":0.76,
+			"starterThrottleKillTime":0.75,
+			"idleRPMStartRate":2,
+			"idleRPMStartCoef":1.1,
+
+			//exhaust
+			"torqueModExhaust":[
+				["rpm", "torque"],
+				[0, 0],
+				[1000, -0],
+				[2000, -0],
+				[3000, -2],
+				[4000, -4],
+				[5000, -6],
+				[6000, -7],
+				[7000, -9],
+				[8000, -12],
+				[9000, -16],
+			],
+		},
+		"soundConfig": {
+			"sampleName": "B4_2_engine_rear",
+			"intakeMuffling": 1,
+	
+			"mainGain": -7,
+			"onLoadGain":1.0,
+			"offLoadGain":0.62,
+	
+			"maxLoadMix": 0.8,
+			"minLoadMix": 0,
+	
+			"lowShelfGain":0,
+			"lowShelfFreq":120,
+	
+			"highShelfGain":1,
+			"highShelfFreq":3500,
+	
+			"eqLowGain": -3,
+			"eqLowFreq": 300,
+			"eqLowWidth": 0.1,
+	
+			"eqHighGain": 0,
+			"eqHighFreq": 6500,
+			"eqHighWidth": 0.1,
+	
+			"fundamentalFrequencyCylinderCount":4,
+			"eqFundamentalGain": -2,
+		},
+		"soundConfigExhaust": {
+			"sampleName": "B4_2_exhaust",
+	
+			"mainGain": 4,
+			"onLoadGain":1.0,
+			"offLoadGain":0.75,
+	
+			"maxLoadMix": 0.85,
+			"minLoadMix": 0,
+	
+			"lowShelfGain":1,
+			"lowShelfFreq":110,
+	
+			"highShelfGain":10,
+			"highShelfFreq":2000,
+	
+			"eqLowGain": 3,
+			"eqLowFreq": 400,
+			"eqLowWidth": 0.1,
+	
+			"eqHighGain": 8,
+			"eqHighFreq": 1300,
+			"eqHighWidth": 0.2,
+	
+			"fundamentalFrequencyCylinderCount":4,
+			"eqFundamentalGain": 3,
+		},
+		"vehicleController": {
+			"clutchLaunchStartRPM":2000,
+			"clutchLaunchTargetRPM":2500,
+			//**highShiftDown can be overwritten by automatic transmissions**
+			"highShiftDownRPM":[0,0,0,3500,4300,4400,4450,4500,4500],
+			//**highShiftUp can be overwritten by intake modifications**
+			"highShiftUpRPM":7000,
+		},
+		"flexbodies": [
+			["mesh", "[group]:", "nonFlexMaterials"],
+			["sbr_engine", ["simple_sbr_body"]],
+			["sbr_exhaust", ["simple_sbr_body"]],
+			["sbr_heatshield", ["simple_sbr_body"]],
+			["sbr_radiator", ["simple_sbr_body"]],
+			["sbr_coolantlines", ["simple_sbr_body"]],
+			["sbr_muffler_custom", ["simple_sbr_body"]],
+			["sbr_exhausttip_custom", ["simple_sbr_body"]],
+		],
+		"nodes": [
+			["id", "posX", "posY", "posZ"],
+			["b4",  0.0, 1.6, 0.17, {"nodeWeight":224.7, "isExhaust":"mainEngine"}],
+		],
+	},
+	"simple_sbr_engine_2.5": {
+		"information":{
+			"authors":"Please Pick a Name",
+			"name":"2.5L F4 Engine",
+			"value":11000,
+		},
+		"slotType" : "simple_sbr_engine",
+		"slots": [
+				["type", "default", "description"],
+				["sbr_engine_ecu","sbr_engine_ecu", "Engine Management", {"coreSlot":true}],
+				["n2o_system","", "Nitrous Oxide System"],
+				["sbr_engine_internals","sbr_engine_internals", "Engine Long Block", {"coreSlot":true}],
+				["simple_sbr_transaxle","simple_sbr_transaxle_7DCT", "Transaxle"]
+			],
+		"powertrain": [
+			["type", "name", "inputName", "inputIndex"],
+			["combustionEngine", "mainEngine", "dummy", 0],
+		],
+		"mainEngine": {
+			"torque":[
+				["rpm", "torque"],
+				[0, 0],
+				[500, 101],
+				[1000, 156],
+				[2000, 205],
+				[3000, 251],
+				[3500, 276],
+				[4000, 289],
+				[4500, 291],
+				[5000, 291],
+				[5500, 291],
+				[6000, 287],
+				[6500, 273],
+				[7000, 259],
+				[7500, 239],
+				[8000, 217],
+				[9000, 174],
+			],
+	
+			"idleRPM":950,
+			//max rpm physically capable of
+			"maxRPM":7200,
+			"revLimiterType": "soft",
+			"inertia":0.125,
+			"friction":12,
+			"dynamicFriction":0.026,
+			"engineBrakeTorque":42,
+			//"burnEfficiency":0.39
+			"burnEfficiency":[
+				[0, 0.11],
+				[0.05, 0.26],
+				[0.4, 0.48],
+				[0.7, 0.48],
+				[1, 0.34],
+			],
+			//fuel system
+			"energyStorage": "mainTank",
+			"requiredEnergyType":"gasoline",
+	
+			//exhaust
+			"instantAfterFireSound": "event:>Vehicle>Afterfire>box4_01>single",
+			"sustainedAfterFireSound": "event:>Vehicle>Afterfire>box4_01>multi",
+			"shiftAfterFireSound": "event:>Vehicle>Afterfire>box4_01>shift",
+			"particulates":0.02,
+			"instantAfterFireCoef": 0.75,
+			"sustainedAfterFireCoef": 0.5,
+	
+			//cooling and oil system
+			"thermalsEnabled":false,
+			"engineBlockMaterial":"aluminum",
+			"oilVolume":6,
+			"engineBlockAirCoolingEfficiency":28,
+
+			//engine durability
+			"cylinderWallTemperatureDamageThreshold":160,
+			"headGasketDamageThreshold":1500000,
+			"pistonRingDamageThreshold":1500000,
+			"connectingRodDamageThreshold":2000000,
+			"maxTorqueRating": 410,
+			"maxOverTorqueDamage": 2000,
+	
+			//node beam interface
+			"torqueReactionNodes:":["b8","b4","r1"],
+			"waterDamage": {"[engineGroup]:":["engine_intake"]},
+			"radiator": {"[engineGroup]:":["radiator"]},
+			"engineBlock": {"[engineGroup]:":["engine_block"]},
+			"breakTriggerBeam":"engine",
+			"uiName":"Engine",
+			"soundConfig": "soundConfig",
+			"soundConfigExhaust": "soundConfigExhaust",
+	
+			//starter motor
+			"starterSample":"event:>Engine>Starter>box4_2006_eng",
+			"starterSampleExhaust":"event:>Engine>Starter>box4_2006_exh",
+			"shutOffSampleEngine":"event:>Engine>Shutoff>box4_2006_eng",
+			"shutOffSampleExhaust":"event:>Engine>Shutoff>box4_2006_exh",
+			"starterVolume":0.76,
+			"starterVolumeExhaust":0.76,
+			"shutOffVolumeEngine":0.76,
+			"shutOffVolumeExhaust":0.76,
+			"starterThrottleKillTime":0.75,
+			"idleRPMStartRate":2,
+			"idleRPMStartCoef":1.1,
+
+			//exhaust
+			"torqueModExhaust":[
+				["rpm", "torque"],
+				[0, 0],
+				[1000, -0],
+				[2000, -0],
+				[3000, -2],
+				[4000, -4],
+				[5000, -6],
+				[6000, -7],
+				[7000, -9],
+				[8000, -12],
+				[9000, -16],
+			],
+		},
+		"soundConfig": {
+			"sampleName": "B4_2_engine_rear",
+			"intakeMuffling": 1,
+	
+			"mainGain": -6,
+			"onLoadGain":1.0,
+			"offLoadGain":0.62,
+	
+			"maxLoadMix": 0.85,
+			"minLoadMix": 0,
+	
+			"lowShelfGain":0,
+			"lowShelfFreq":120,
+	
+			"highShelfGain":1,
+			"highShelfFreq":3500,
+	
+			"eqLowGain": -3,
+			"eqLowFreq": 300,
+			"eqLowWidth": 0.1,
+	
+			"eqHighGain": 0,
+			"eqHighFreq": 6500,
+			"eqHighWidth": 0.1,
+	
+			"fundamentalFrequencyCylinderCount":4,
+			"eqFundamentalGain": -2,
+		},
+		"soundConfigExhaust": {
+			"sampleName": "B4_3_exhaust",
+	
+			"mainGain": 5,
+			"onLoadGain":1.0,
+			"offLoadGain":0.75,
+	
+			"maxLoadMix": 0.85,
+			"minLoadMix": 0,
+	
+			"lowShelfGain":-2,
+			"lowShelfFreq":130,
+	
+			"highShelfGain":4,
+			"highShelfFreq":3000,
+	
+			"eqLowGain": 1,
+			"eqLowFreq": 400,
+			"eqLowWidth": 0.1,
+	
+			"eqHighGain": 7,
+			"eqHighFreq": 1300,
+			"eqHighWidth": 0.2,
+	
+			"fundamentalFrequencyCylinderCount":4,
+			"eqFundamentalGain": 3,
+		},
+		"vehicleController": {
+			"clutchLaunchStartRPM":2000,
+			"clutchLaunchTargetRPM":2500,
+			//**highShiftDown can be overwritten by automatic transmissions**
+			"highShiftDownRPM":[0,0,0,3500,4300,4400,4450,4500,4500],
+			//**highShiftUp can be overwritten by intake modifications**
+			"highShiftUpRPM":7000,
+		},
+		"flexbodies": [
+			["mesh", "[group]:", "nonFlexMaterials"],
+			["sbr_engine", ["simple_sbr_body"]],
+			["sbr_exhaust", ["simple_sbr_body"]],
+			["sbr_heatshield", ["simple_sbr_body"]],
+			["sbr_radiator", ["simple_sbr_body"]],
+			["sbr_coolantlines", ["simple_sbr_body"]],
+			["sbr_muffler_custom", ["simple_sbr_body"]],
+			["sbr_exhausttip_custom", ["simple_sbr_body"]],
+		],
+		"nodes": [
+			["id", "posX", "posY", "posZ"],
+			["b4",  0.0, 1.6, 0.17, {"nodeWeight":228.7, "isExhaust":"mainEngine"}],
+		],
+	},
+	"simple_sbr_transaxle_7DCT": {
+		"information":{
+			"authors":"BeamNG",
+			"name":"7-Speed Dual-Clutch Transaxle",
+			"value":6300,
+		},
+		"slotType" : "simple_sbr_transaxle",
+		"gearbox": {
+			"uiName":"Gearbox",
+			"gearRatios":[-3.55, 0, 3.91, 2.29, 1.65, 1.30, 1.08, 0.88, 0.67],
+			"friction": 1.24,
+			"dynamicFriction": 0.0012,
+			"torqueLossCoef": 0.0155,
+			"parkLockTorque":2000,
+			"additionalEngineInertia":0.05,
+			"gearboxNode:":["tra1"],
+	
+			"gearWhineCoefsInput":  [0.60, 0.00, 0.13, 0.13, 0.13, 0.13, 0.13, 0.13, 0.13, 0.13],
+			"gearWhineCoefsOutput": [0.00, 0.00, 0.27, 0.27, 0.27, 0.27, 0.27, 0.27, 0.27, 0.27],
+			"gearWhineInputEvent": "event:>Vehicle>Transmission>helical_01>twine_in_tuned",
+			"gearWhineOutputEvent": "event:>Vehicle>Transmission>helical_01>twine_out_tuned",
+		},
+		"vehicleController": {
+			"automaticModes":"PRNDSM",
+			"calculateOptimalLoadShiftPoints": true,
+			"shiftDownRPMOffsetCoef":1.2,
+			//"aggressionSmoothingUp":2
+			//"aggressionSmoothingDown":0.06
+			"lowShiftDownRPM":[0,0,0,1600,1600,1500,1400,1300,1300],
+			"lowShiftUpRPM":[0,0,2800,2600,2400,2200,2000,2000],
+			"clutchLaunchStartRPM": 2500,
+			"clutchLaunchTargetRPM": 3000,
+		},
+		"powertrain" : [
+			["type", "name", "inputName", "inputIndex"],
+			["dctGearbox", "gearbox", "mainEngine", 1],
+
+			//rwd
+			//["shaft", "transfercase", "gearbox", 1, {"electricsName":"Rear Output Shaft", "friction":0.4, "dynamicFriction":0.00035}],
+        	["differential", "transfercase", "gearbox", 1, {"diffType":"open", "diffTorqueSplit":0.75, "friction":0.5, "dynamicFriction":0.0004, "torqueLossCoef":0.012, "uiName":"Center Differential","defaultVirtualInertia":0.1,"speedLimitCoef":0.1}],
+			["differential", "rearDiff", "transfercase", 1, {"diffType":"lsd", "gearRatio":3.44, "lsdPreload":100, "lsdLockCoef":0.1, "lsdRevLockCoef":0.025, "uiName":"Rear Differential","defaultVirtualInertia":0.25}],
+			["differential", "frontDiff", "transfercase", 2, {"diffType":"lsd", "gearRatio":3.44, "lsdPreload":60, "lsdLockCoef":0.05, "lsdRevLockCoef":0.0, "uiName":"Front Differential","defaultVirtualInertia":0.25}],
+			
+			["shaft", "wheelaxleRL", "rearDiff", 1, {"connectedWheel":"RL", "breakTriggerBeam":"axle_RL", "friction":1.51, "dynamicFriction":0.0036, "electricsName":"axle_RL"}],
+			["shaft", "wheelaxleRR", "rearDiff", 2, {"connectedWheel":"RR", "breakTriggerBeam":"axle_RR", "friction":1.51, "dynamicFriction":0.0036, "electricsName":"axle_RR"}],
+
+			["shaft", "wheelaxleFL", "frontDiff", 1,  {"connectedWheel":"FL", "breakTriggerBeam":"axle_FL", "friction":1.51, "dynamicFriction":0.0036, "electricsName":"axle_FL", "visualShaftAVName":"outputAV1"}],
+			["shaft", "wheelaxleFR", "frontDiff", 2,  {"connectedWheel":"FR", "breakTriggerBeam":"axle_FR", "friction":1.51, "dynamicFriction":0.0036, "electricsName":"axle_FR", "visualShaftAVName":"outputAV1"}],
+		],
+		"rearDiff": {
+			"friction": 3.7,
+			"dynamicFriction": 0.0018,
+			"torqueLossCoef": 0.03,
+		},
+		"frontDiff": {
+			"friction": 3.4,
+			"dynamicFriction": 0.0016,
+			"torqueLossCoef": 0.03,
+		},
+		"flexbodies": [
+			["mesh", "[group]:", "nonFlexMaterials"],
+			["sbr_transaxle", ["simple_sbr_body","subframe_R"]],
+			["sbr_halfshaft_R", ["hub_R","subframe_R"]],
+			["sbr_driveshaft", ["subframe_R","subframe_F"],[],{"pos":{"x":0,"y":-0.03,"z":0},"rot":{"x":180,"y":0,"z":0}}],
+			["sbr_diff_F", ["subframe_F"]],
+			["sbr_halfshaft_F", ["hub_F","subframe_F"]],
+		],
+	},
+}
