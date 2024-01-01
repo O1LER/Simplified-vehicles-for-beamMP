@@ -24,7 +24,7 @@
 			//axles:
 			{"group":"axles"},
 			{"selfCollision":false},
-			{"nodeWeight":10},
+			{"nodeWeight":5},
 			["axf1",-0.58, -1.2495, 0.315, {"group":"axf_R"}],
 			["axf3", 0.85, -1.2495, 0.315, {"group":"axf_L"}],
 			["axf4", 0.58, -1.2495, 0.315, {"group":"axf_L"}],
@@ -33,15 +33,15 @@
 		"beams": [
 			["id1:", "id2:"],
 			//{"highlight":{"radius":0.0075, "col":"#C0C0C03f"}}
-			{"beamSpring":6061813,"beamDamp":433},  //axles:
-			{"beamStrength":607739},
-			{"beamDeform":86572},
+        	{"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+			{"beamDeform":78500,"beamStrength":434000},
+			{"beamSpring":1501000,"beamDamp":25},
 			{"breakGroup":""},
 			{"breakGroupType":0},
-			{"beamSpring":5628950,"beamDamp":432},
 			["axf3", "axf4"],
 			["axf5", "axf1"],
-			{"highlight":{"radius":0, "col":"#00000000"}}
+			//{"highlight":{"radius":0, "col":"#00000000"}},
+			{"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
 		],
 		"variables": [
 			["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
@@ -71,7 +71,7 @@
 			{"hubPeripheryBeamSpring":410000, "hubPeripheryBeamDamp":35},
 			{"hubReinfBeamSpring":400000, "hubReinfBeamDamp":195},
 			{"hubSideBeamSpring":481000, "hubSideBeamDamp":45},
-			{"hubNodeWeight":0.65},
+			{"hubNodeWeight":1.00},
 			{"hubNodeMaterial":"|NM_RUBBER"},
 			{"hubFrictionCoef":1.0},
 			//groundmodel friction multipliers
@@ -116,7 +116,7 @@
 			//axles:
 			{"group":"axles"},
 			{"selfCollision":false},
-			{"nodeWeight":10},
+			{"nodeWeight":5},
 			["axr1",-0.58, 1.2495, 0.273, {"group":"axr_R"}],
 			["axr3", 0.85, 1.2495, 0.273, {"group":"axr_L"}],
 			["axr4", 0.58, 1.2495, 0.273, {"group":"axr_L"}],
@@ -125,15 +125,15 @@
 		"beams": [
 			["id1:", "id2:"],
 			//{"highlight":{"radius":0.0075, "col":"#C0C0C03f"}}
-			{"beamSpring":8308027,"beamDamp":593},  //axles:
-			{"beamStrength":832938},
-			{"beamDeform":118652},
+        	{"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+			{"beamDeform":78500,"beamStrength":434000},
+			{"beamSpring":1501000,"beamDamp":25},
 			{"breakGroup":""},
 			{"breakGroupType":0},
-			{"beamSpring":7714765,"beamDamp":593},
 			["axr3", "axr4"],
 			["axr5", "axr1"],
-			{"highlight":{"radius":0, "col":"#00000000"}}
+			//{"highlight":{"radius":0, "col":"#00000000"}},
+			{"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
 		],
 		"variables": [
 			["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
@@ -163,7 +163,7 @@
 			{"hubPeripheryBeamSpring":510000, "hubPeripheryBeamDamp":40},
 			{"hubReinfBeamSpring":610000, "hubReinfBeamDamp":205},
 			{"hubSideBeamSpring":501000, "hubSideBeamDamp":45},
-			{"hubNodeWeight":0.65},
+			{"hubNodeWeight":1.05},
 			{"hubNodeMaterial":"|NM_RUBBER"},
 			{"hubFrictionCoef":1.0},
 			//groundmodel friction multipliers
