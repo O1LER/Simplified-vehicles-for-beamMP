@@ -365,7 +365,7 @@
 			["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
 			//brakes
 			{"enableABS":false},
-			{"brakeTorque":"$=$brakestrength*2000"}, //Rate of brake torque (Nm) increase per input (input is 0 to 1). If there is no knee point, it also indicates the maximum brake torque.
+			{"brakeTorque":"$=$brakestrength*3000"}, //Rate of brake torque (Nm) increase per input (input is 0 to 1). If there is no knee point, it also indicates the maximum brake torque.
 			{"brakeInputSplit":1}, //Creates a knee point in brake torque rate (value of 0.5 means knee occurs at half brake input)
 			{"brakeSplitCoef":1}, //Reduces or increases the brake torque rate after the knee point. Value of 0.5 means brake torque will rise at half the rate defined by brakeTorque.
 			{"parkingTorque":0}, //Maximum parking brake torque
@@ -373,12 +373,15 @@
 
 			//brake thermals
 			{"enableBrakeThermals":false},
-			{"brakeDiameter":0.27}, //Diameter (m)
-			{"brakeMass":6}, //Rotor mass (ignoring hub/bearing area) (kg)
-			{"brakeType":"disc"}, //Type ("drum", "disc", "vented-disc")
+			{"brakeDiameter":0.36}, //Diameter (m)
+			{"brakeMass":10.5}, //Rotor mass (ignoring hub/bearing area) (kg)
+			{"brakeType":"vented-disc"}, //Type ("drum", "disc", "vented-disc")
 			{"rotorMaterial":"steel"}, //Rotor material ("steel", "aluminum", "aluminium", "ceramic")
 			{"padMaterial":"basic"}, //Pad material ("basic","premium","sport","semi-race","full-race","godmode")
-			{"brakeVentingCoef":1.0}, //Cooling multiplier (1 for typical unducted brakes)
+			{"brakeVentingCoef":1.2}, //Cooling multiplier (1 for typical unducted brakes)
+			{"absSlipRatioTarget":0.2},
+			//brake sounds
+			{"squealCoefNatural": 0.0, "squealCoefLowSpeed": 0.5}
 		],
 	},
 	"simple_sbr_swaybar_F_strut": {
@@ -1020,20 +1023,23 @@
 			["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
 			//brakes
 			{"enableABS":false},
-			{"brakeTorque":"$=$brakestrength*950"}, //Rate of brake torque (Nm) increase per input (input is 0 to 1). If there is no knee point, it also indicates the maximum brake torque.
-			{"brakeInputSplit":0.5}, //Creates a knee point in brake torque rate (value of 0.5 means knee occurs at half brake input)
-			{"brakeSplitCoef":0.5}, //Reduces or increases the brake torque rate after the knee point. Value of 0.5 means brake torque will rise at half the rate defined by brakeTorque.
-			{"parkingTorque":1500}, //Maximum parking brake torque
+			{"brakeTorque":"$=$brakestrength*2100"}, //Rate of brake torque (Nm) increase per input (input is 0 to 1). If there is no knee point, it also indicates the maximum brake torque.
+			{"brakeInputSplit":0.4}, //Creates a knee point in brake torque rate (value of 0.5 means knee occurs at half brake input)
+			{"brakeSplitCoef":0.4}, //Reduces or increases the brake torque rate after the knee point. Value of 0.5 means brake torque will rise at half the rate defined by brakeTorque.
+			{"parkingTorque":1700}, //Maximum parking brake torque
 			{"brakeSpring":150}, //Stiffness of the brake system. Too high will make brake unstable, too low will cause wheel hop or rubber band effect.
 
 			//brake thermals
 			{"enableBrakeThermals":false},
-			{"brakeDiameter":0.27}, //Diameter (m)
-			{"brakeMass":4.6}, //Rotor mass (ignoring hub/bearing area) (kg)
-			{"brakeType":"drum"}, //Type ("drum", "disc", "vented-disc")
+			{"brakeDiameter":0.32}, //Diameter (m)
+			{"brakeMass":8.0}, //Rotor mass (ignoring hub/bearing area) (kg)
+			{"brakeType":"vented-disc"}, //Type ("drum", "disc", "vented-disc")
 			{"rotorMaterial":"steel"}, //Rotor material ("steel", "aluminum", "aluminium", "ceramic")
 			{"padMaterial":"basic"}, //Pad material ("basic","premium","sport","semi-race","full-race","godmode")
-			{"brakeVentingCoef":0.8}, //Cooling multiplier (1 for typical unducted brakes)
+			{"brakeVentingCoef":0.9}, //Cooling multiplier (1 for typical unducted brakes)
+			{"absSlipRatioTarget":0.14},
+			//brake sounds
+			{"squealCoefNatural": 0.0, "squealCoefLowSpeed": 0.0}
 		],
 	},
 	"simple_sbr_swaybar_R_doublewishbone": {
