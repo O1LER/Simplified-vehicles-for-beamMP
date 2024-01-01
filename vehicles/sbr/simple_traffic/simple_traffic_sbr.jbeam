@@ -37,14 +37,14 @@
 			{"node:":"f3"},
 		],
 		"cameraChase":{
-			"distance":5.5,
+			"distance":4.8,
 			"distanceMin":2,
 			"defaultRotation":{"x":0,"y":-12,"z":0},
 			"offset":{"x":0.0, "y":-0.39, "z":1.17},
 			"fov":65,
 		},
 		"cameraExternal":{
-			"distance":5.5,
+			"distance":4.8,
 			"distanceMin":2,
 			"offset":{"x":0.0, "y":-0.39, "z":0.37},
 			"fov":65,
