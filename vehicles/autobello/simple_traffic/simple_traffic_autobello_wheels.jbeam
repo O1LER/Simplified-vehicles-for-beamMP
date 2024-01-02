@@ -1,0 +1,185 @@
+{
+	"simple_autobello_wheels_F":{
+		"information":{
+			"authors":"Please Pick a Name",
+			"name":"Front Wheels",
+		},
+		"slotType" : "simple_autobello_wheels_F",
+		"flexbodies": [
+			["mesh", "[group]:", "nonFlexMaterials"],
+			["tire_03c_13x6_24", ["wheel_FL","axf_L"], [], {"pos":{"x": 0.635, "y":-1.1274, "z":0.2948}, "rot":{"x":0.0, "y":0.0, "z":0.0}, "scale":{"x":1.1, "y":1.0, "z":1.0}}],
+			["tire_03c_13x6_24", ["wheel_FR","axf_R"], [], {"pos":{"x":-0.635, "y":-1.1274, "z":0.2948}, "rot":{"x":0.0, "y":0.0, "z":180}, "scale":{"x":1.1, "y":1.0, "z":1.0}}],
+		],
+		"props":[
+			["func",   "mesh",               "idRef:","idX:","idY:","baseRotation",        "rotation",           "translation",        "min","max","offset","multiplier",],
+			["axle_FR","steelwheel_11b_13x5","axf1",  "axf5","fh2r",{"x":0, "y":0, "z":0}, {"x":-1,"y":0, "z":0},{"x":0, "y":0, "z":0},-360, 360, 0, 1, {"baseTranslation":{"x":0.15, "y":0, "z":0.0}, "breakGroup":"driveshaft","deformGroup":"driveshaft","optional":true}],
+			["axle_FL","steelwheel_11b_13x5","axf4",  "axf3","fh2l",{"x":0, "y":0, "z":0}, {"x":1, "y":0, "z":0},{"x":0, "y":0, "z":0},-360, 360, 0, 1, {"baseTranslation":{"x":0.15, "y":0, "z":0.0}, "breakGroup":"driveshaft","deformGroup":"driveshaft","optional":true}],
+		],
+		"nodes": [
+			["id", "posX", "posY", "posZ"],
+			{"frictionCoef":0.5},
+			{"nodeMaterial":"|NM_METAL"},
+			{"collision":true},
+			{"selfCollision":false},
+			//axles:
+			{"group":"axles"},
+			{"selfCollision":false},
+			{"nodeWeight":4.5},
+			["axf1",-0.485, -1.1274, 0.2948, {"group":"axf_R"}],
+			["axf3", 0.705, -1.1274, 0.2948, {"group":"axf_L"}],
+			["axf4", 0.485, -1.1274, 0.2948, {"group":"axf_L"}],
+			["axf5",-0.705, -1.1274, 0.2948, {"group":"axf_R"}],
+		],
+		"beams": [
+			["id1:", "id2:"],
+			//{"highlight":{"radius":0.0075, "col":"#C0C0C03f"}}
+        	{"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+			{"beamDeform":78500,"beamStrength":434000},
+			{"beamSpring":1501000,"beamDamp":25},
+			{"breakGroup":""},
+			{"breakGroupType":0},
+			["axf3", "axf4"],
+			["axf5", "axf1"],
+			//{"highlight":{"radius":0, "col":"#00000000"}},
+			{"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		],
+		"variables": [
+			["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+			//["$tirepressure_F", "range", "psi", "Wheels", 27, 0, 50, "Tire Pressure", "Relative to atmospheric pressure", {"subCategory":"Front"}],
+		],
+		"pressureWheels": [
+			["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
+			//these things enable features that have been added since the introduction of the pressurewheel
+			{"disableMeshBreaking":false,"disableHubMeshBreaking":false},
+			{"hasTire":true},
+			{"enableTireReinfBeams":false},
+			{"enableTireLbeams":false},
+			{"enableTireSideReinfBeams":false},
+			{"enableTreadReinfBeams":false},
+			{"enableTirePeripheryReinfBeams":false},
+			{"triangleCollision":false},
+			///general settings
+        	{"radius":0.303},
+			{"hubRadius":0.303},
+			{"wheelOffset":-0.04},
+			{"hubWidth":0.115},
+			{"numRays":10},
+			{"hubRadiusSimple":0.18},
+			{"pressurePSI":"$tirepressure_F"},
+			//hub options
+			{"hubTreadBeamSpring":510000, "hubTreadBeamDamp":115},
+			{"hubPeripheryBeamSpring":510000, "hubPeripheryBeamDamp":40},
+			{"hubReinfBeamSpring":610000, "hubReinfBeamDamp":205},
+			{"hubSideBeamSpring":501000, "hubSideBeamDamp":45},
+			{"hubNodeWeight":0.8},
+			{"hubNodeMaterial":"|NM_RUBBER"},
+			{"hubFrictionCoef":1.0},
+			//groundmodel friction multipliers
+			{"frictionCoef":1.0},
+			{"slidingFrictionCoef":0.98},
+			//{"stribeckExponent":1.5},
+			{"stribeckVelMult":1.4},
+			{"treadCoef":0.7},
+	
+			//advanced friction values
+			{"noLoadCoef":1.23},
+			{"loadSensitivitySlope":0.00018},
+			{"fullLoadCoef":0.4},
+			{"softnessCoef":0.5},
+			//deform values
+        	{"hubBeamDeform":43600, "hubBeamStrength":78000},
+		],
+	},
+
+	"simple_autobello_wheels_R":{
+		"information":{
+			"authors":"Please Pick a Name",
+			"name":"Rear Wheels",
+		},
+		"slotType" : "simple_autobello_wheels_R",
+		"flexbodies": [
+			["mesh", "[group]:", "nonFlexMaterials"],
+			["tire_03c_13x6_24", ["wheel_RL", "axr_L"], [], {"pos":{"x":0.635, "y":1.07275, "z":0.29476}, "rot":{"x":0.0, "y":0.0, "z":0.0}, "scale":{"x":1.1, "y":1.0, "z":1.0}}],
+			["tire_03c_13x6_24", ["wheel_RR","axr_R"], [], {"pos":{"x":-0.635, "y":1.07275, "z":0.29476}, "rot":{"x":0.0, "y":0.0, "z":180}, "scale":{"x":1.1, "y":1.0, "z":1.0}}],
+		],
+		"props":[
+			["func",   "mesh",               "idRef:","idX:","idY:","baseRotation",       "rotation",           "translation",        "min","max","offset","multiplier",],
+			["axle_RR","steelwheel_11b_13x5","axr1",  "axr5","rh2r",{"x":0, "y":0, "z":0},{"x":-1,"y":0, "z":0},{"x":0, "y":0, "z":0},-360, 360, 0, 1, {"baseTranslation":{"x":0.15, "y":0, "z":0.0}, "breakGroup":"driveshaft","deformGroup":"driveshaft","optional":true}],
+			["axle_RL","steelwheel_11b_13x5","axr4",  "axr3","rh2l",{"x":0, "y":0, "z":0},{"x":1, "y":0, "z":0},{"x":0, "y":0, "z":0},-360, 360, 0, 1, {"baseTranslation":{"x":0.15, "y":0, "z":0.0}, "breakGroup":"driveshaft","deformGroup":"driveshaft","optional":true}],
+		],
+		"nodes": [
+			["id", "posX", "posY", "posZ"],
+			{"frictionCoef":0.5},
+			{"nodeMaterial":"|NM_METAL"},
+			{"collision":true},
+			{"selfCollision":false},
+			//axles:
+			{"group":"axles"},
+			{"selfCollision":false},
+			{"nodeWeight":4.5},
+			["axr1",-0.485, 1.07275, 0.29476, {"group":"axr_R"}],
+			["axr3", 0.705, 1.07275, 0.29476, {"group":"axr_L"}],
+			["axr4", 0.485, 1.07275, 0.29476, {"group":"axr_L"}],
+			["axr5",-0.705, 1.07275, 0.29476, {"group":"axr_R"}],
+		],
+		"beams": [
+			["id1:", "id2:"],
+			//{"highlight":{"radius":0.0075, "col":"#C0C0C03f"}}
+        	{"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+			{"beamDeform":78500,"beamStrength":434000},
+			{"beamSpring":1501000,"beamDamp":25},
+			{"breakGroup":""},
+			{"breakGroupType":0},
+			["axr3", "axr4"],
+			["axr5", "axr1"],
+			//{"highlight":{"radius":0, "col":"#00000000"}},
+			{"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+		],
+		"variables": [
+			["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+			//["$tirepressure_R", "range", "psi", "Wheels", 27, 0, 50, "Tire Pressure", "Relative to atmospheric pressure", {"subCategory":"Rear"}],
+		],
+		"pressureWheels": [
+			["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
+			//these things enable features that have been added since the introduction of the pressurewheel
+			{"disableMeshBreaking":false,"disableHubMeshBreaking":false},
+			{"hasTire":true},
+			{"enableTireReinfBeams":false},
+			{"enableTireLbeams":false},
+			{"enableTireSideReinfBeams":false},
+			{"enableTreadReinfBeams":false},
+			{"enableTirePeripheryReinfBeams":false},
+			{"triangleCollision":false},
+			///general settings
+        	{"radius":0.303},
+			{"hubRadius":0.303},
+			{"wheelOffset":-0.04},
+			{"hubWidth":0.115},
+			{"numRays":10},
+			{"hubRadiusSimple":0.18},
+			{"pressurePSI":"$tirepressure_R"},
+			//hub options
+			{"hubTreadBeamSpring":510000, "hubTreadBeamDamp":115},
+			{"hubPeripheryBeamSpring":510000, "hubPeripheryBeamDamp":40},
+			{"hubReinfBeamSpring":610000, "hubReinfBeamDamp":205},
+			{"hubSideBeamSpring":501000, "hubSideBeamDamp":45},
+			{"hubNodeWeight":0.8},
+			{"hubNodeMaterial":"|NM_RUBBER"},
+			{"hubFrictionCoef":1.0},
+			//groundmodel friction multipliers
+			{"frictionCoef":1.0},
+			{"slidingFrictionCoef":0.98},
+			//{"stribeckExponent":1.5},
+			{"stribeckVelMult":1.4},
+			{"treadCoef":0.7},
+	
+			//advanced friction values
+			{"noLoadCoef":1.23},
+			{"loadSensitivitySlope":0.00018},
+			{"fullLoadCoef":0.4},
+			{"softnessCoef":0.5},
+			//deform values
+        	{"hubBeamDeform":43600, "hubBeamStrength":78000},
+		],
+	}
+}
