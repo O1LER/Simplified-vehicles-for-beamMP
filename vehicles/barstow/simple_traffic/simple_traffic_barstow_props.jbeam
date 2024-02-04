@@ -1,0 +1,63 @@
+{
+	"simple_barstow_props":{
+		"information":{
+			"authors":"Please Pick a Name",
+			"name":"Props",
+		},
+		"slotType" : "simple_barstow_props",
+		"props": [
+			["func",     "mesh",          "idRef:", "idX:", "idY:", "baseRotation",            "rotation",            "translation",         "min", "max", "offset", "multiplier"],
+			["parkingbrake", "barstow_parkingbrake", "b1",     "b1l",  "b2",   {"x":90, "y":0, "z":0}, {"x":0, "y":0, "z":0},  {"x":0.0, "y":0.028, "z":-0.008}, 0, 1, 0, 1],
+			["turnsignal",   "barstow_signalstalk",  "b1",     "b1l",  "b2",   {"x":20, "y":0, "z":0}, {"x":0, "y":0, "z":0},  {"x":0, "y":0, "z":0}, -1, 1, 0.8, 1],
+			//head lights
+			{
+				"lightInnerAngle":0,
+				"lightOuterAngle":80,
+				"lightColor":{"r":255, "g":255, "b":150, "a":255},
+				"lightAttenuation":{"x":0, "y":1, "z":1},
+				"lightCastShadows":true,
+				"flareName":"vehicleHeadLightFlare",
+				"cookieName":"art/special/BNG_light_cookie_headlight.dds",
+				"texSize":512,
+				"shadowSoftness":0.5,
+			},
+			//low beams angled right slightly to avoid blinding oncoming traffic
+			["lowhighbeam","SPOTLIGHT","f1rr","f1r","f3rr",{"x":165, "y":0,  "z":0},{"x":0,"y":0,"z":0},{"x":0,"y":0,"z":0},0,0,0,1,{"baseTranslation":{"x":0.23,"y":0.7,"z":-0.01},"lightRange":50,"lightBrightness":0.35,"flareScale":0.06,"deformGroup":"headlightglass_R_break"}],
+			["lowhighbeam","SPOTLIGHT","f1ll","f1l","f3ll",{"x": 15, "y":-45,"z":0},{"x":0,"y":0,"z":0},{"x":0,"y":0,"z":0},0,0,0,1,{"baseTranslation":{"x":0.23,"y":0.7,"z": 0.01},"lightRange":50,"lightBrightness":0.35,"flareScale":0.06,"deformGroup":"headlightglass_L_break"}],
+			["highbeam",   "SPOTLIGHT","f1rr","f1r","f3rr",{"x":165, "y":0,  "z":0},{"x":0,"y":0,"z":0},{"x":0,"y":0,"z":0},0,0,0,1,{"baseTranslation":{"x":0.65,"y":0.7,"z":-0.02},"lightRange":80,"lightBrightness":0.6,"flareScale":0.09,"deformGroup":"headlightglass_R_break"}],
+			["highbeam",   "SPOTLIGHT","f1ll","f1l","f3ll",{"x": 15, "y":-45,"z":0},{"x":0,"y":0,"z":0},{"x":0,"y":0,"z":0},0,0,0,1,{"baseTranslation":{"x":0.65,"y":0.7,"z": 0.02},"lightRange":80,"lightBrightness":0.6,"flareScale":0.09,"deformGroup":"headlightglass_L_break"}],	
+			//reverse lights
+			{
+				//"lightInnerAngle":0,
+				"lightOuterAngle":120,
+				"lightRange":8,
+				"lightColor":{"r":255, "g":255, "b":150, "a":255},
+				//"lightAttenuation":{"x":0, "y":1, "z":1},
+				"lightCastShadows":false,
+				"flareName":"vehicleReverseLightFlare",
+				//"cookieName":"art/special/BNG_light_cookie_headlight.dds",
+				//"texSize":512,
+				//"shadowSoftness":0.5,
+			},
+			["reverse", "SPOTLIGHT", "r1rr", "r1r", "r2rr", {"x":0,  "y":0,"z":-5}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.15, "y":0.5, "z": 0.03},"flareScale":0.05,"lightBrightness":0.06,"deformGroup":"taillight_R_break"}],
+			["reverse", "SPOTLIGHT", "r1ll", "r1l", "r2ll", {"x":180,"y":0,"z": 5}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.15, "y":0.5, "z":-0.03},"flareScale":0.05,"lightBrightness":0.06,"deformGroup":"taillight_L_break"}],
+			//taillights
+			{
+				//"lightInnerAngle":0,
+				//"lightOuterAngle":120,
+				//"lightRange":8,
+				"lightColor":{"r":255, "g":50, "b":0, "a":255},
+				//"lightAttenuation":{"x":0, "y":1, "z":1},
+				//"lightCastShadows":false,
+				"flareName":"vehicleBrakeLightFlare",
+			},
+			["brake",      "SPOTLIGHT", "r1rr", "r1r", "r2rr", {"x":0,  "y":0,"z":-5}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.15, "y":0.6, "z": 0.03},"flareScale":0.07,"lightBrightness":0.06,"deformGroup":"taillight_R_break"}],
+			["brake",      "SPOTLIGHT", "r1ll", "r1l", "r2ll", {"x":180,"y":0,"z": 5}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.15, "y":0.6, "z":-0.03},"flareScale":0.07,"lightBrightness":0.06,"deformGroup":"taillight_L_break"}],
+			["signal_R",   "SPOTLIGHT", "r1rr", "r1r", "r2rr", {"x":0,  "y":0,"z":-5}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.15, "y":0.4, "z": 0.03},"flareScale":0.06,"lightBrightness":0.06,"deformGroup":"taillight_R_break"}],
+			["signal_L",   "SPOTLIGHT", "r1ll", "r1l", "r2ll", {"x":180,"y":0,"z": 5}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.15, "y":0.4, "z":-0.03},"flareScale":0.06,"lightBrightness":0.06,"deformGroup":"taillight_L_break"}],
+			["lowhighbeam","SPOTLIGHT", "r1rr", "r1r", "r2rr", {"x":0,  "y":0,"z":-5}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.15, "y":0.4, "z": 0.03},"flareScale":0.05,"lightBrightness":0.03,"lightRange":8,"deformGroup":"taillight_R_break"}],
+			["lowhighbeam","SPOTLIGHT", "r1ll", "r1l", "r2ll", {"x":180,"y":0,"z": 5}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.15, "y":0.4, "z":-0.03},"flareScale":0.05,"lightBrightness":0.03,"lightRange":8,"deformGroup":"taillight_L_break"}],
+		],
+	},
+
+}

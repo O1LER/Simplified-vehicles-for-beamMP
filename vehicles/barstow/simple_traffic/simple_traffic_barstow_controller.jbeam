@@ -1,0 +1,37 @@
+{
+	"simple_barstow_controller":{
+		"information":{
+			"authors":"Please Pick a Name",
+			"name":"Vehicle Controller (remove for parked cars)",
+		},
+		"slotType" : "simple_barstow_controller",
+		"slots": [
+			["type", "default", "description"],
+			["simple_barstow_props","simple_barstow_props","Props"], //adjusted for individual vehicle, removed for traffic variant
+			["simple_barstow_engine","simple_barstow_engine_i6","Engine"],
+		],
+		"controller": [
+			["fileName"],
+			["vehicleController", {}],
+		],
+		"soundscape": [
+			["name", "src"],
+			{"node:":"f3"},
+		],
+		"energyStorage": [
+			["type", "name"],
+			["fuelTank", "mainTank"],
+		],
+		"variables": [
+			["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+			["$fuel", "range", "L", "Engine", 60, 0, 80, "Fuel Volume", "Initial Fuel Volume", {"stepDis":0.5}]
+		],
+		"mainTank": {
+			"energyType":"gasoline",
+			"fuelCapacity": 80,
+			"startingFuelCapacity": "$fuel",
+			"fuel": {"[engineGroup]:":["fuel"]},
+			"breakTriggerBeam": "fuelTank",
+		},
+	},
+}

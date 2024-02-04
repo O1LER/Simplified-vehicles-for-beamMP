@@ -10,31 +10,29 @@
 		"slotType" : "barstow_body",
 		"slots": [
 			["type", "default", "description"],
-			["simple_barstow_engine","simple_barstow_engine_i6","Engine", {"coreSlot":true}],
+			//engine is inside this slot for convenience
+			["simple_barstow_controller","simple_barstow_controller","Vehicle Controller"], //shared by all simple traffic cars except parked
+			
 			["simple_barstow_suspension_F","simple_barstow_doublewishbone_F","Front Suspension"],
 			["simple_barstow_suspension_R","simple_barstow_liveaxle_R","Rear Suspension"],
+
+			//body panels
 			["simple_barstow_bumper_F","simple_barstow_bumper_F","Front Bumper"],
 			["simple_barstow_bumper_R","simple_barstow_bumper_R","Rear Bumper"],
 			["simple_barstow_hood","simple_barstow_hood","Hood"],
 			["simple_barstow_trunk","simple_barstow_trunk","Trunk"],
-			["simple_barstow_headlight_R","simple_barstow_headlight_R","Right Headlight"],
-			["simple_barstow_headlight_L","simple_barstow_headlight_L","Left Headlight"],
 			["simple_barstow_mirrors","simple_barstow_mirrors","Mirrors"],
 			["simple_barstow_licenseplate","simple_barstow_licenseplate","License Plate"],
+			
+			["simple_barstow_steer","simple_barstow_steer","Steering Wheel"],
+
+			//copy these from the normal body
 			["skin_interior", "barstow_skin_interior", "Interior Color", {"coreSlot":true}],
 			["soundscape_horn", "soundscape_horn_12", "Horn"],
-		],
-		"controller": [
-			["fileName"],
-			["vehicleController", {}],
 		],
 		"refNodes": [
 			["ref:", "back:", "left:", "up:", "leftCorner:", "rightCorner:"],
 			["b2", "b3", "b2l", "b6", "f3ll", "f3rr"],
-		],
-		"soundscape": [
-			["name", "src"],
-			{"node:":"f3"},
 		],
 		"cameraChase":{
 			"distance":5.5,
@@ -52,79 +50,6 @@
 		"glowMap":{
 			"generic_gauges_odo":     {"simpleFunction":"nop", "off":"digidash_screen_dmg", "on":"digidash_screen_dmg"},
 		},
-		"variables": [
-			["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
-			["$fuel", "range", "L", "Engine", 60, 0, 80, "Fuel Volume", "Initial Fuel Volume", {"stepDis":0.5}]
-		],
-		"energyStorage": [
-			["type", "name"],
-			["fuelTank", "mainTank"],
-		],
-		"mainTank": {
-			"energyType":"gasoline",
-			"fuelCapacity": 80,
-			"startingFuelCapacity": "$fuel",
-			"fuel": {"[engineGroup]:":["fuel"]},
-			"breakTriggerBeam": "fuelTank",
-		},
-		"props": [
-			["func",         "mesh",                 "idRef:", "idX:", "idY:", "baseRotation",         "rotation",            "translation",         "min", "max", "offset", "multiplier"],
-			["steering",     "barstow_steer",        "b1",     "b1l",  "b2",   {"x":20, "y":0, "z":0}, {"x":0, "y":0, "z":1}, {"x":0, "y":0, "z":0}, -1000, 1000, 0, 1],
-			//["gear_A",     "barstow_shifter_A",    "b1",     "b1l",  "b2",   {"x":85, "y":0, "z":0}, {"x":1, "y":0, "z":0}, {"x":0, "y":0.2, "z":0.01}, 0, 1, 0, 1],
-
-			["parkingbrake", "barstow_parkingbrake", "b1",     "b1l",  "b2",   {"x":90, "y":0, "z":0}, {"x":0, "y":0, "z":0},  {"x":0.0, "y":0.028, "z":-0.008}, 0, 1, 0, 1],
-			["brake",        "barstow_brakepedal",   "b1",     "b1l",  "b2",   {"x":90, "y":0, "z":0}, {"x":-20, "y":0, "z":0},{"x":0.0, "y":0, "z":0}, 0, 1, 0, 1],
-			["throttle",     "barstow_gaspedal",     "b1",     "b1l",  "b2",   {"x":90, "y":0, "z":0}, {"x":-14, "y":0, "z":0},{"x":0.0, "y":0, "z":0}, 0, 1, 0, 1],
-			["turnsignal",   "barstow_signalstalk",  "b1",     "b1l",  "b2",   {"x":20, "y":0, "z":0}, {"x":0, "y":0, "z":0},  {"x":0, "y":0, "z":0}, -1, 1, 0.8, 1],
-			//head lights
-			{
-				"lightInnerAngle":0,
-				"lightOuterAngle":80,
-				"lightColor":{"r":255, "g":255, "b":150, "a":255},
-				"lightAttenuation":{"x":0, "y":1, "z":1},
-				"lightCastShadows":true,
-				"flareName":"vehicleHeadLightFlare",
-				"cookieName":"art/special/BNG_light_cookie_headlight.dds",
-				"texSize":512,
-				"shadowSoftness":0.5,
-			},
-			//low beams angled right slightly to avoid blinding oncoming traffic
-			["lowhighbeam","SPOTLIGHT","f1rr","f1r","f3rr",{"x":165, "y":0,  "z":0},{"x":0,"y":0,"z":0},{"x":0,"y":0,"z":0},0,0,0,1,{"baseTranslation":{"x":0.23,"y":0.7,"z":-0.01},"lightRange":50,"lightBrightness":0.35,"flareScale":0.06,"deformGroup":"headlightglass_R_break"}],
-			["lowhighbeam","SPOTLIGHT","f1ll","f1l","f3ll",{"x": 15, "y":-45,"z":0},{"x":0,"y":0,"z":0},{"x":0,"y":0,"z":0},0,0,0,1,{"baseTranslation":{"x":0.23,"y":0.7,"z": 0.01},"lightRange":50,"lightBrightness":0.35,"flareScale":0.06,"deformGroup":"headlightglass_L_break"}],
-			["highbeam",   "SPOTLIGHT","f1rr","f1r","f3rr",{"x":165, "y":0,  "z":0},{"x":0,"y":0,"z":0},{"x":0,"y":0,"z":0},0,0,0,1,{"baseTranslation":{"x":0.65,"y":0.7,"z":-0.02},"lightRange":80,"lightBrightness":0.6,"flareScale":0.09,"deformGroup":"headlightglass_R_break"}],
-			["highbeam",   "SPOTLIGHT","f1ll","f1l","f3ll",{"x": 15, "y":-45,"z":0},{"x":0,"y":0,"z":0},{"x":0,"y":0,"z":0},0,0,0,1,{"baseTranslation":{"x":0.65,"y":0.7,"z": 0.02},"lightRange":80,"lightBrightness":0.6,"flareScale":0.09,"deformGroup":"headlightglass_L_break"}],	
-			//reverse lights
-			{
-				//"lightInnerAngle":0,
-				"lightOuterAngle":120,
-				"lightRange":8,
-				"lightColor":{"r":255, "g":255, "b":150, "a":255},
-				//"lightAttenuation":{"x":0, "y":1, "z":1},
-				"lightCastShadows":false,
-				"flareName":"vehicleReverseLightFlare",
-				//"cookieName":"art/special/BNG_light_cookie_headlight.dds",
-				//"texSize":512,
-				//"shadowSoftness":0.5,
-			},
-			["reverse", "SPOTLIGHT", "r1rr", "r1r", "r2rr", {"x":0,  "y":0,"z":-5}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.15, "y":0.5, "z": 0.03},"flareScale":0.05,"lightBrightness":0.06,"deformGroup":"taillight_R_break"}],
-			["reverse", "SPOTLIGHT", "r1ll", "r1l", "r2ll", {"x":180,"y":0,"z": 5}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.15, "y":0.5, "z":-0.03},"flareScale":0.05,"lightBrightness":0.06,"deformGroup":"taillight_L_break"}],
-			//taillights
-			{
-				//"lightInnerAngle":0,
-				//"lightOuterAngle":120,
-				//"lightRange":8,
-				"lightColor":{"r":255, "g":50, "b":0, "a":255},
-				//"lightAttenuation":{"x":0, "y":1, "z":1},
-				//"lightCastShadows":false,
-				"flareName":"vehicleBrakeLightFlare",
-			},
-			["brake",      "SPOTLIGHT", "r1rr", "r1r", "r2rr", {"x":0,  "y":0,"z":-5}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.15, "y":0.6, "z": 0.03},"flareScale":0.07,"lightBrightness":0.06,"deformGroup":"taillight_R_break"}],
-			["brake",      "SPOTLIGHT", "r1ll", "r1l", "r2ll", {"x":180,"y":0,"z": 5}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.15, "y":0.6, "z":-0.03},"flareScale":0.07,"lightBrightness":0.06,"deformGroup":"taillight_L_break"}],
-			["signal_R",   "SPOTLIGHT", "r1rr", "r1r", "r2rr", {"x":0,  "y":0,"z":-5}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.15, "y":0.4, "z": 0.03},"flareScale":0.06,"lightBrightness":0.06,"deformGroup":"taillight_R_break"}],
-			["signal_L",   "SPOTLIGHT", "r1ll", "r1l", "r2ll", {"x":180,"y":0,"z": 5}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.15, "y":0.4, "z":-0.03},"flareScale":0.06,"lightBrightness":0.06,"deformGroup":"taillight_L_break"}],
-			["lowhighbeam","SPOTLIGHT", "r1rr", "r1r", "r2rr", {"x":0,  "y":0,"z":-5}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.15, "y":0.4, "z": 0.03},"flareScale":0.05,"lightBrightness":0.03,"lightRange":8,"deformGroup":"taillight_R_break"}],
-			["lowhighbeam","SPOTLIGHT", "r1ll", "r1l", "r2ll", {"x":180,"y":0,"z": 5}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.15, "y":0.4, "z":-0.03},"flareScale":0.05,"lightBrightness":0.03,"lightRange":8,"deformGroup":"taillight_L_break"}],
-		],
 		"flexbodies": [
 			["mesh", "[group]:", "nonFlexMaterials"],
 			["barstow_radsupport", ["simple_barstow_body"]],
