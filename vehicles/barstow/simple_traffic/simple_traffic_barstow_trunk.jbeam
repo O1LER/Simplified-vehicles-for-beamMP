@@ -1,0 +1,148 @@
+{
+	"simple_barstow_trunk": {
+		"information":{
+			"authors":"Please Pick a Name",
+			"name":"Trunk",
+			"value":390,
+		},
+		"slotType" : "simple_barstow_trunk",
+		"slots": [
+			["type", "default", "description"],
+			["barstow_licenseplate_R","barstow_licenseplate_R","Rear License Plate"],
+		],
+		"flexbodies": [
+			["mesh", "[group]:", "nonFlexMaterials"],
+			["barstow_trunk", ["barstow_trunk"]],
+		],
+		"nodes": [
+			["id", "posX", "posY", "posZ"],
+			{"nodeMaterial":"|NM_METAL"},
+			{"frictionCoef":0.5},
+			{"collision":true},
+			{"selfCollision":true},
+			{"group":"barstow_trunk"},
+			{"nodeWeight":2},
+			["t3r", -0.7, 2.13, 0.97],
+			["t3", 0.0, 2.14, 0.99],
+			["t3l", 0.7, 2.13, 0.97],
+
+			["t2r", -0.8, 2.36, 0.88],
+			["t2", 0.0, 2.39, 0.9],
+			["t2l", 0.8, 2.36, 0.88],
+
+			["t1r", -0.7, 2.51, 0.59],
+			["t1", 0.0, 2.54, 0.59],
+			["t1l", 0.7, 2.51, 0.59],
+			{"group":""},
+
+		],
+		"beams": [
+			["id1:", "id2:"],
+			//--trunk--
+			{"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+			{"beamSpring":601000,"beamDamp":60},
+			{"beamDeform":32535,"beamStrength":"FLT_MAX"},
+			{"deformLimitExpansion":1.1},
+			//main shape
+			["t1r", "t1"],
+			["t1", "t1l"],
+			["t2l", "t2"],
+			["t2", "t2r"],
+			["t3r", "t3"],
+			["t3", "t3l"],
+			["t1", "t2"],
+			["t2", "t3"],
+			["t1r", "t2r"],
+			["t2r", "t3r"],
+			["t1l", "t2l"],
+			["t2l", "t3l"],
+
+			//surficial crossing
+			{"beamDeform":12150,"beamStrength":"FLT_MAX"},
+			{"deformLimitExpansion":""},
+			["t1r", "t2"],
+			["t2", "t1l"],
+			["t2l", "t3"],
+			["t3", "t2r"],
+			["t3r", "t2"],
+			["t2", "t3l"],
+			["t2l", "t1"],
+			["t1", "t2r"],
+
+			//rigids
+			{"beamDeform":2890,"beamStrength":"FLT_MAX"},
+			["t1r", "t3r"],
+			["t1", "t3"],
+			["t1l", "t3l"],
+			["t1l", "t1r"],
+			["t2r", "t2l"],
+			["t3l", "t3r"],
+			["t3", "t1r"],
+			["t3", "t1l"],
+
+			//pop open
+			{"breakGroupType":1},
+			{"beamSpring":360,"beamDamp":60},
+			{"beamDeform":3915,"beamStrength":9000},
+			{"beamPrecompression":1.5},
+			["t2r", "b4", {"breakGroup":"trunkhinge_R"}],
+			["t2l", "b4", {"breakGroup":"trunkhinge_L"}],
+			{"breakGroup":""},
+			{"beamPrecompression":1},
+			{"breakGroupType":0},
+
+			//hinge
+			{"disableTriangleBreaking":true},
+			{"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+			{"beamSpring":801000,"beamDamp":60},
+			{"beamDeform":32000,"beamStrength":95000},
+			{"breakGroupType":0},
+			{"breakGroup":"trunkhinge_R"},
+			//r
+			["t3r", "b4r"],
+			["t3r", "r2"],
+			["t3r", "r2r"],
+			["t3r", "r2rr"],
+			{"breakGroup":"trunkhinge_L"},
+			//l
+			["t3l", "b4l"],
+			["t3l", "r2"],
+			["t3l", "r2l"],
+			["t3l", "r2ll"],
+			{"breakGroup":""},
+
+			//latch
+			{"beamDeform":5500,"beamStrength":20000},
+			{"breakGroup":"trunklatch"},
+			["t1l", "r1"],
+			["t1", "r1"],
+			["t1r", "r1"],
+			{"breakGroup":""},
+
+			//support beams
+			{"beamType":"|SUPPORT", "beamLongBound":12},
+			{"beamSpring":501000,"beamDamp":100},
+			{"beamDeform":9150,"beamStrength":1125000},
+			["t3r", "b4r"],
+			["t3l", "b4l"],
+			["t2l", "r1ll"],
+			["t2r", "r1rr"],
+			["t2", "r1"],
+			{"deformLimitExpansion":1.1},
+		],
+		"triangles": [
+			["id1:","id2:","id3:"],
+			{"groundModel":"metal"},
+			{"dragCoef":9},
+			["t2l", "t1l", "t2"],
+			["t2", "t1l", "t1"],
+			["t2", "t1", "t1r"],
+			["t1r", "t2r", "t2"],
+			["t3", "t2", "t2r"],
+			["t2r", "t3r", "t3"],
+			["t3", "t2l", "t2"],
+			["t3", "t3l", "t2l"],
+			{"group":""},
+		],
+	},
+}
